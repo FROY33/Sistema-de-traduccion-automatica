@@ -5,7 +5,7 @@ Conecta el módulo puro ``mmas`` con:
 - una caché de aptitud persistida en JSON (``CacheJSON``), que se reescribe tras
   cada evaluación para poder reanudar si el proceso se interrumpe;
 - la función de aptitud: la falsa (``aptitud_falsa``, con óptimo conocido) o la
-  real (``entrenar_y_evaluar`` del issue 003, aún no implementada);
+  real (``traduccion.entrenamiento.entrenar_y_evaluar``, issue 003);
 - el registro de la matriz de feromona por iteración, también en JSON;
 - las líneas base: la configuración por defecto (``evaluar_defecto``) y la
   búsqueda aleatoria uniforme sobre la misma rejilla (``buscar_aleatoria``),
@@ -13,8 +13,9 @@ Conecta el módulo puro ``mmas`` con:
 - la huella por resultado (``calcular_huella``) y la fusión de JSON con
   verificación de coherencia (``fusionar_resultados``).
 
-Para enchufar la aptitud real basta con implementar ``_aptitud_real`` (o
-cambiar la función que devuelve ``obtener_funcion_aptitud``): el resto no cambia.
+La aptitud real se configura una vez por proceso con ``configurar_aptitud_real``
+(carpeta de artefactos, presupuesto de tokens, ...); ``buscar.py`` lo hace a
+partir de sus argumentos. PyTorch solo se importa al evaluar con la aptitud real.
 """
 
 from __future__ import annotations
@@ -57,7 +58,9 @@ CONFIGURACION_DEFECTO: dict[str, Any] = {
 PRESUPUESTO_POR_DEFECTO = 8 * 5
 
 #: Campos de la huella que deben coincidir para poder mezclar resultados.
-CAMPOS_HUELLA_COHERENCIA = ("commit", "md5_tokenizador", "tamano_entrenamiento")
+#: ``presupuesto_tokens`` evita mezclar una corrida piloto (presupuesto mínimo)
+#: con una real; con la aptitud falsa vale ``None`` en todos los registros.
+CAMPOS_HUELLA_COHERENCIA = ("commit", "md5_tokenizador", "tamano_entrenamiento", "presupuesto_tokens")
 
 #: Bibliotecas cuya versión se registra en la huella (si están instaladas).
 BIBLIOTECAS_HUELLA = ("torch", "transformers", "sentencepiece", "sacrebleu", "datasets")
@@ -219,12 +222,34 @@ def aptitud_falsa(configuracion: dict[str, Any], optimo: dict[str, Any] = OPTIMO
     return sum(puntos) / len(puntos)
 
 
+#: Opciones con que se llama a ``entrenar_y_evaluar`` desde la búsqueda (ver
+#: ``configurar_aptitud_real``). Vacío = valores por defecto: artefactos en
+#: ``notebooks/`` y presupuesto ``"real"`` (≈2 épocas).
+OPCIONES_APTITUD_REAL: dict[str, Any] = {}
+
+
+def configurar_aptitud_real(**opciones: Any) -> None:
+    """Fija las opciones de la aptitud real para este proceso.
+
+    Acepta los argumentos con nombre de ``entrenar_y_evaluar``: p. ej.
+    ``presupuesto_tokens`` (``"minimo"``, ``"real"`` o un entero),
+    ``carpeta_artefactos``, ``ruta_tokenizador``, ``ruta_datos``,
+    ``tokens_por_lote``, ``tamano_validacion``, ``dispositivo`` o ``progreso``.
+    Reemplaza las opciones anteriores.
+    """
+    OPCIONES_APTITUD_REAL.clear()
+    OPCIONES_APTITUD_REAL.update(opciones)
+
+
 def _aptitud_real(configuracion: dict[str, Any], par: str, semilla: int) -> dict[str, Any]:
-    raise NotImplementedError(
-        "La aptitud real aún no está implementada: depende de `entrenar_y_evaluar` "
-        "(ver issues/003-tracer-bullet-evaluacion-extremo-a-extremo.md). "
-        "Usa --aptitud falsa mientras tanto."
-    )
+    """Entrena y evalúa la configuración (``entrenar_y_evaluar``) con las opciones fijadas.
+
+    El resultado trae su propia huella (con MD5 del tokenizador, tamaño del
+    entrenamiento, GPU y presupuesto), que prevalece sobre la genérica.
+    """
+    from .entrenamiento import entrenar_y_evaluar
+
+    return entrenar_y_evaluar(configuracion, par, semilla, **OPCIONES_APTITUD_REAL)
 
 
 def obtener_funcion_aptitud(

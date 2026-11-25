@@ -206,6 +206,12 @@ def test_comando_busqueda_solo_pasa_fragmentos_a_la_aleatoria(rutas):
     assert "--fragmento" not in ejecutor.comando_busqueda("repo", rutas, "mmas", 0, "en-la", "falsa")
 
 
+def test_comando_busqueda_real_lee_los_artefactos_de_drive(rutas):
+    real = ejecutor.comando_busqueda("repo", rutas, "mmas", 0, "en-la", "real", python="py")
+    assert real[real.index("--artefactos") + 1] == str(rutas.artefactos)
+    assert "--artefactos" not in ejecutor.comando_busqueda("repo", rutas, "mmas", 0, "en-la", "falsa")
+
+
 def test_relanzar_el_fragmento_en_drive_no_repite_evaluaciones(rutas):
     """Simula un corte de Colab: el JSON en Drive conserva lo evaluado."""
     raiz = Path(__file__).resolve().parent.parent

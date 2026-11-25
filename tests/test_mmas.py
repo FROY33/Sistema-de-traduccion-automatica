@@ -253,7 +253,9 @@ def test_script_escribe_cache_y_registro_de_feromona(tmp_path, capsys):
     assert "Evaluaciones nuevas en esta ejecución: 40" in capsys.readouterr().out
 
 
-def test_script_con_aptitud_real_da_error_claro(tmp_path, capsys):
-    codigo = buscar.main(["--aptitud", "real", "--salida", str(tmp_path)])
+def test_script_con_aptitud_real_sin_artefactos_da_error_claro(tmp_path, capsys, monkeypatch):
+    monkeypatch.setattr(busqueda, "OPCIONES_APTITUD_REAL", {})
+    vacia = tmp_path / "sin_artefactos"
+    codigo = buscar.main(["--aptitud", "real", "--artefactos", str(vacia), "--salida", str(tmp_path)])
     assert codigo == 2
-    assert "issues/003" in capsys.readouterr().err
+    assert "issues/001" in capsys.readouterr().err

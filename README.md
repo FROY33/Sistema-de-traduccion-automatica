@@ -260,7 +260,7 @@ python buscar.py --metodo defecto --semilla 0 --par en-la --aptitud falsa
 python buscar.py --metodo aleatoria --semilla 0 --par en-la --aptitud falsa
 ```
 
-Opciones: `--par` (`en-la` o `en-el`), `--aptitud` (`falsa` o `real`; la real depende del issue 003 y por ahora termina con un error explicativo), `--salida` (carpeta de resultados, por defecto `resultados/`), `--hormigas` (8) e `--iteraciones` (5) para MMAS, y `--presupuesto` (por defecto hormigas × iteraciones), `--fragmento` y `--fragmentos` para la aleatoria.
+Opciones: `--par` (`en-la` o `en-el`), `--aptitud` (`falsa` o `real`; la real entrena cada configuración, ver sección 14), `--salida` (carpeta de resultados, por defecto `resultados/`), `--hormigas` (8) e `--iteraciones` (5) para MMAS, y `--presupuesto` (por defecto hormigas × iteraciones), `--fragmento` y `--fragmentos` para la aleatoria.
 
 ### Búsqueda aleatoria repartida en varias cuentas
 
@@ -289,7 +289,7 @@ Se escriben en `resultados/<par>/<aptitud>/`, todos con el formato `{"resultados
 - `defecto_semilla<semilla>.json`: la configuración por defecto.
 - `aleatoria_semilla<semilla>.json` o `aleatoria_semilla<semilla>_fragmento<k>de<n>.json`: la búsqueda aleatoria.
 
-Cada registro incluye la configuración, la aptitud, el tiempo, el estado, el `metodo`, el número de `evaluacion` (para trazar la mejor aptitud frente a evaluaciones con `busqueda.curva_mejor_aptitud`) y la `huella`: commit de git (y si el árbol tenía cambios sin confirmar), MD5 del tokenizador, tamaño del entrenamiento, GPU, versión de Python, plataforma y versiones de las bibliotecas. Con la aptitud falsa, el tokenizador, el tamaño del entrenamiento y la GPU quedan en `null`; la aptitud real (issue 003) debe rellenarlos con `busqueda.calcular_huella(...)`.
+Cada registro incluye la configuración, la aptitud, el tiempo, el estado, el `metodo`, el número de `evaluacion` (para trazar la mejor aptitud frente a evaluaciones con `busqueda.curva_mejor_aptitud`) y la `huella`: commit de git (y si el árbol tenía cambios sin confirmar), MD5 del tokenizador, tamaño del entrenamiento, GPU, versión de Python, plataforma y versiones de las bibliotecas. Con la aptitud falsa, el tokenizador, el tamaño del entrenamiento y la GPU quedan en `null`; la aptitud real los rellena y añade el presupuesto de tokens y el tamaño de lote (la fusión no mezcla resultados con distinto presupuesto).
 
 Si el proceso se interrumpe, basta con relanzar el mismo comando: continúa desde el JSON sin repetir evaluaciones.
 
@@ -329,3 +329,28 @@ python -c "from pathlib import Path; from traduccion import ejecutor; r = ejecut
 donde `CARPETA` contiene `artefactos/` con la estructura de arriba.
 
 Fuera de Colab el notebook entra en **modo local**: simula Drive en una carpeta temporal, clona el repositorio local en su `HEAD` y crea artefactos simulados; sirve para probar el flujo completo con `APTITUD = "falsa"` sin GPU. El entrenamiento completo (`TAREA = "entrenamiento"`) queda pendiente del issue 009. Azure no se usa: las cuentas del equipo no tienen cuota de GPU (issue 002).
+
+## 14. Evaluación real de una configuración (issue 003)
+
+`evaluar.py` entrena **una** configuración y escribe su resultado en JSON; es la misma función (`traduccion.entrenamiento.entrenar_y_evaluar`) que usan MMAS, la búsqueda aleatoria y la línea base con `--aptitud real`. Necesita los artefactos del notebook de preprocesamiento (issue 001) donde este los deja: `notebooks/tok_la_8000.model` y `notebooks/datos/en_la/` (o en otra carpeta con la misma estructura, indicada con `--artefactos`).
+
+```bash
+python evaluar.py --verificar               # entorno, GPU, artefactos, ids del tokenizador, parámetros (no entrena)
+python evaluar.py --presupuesto minimo      # prueba de humo: unos pocos lotes
+python evaluar.py --presupuesto real        # ≈2 épocas de latín, configuración por defecto del PRD
+python evaluar.py --presupuesto minimo --d_model 256 --capas_codificador 6   # otra configuración
+```
+
+Imprime el estado, los parámetros, chrF, la **aptitud** (chrF / 100), el **tiempo** y la **memoria GPU pico**, y escribe el JSON en `resultados/evaluaciones/` (o en `--salida`). Otras opciones: `--par`, `--semilla`, `--tokens-por-lote` (8192), `--n-validacion` (1000), `--dispositivo`.
+
+Cómo funciona (código en `traduccion/datos.py`, `traduccion/modelo.py` y `traduccion/entrenamiento.py`):
+
+- **Modelo**: `MarianMTModel` desde `MarianConfig`, inicializado al azar, con unk=0, bos=1, eos=2, pad=3 y el vocabulario del tokenizador; embeddings compartidos entre codificador, decodificador y capa de salida. Más de 40M parámetros entrenables → estado `rechazado_parametros`, aptitud 0, sin entrenar. Con vocabulario de 8k, la configuración por defecto tiene 26.2M y la más grande de la rejilla 48.2M (5 de las 150 combinaciones de tamaño, 2 400 de las 72 000 configuraciones, superan el tope en latín).
+- **Token inicial del decodificador = bos**: las `labels` del notebook son `[bos] + latín + [eos]`; el decodificador recibe `labels[:-1]` y predice `labels[1:]`, y la generación empieza en bos. Así el entrenamiento y la decodificación son coherentes.
+- **Lotes por tokens**: a lo sumo 8192 tokens por lote, contando `n_pares × longitud máxima` (la mayor entre entrada y salida), con los pares ordenados por longitud. Los lotes y su orden por época dependen solo de los datos y la semilla, no de la configuración.
+- **Presupuesto en tokens objetivo** (tokens que predice el decodificador, `len(labels) − 1` por par): `minimo` = 20 000; `real` = 2 épocas del entrenamiento; o un entero. Se entrena hasta alcanzarlo (el último lote puede pasarse un poco); con la misma semilla todas las configuraciones ven los mismos lotes.
+- **Optimización**: AdamW (β = 0.9/0.98, ε = 1e-9, sin decaimiento de pesos), tasa con calentamiento lineal y raíz cuadrada inversa, recorte de gradiente a 1.0, suavizado de etiquetas de la configuración, fp16 solo con CUDA, semilla fija.
+- **Aptitud**: decodificación voraz de una muestra fija de 1 000 pares de validación (índices elegidos por MD5 con una semilla constante: la misma muestra en cualquier máquina; el JSON trae su MD5), detokenización con SentencePiece y chrF de sacreBLEU.
+- **Falta de memoria**: se captura, se libera la GPU y se registra `sin_memoria` con aptitud 0; la búsqueda sigue.
+
+Con `buscar.py --aptitud real` se puede elegir el presupuesto (`--presupuesto-tokens minimo|real|<n>`, por defecto `real`) y la carpeta de artefactos (`--artefactos`). Con un presupuesto distinto de `real` y sin `--salida`, los resultados van a `resultados_piloto/` para no mezclarse con los reales. El notebook de Colab pasa `--artefactos` automáticamente con la carpeta `artefactos/` de Drive.
