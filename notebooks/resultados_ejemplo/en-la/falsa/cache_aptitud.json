@@ -1,0 +1,6004 @@
+{
+  "resultados": {
+    "{\"calentamiento\":1000,\"capas_codificador\":4,\"capas_decodificador\":3,\"d_model\":512,\"dropout\":0.1,\"heads\":8,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.1,\"tasa_aprendizaje\":0.0005}": {
+      "aptitud": 0.8240740740740741,
+      "estado": "ok",
+      "tiempo": 1.3200100511312485e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 0,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 512,
+        "heads": 8,
+        "capas_codificador": 4,
+        "capas_decodificador": 3,
+        "multiplicador_ffn": 4,
+        "dropout": 0.1,
+        "tasa_aprendizaje": 0.0005,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.1
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 0,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 1,
+      "evaluacion": 1
+    },
+    "{\"calentamiento\":4000,\"capas_codificador\":4,\"capas_decodificador\":3,\"d_model\":384,\"dropout\":0.2,\"heads\":8,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.2,\"tasa_aprendizaje\":0.0002}": {
+      "aptitud": 0.787037037037037,
+      "estado": "ok",
+      "tiempo": 1.6600126400589943e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 0,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 384,
+        "heads": 8,
+        "capas_codificador": 4,
+        "capas_decodificador": 3,
+        "multiplicador_ffn": 4,
+        "dropout": 0.2,
+        "tasa_aprendizaje": 0.0002,
+        "calentamiento": 4000,
+        "suavizado_etiquetas": 0.2
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 0,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 1,
+      "evaluacion": 2
+    },
+    "{\"calentamiento\":500,\"capas_codificador\":3,\"capas_decodificador\":5,\"d_model\":512,\"dropout\":0.2,\"heads\":8,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.1,\"tasa_aprendizaje\":0.0003}": {
+      "aptitud": 0.8240740740740741,
+      "estado": "ok",
+      "tiempo": 9.09995287656784e-06,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 0,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 512,
+        "heads": 8,
+        "capas_codificador": 3,
+        "capas_decodificador": 5,
+        "multiplicador_ffn": 4,
+        "dropout": 0.2,
+        "tasa_aprendizaje": 0.0003,
+        "calentamiento": 500,
+        "suavizado_etiquetas": 0.1
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 0,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 1,
+      "evaluacion": 3
+    },
+    "{\"calentamiento\":2000,\"capas_codificador\":6,\"capas_decodificador\":4,\"d_model\":384,\"dropout\":0.1,\"heads\":8,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.0,\"tasa_aprendizaje\":0.001}": {
+      "aptitud": 0.7870370370370371,
+      "estado": "ok",
+      "tiempo": 9.500188753008842e-06,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 0,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 384,
+        "heads": 8,
+        "capas_codificador": 6,
+        "capas_decodificador": 4,
+        "multiplicador_ffn": 4,
+        "dropout": 0.1,
+        "tasa_aprendizaje": 0.001,
+        "calentamiento": 2000,
+        "suavizado_etiquetas": 0.0
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 0,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 1,
+      "evaluacion": 4
+    },
+    "{\"calentamiento\":500,\"capas_codificador\":6,\"capas_decodificador\":5,\"d_model\":512,\"dropout\":0.1,\"heads\":4,\"multiplicador_ffn\":2,\"suavizado_etiquetas\":0.0,\"tasa_aprendizaje\":0.001}": {
+      "aptitud": 0.48148148148148157,
+      "estado": "ok",
+      "tiempo": 1.3799872249364853e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 0,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 512,
+        "heads": 4,
+        "capas_codificador": 6,
+        "capas_decodificador": 5,
+        "multiplicador_ffn": 2,
+        "dropout": 0.1,
+        "tasa_aprendizaje": 0.001,
+        "calentamiento": 500,
+        "suavizado_etiquetas": 0.0
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 0,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 1,
+      "evaluacion": 5
+    },
+    "{\"calentamiento\":500,\"capas_codificador\":4,\"capas_decodificador\":3,\"d_model\":512,\"dropout\":0.3,\"heads\":4,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.0,\"tasa_aprendizaje\":0.0003}": {
+      "aptitud": 0.6481481481481483,
+      "estado": "ok",
+      "tiempo": 9.599840268492699e-06,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 0,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 512,
+        "heads": 4,
+        "capas_codificador": 4,
+        "capas_decodificador": 3,
+        "multiplicador_ffn": 4,
+        "dropout": 0.3,
+        "tasa_aprendizaje": 0.0003,
+        "calentamiento": 500,
+        "suavizado_etiquetas": 0.0
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 0,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 1,
+      "evaluacion": 6
+    },
+    "{\"calentamiento\":2000,\"capas_codificador\":2,\"capas_decodificador\":4,\"d_model\":384,\"dropout\":0.2,\"heads\":8,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.2,\"tasa_aprendizaje\":0.001}": {
+      "aptitud": 0.7685185185185186,
+      "estado": "ok",
+      "tiempo": 1.1699972674250603e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 0,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 384,
+        "heads": 8,
+        "capas_codificador": 2,
+        "capas_decodificador": 4,
+        "multiplicador_ffn": 4,
+        "dropout": 0.2,
+        "tasa_aprendizaje": 0.001,
+        "calentamiento": 2000,
+        "suavizado_etiquetas": 0.2
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 0,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 1,
+      "evaluacion": 7
+    },
+    "{\"calentamiento\":500,\"capas_codificador\":4,\"capas_decodificador\":4,\"d_model\":384,\"dropout\":0.2,\"heads\":8,\"multiplicador_ffn\":2,\"suavizado_etiquetas\":0.0,\"tasa_aprendizaje\":0.0002}": {
+      "aptitud": 0.7407407407407408,
+      "estado": "ok",
+      "tiempo": 8.499948307871819e-06,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 0,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 384,
+        "heads": 8,
+        "capas_codificador": 4,
+        "capas_decodificador": 4,
+        "multiplicador_ffn": 2,
+        "dropout": 0.2,
+        "tasa_aprendizaje": 0.0002,
+        "calentamiento": 500,
+        "suavizado_etiquetas": 0.0
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 0,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 1,
+      "evaluacion": 8
+    },
+    "{\"calentamiento\":4000,\"capas_codificador\":4,\"capas_decodificador\":2,\"d_model\":512,\"dropout\":0.3,\"heads\":8,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.2,\"tasa_aprendizaje\":0.001}": {
+      "aptitud": 0.6388888888888888,
+      "estado": "ok",
+      "tiempo": 1.500011421740055e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 0,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 512,
+        "heads": 8,
+        "capas_codificador": 4,
+        "capas_decodificador": 2,
+        "multiplicador_ffn": 4,
+        "dropout": 0.3,
+        "tasa_aprendizaje": 0.001,
+        "calentamiento": 4000,
+        "suavizado_etiquetas": 0.2
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 0,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 2,
+      "evaluacion": 9
+    },
+    "{\"calentamiento\":4000,\"capas_codificador\":4,\"capas_decodificador\":5,\"d_model\":512,\"dropout\":0.3,\"heads\":8,\"multiplicador_ffn\":2,\"suavizado_etiquetas\":0.1,\"tasa_aprendizaje\":0.001}": {
+      "aptitud": 0.6111111111111112,
+      "estado": "ok",
+      "tiempo": 1.0699965059757233e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 0,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 512,
+        "heads": 8,
+        "capas_codificador": 4,
+        "capas_decodificador": 5,
+        "multiplicador_ffn": 2,
+        "dropout": 0.3,
+        "tasa_aprendizaje": 0.001,
+        "calentamiento": 4000,
+        "suavizado_etiquetas": 0.1
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 0,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 2,
+      "evaluacion": 10
+    },
+    "{\"calentamiento\":500,\"capas_codificador\":4,\"capas_decodificador\":4,\"d_model\":512,\"dropout\":0.3,\"heads\":8,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.1,\"tasa_aprendizaje\":0.0005}": {
+      "aptitud": 0.8148148148148149,
+      "estado": "ok",
+      "tiempo": 1.00000761449337e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 0,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 512,
+        "heads": 8,
+        "capas_codificador": 4,
+        "capas_decodificador": 4,
+        "multiplicador_ffn": 4,
+        "dropout": 0.3,
+        "tasa_aprendizaje": 0.0005,
+        "calentamiento": 500,
+        "suavizado_etiquetas": 0.1
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 0,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 2,
+      "evaluacion": 11
+    },
+    "{\"calentamiento\":2000,\"capas_codificador\":6,\"capas_decodificador\":3,\"d_model\":384,\"dropout\":0.0,\"heads\":8,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.1,\"tasa_aprendizaje\":0.0002}": {
+      "aptitud": 0.8055555555555556,
+      "estado": "ok",
+      "tiempo": 1.3200100511312485e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 0,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 384,
+        "heads": 8,
+        "capas_codificador": 6,
+        "capas_decodificador": 3,
+        "multiplicador_ffn": 4,
+        "dropout": 0.0,
+        "tasa_aprendizaje": 0.0002,
+        "calentamiento": 2000,
+        "suavizado_etiquetas": 0.1
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 0,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 2,
+      "evaluacion": 12
+    },
+    "{\"calentamiento\":1000,\"capas_codificador\":2,\"capas_decodificador\":5,\"d_model\":512,\"dropout\":0.1,\"heads\":4,\"multiplicador_ffn\":2,\"suavizado_etiquetas\":0.1,\"tasa_aprendizaje\":0.001}": {
+      "aptitud": 0.5185185185185186,
+      "estado": "ok",
+      "tiempo": 1.3899989426136017e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 0,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 512,
+        "heads": 4,
+        "capas_codificador": 2,
+        "capas_decodificador": 5,
+        "multiplicador_ffn": 2,
+        "dropout": 0.1,
+        "tasa_aprendizaje": 0.001,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.1
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 0,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 2,
+      "evaluacion": 13
+    },
+    "{\"calentamiento\":500,\"capas_codificador\":4,\"capas_decodificador\":4,\"d_model\":256,\"dropout\":0.1,\"heads\":8,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.0,\"tasa_aprendizaje\":0.001}": {
+      "aptitud": 0.7314814814814815,
+      "estado": "ok",
+      "tiempo": 1.4299992471933365e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 0,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 256,
+        "heads": 8,
+        "capas_codificador": 4,
+        "capas_decodificador": 4,
+        "multiplicador_ffn": 4,
+        "dropout": 0.1,
+        "tasa_aprendizaje": 0.001,
+        "calentamiento": 500,
+        "suavizado_etiquetas": 0.0
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 0,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 2,
+      "evaluacion": 14
+    },
+    "{\"calentamiento\":1000,\"capas_codificador\":2,\"capas_decodificador\":3,\"d_model\":512,\"dropout\":0.3,\"heads\":4,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.0,\"tasa_aprendizaje\":0.0001}": {
+      "aptitud": 0.5740740740740741,
+      "estado": "ok",
+      "tiempo": 1.300009898841381e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 0,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 512,
+        "heads": 4,
+        "capas_codificador": 2,
+        "capas_decodificador": 3,
+        "multiplicador_ffn": 4,
+        "dropout": 0.3,
+        "tasa_aprendizaje": 0.0001,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.0
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 0,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 2,
+      "evaluacion": 15
+    },
+    "{\"calentamiento\":500,\"capas_codificador\":4,\"capas_decodificador\":3,\"d_model\":384,\"dropout\":0.1,\"heads\":4,\"multiplicador_ffn\":2,\"suavizado_etiquetas\":0.2,\"tasa_aprendizaje\":0.0001}": {
+      "aptitud": 0.5370370370370371,
+      "estado": "ok",
+      "tiempo": 8.200062438845634e-06,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 0,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 384,
+        "heads": 4,
+        "capas_codificador": 4,
+        "capas_decodificador": 3,
+        "multiplicador_ffn": 2,
+        "dropout": 0.1,
+        "tasa_aprendizaje": 0.0001,
+        "calentamiento": 500,
+        "suavizado_etiquetas": 0.2
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 0,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 2,
+      "evaluacion": 16
+    },
+    "{\"calentamiento\":4000,\"capas_codificador\":5,\"capas_decodificador\":5,\"d_model\":384,\"dropout\":0.1,\"heads\":8,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.0,\"tasa_aprendizaje\":0.0005}": {
+      "aptitud": 0.7777777777777778,
+      "estado": "ok",
+      "tiempo": 9.499955922365189e-06,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 0,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 384,
+        "heads": 8,
+        "capas_codificador": 5,
+        "capas_decodificador": 5,
+        "multiplicador_ffn": 4,
+        "dropout": 0.1,
+        "tasa_aprendizaje": 0.0005,
+        "calentamiento": 4000,
+        "suavizado_etiquetas": 0.0
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 0,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 3,
+      "evaluacion": 17
+    },
+    "{\"calentamiento\":1000,\"capas_codificador\":4,\"capas_decodificador\":3,\"d_model\":512,\"dropout\":0.1,\"heads\":8,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.1,\"tasa_aprendizaje\":0.0002}": {
+      "aptitud": 0.8240740740740741,
+      "estado": "ok",
+      "tiempo": 1.3699987903237343e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 0,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 512,
+        "heads": 8,
+        "capas_codificador": 4,
+        "capas_decodificador": 3,
+        "multiplicador_ffn": 4,
+        "dropout": 0.1,
+        "tasa_aprendizaje": 0.0002,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.1
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 0,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 3,
+      "evaluacion": 18
+    },
+    "{\"calentamiento\":500,\"capas_codificador\":4,\"capas_decodificador\":3,\"d_model\":512,\"dropout\":0.1,\"heads\":8,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.1,\"tasa_aprendizaje\":0.0005}": {
+      "aptitud": 0.7870370370370371,
+      "estado": "ok",
+      "tiempo": 1.3400102034211159e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 0,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 512,
+        "heads": 8,
+        "capas_codificador": 4,
+        "capas_decodificador": 3,
+        "multiplicador_ffn": 4,
+        "dropout": 0.1,
+        "tasa_aprendizaje": 0.0005,
+        "calentamiento": 500,
+        "suavizado_etiquetas": 0.1
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 0,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 3,
+      "evaluacion": 19
+    },
+    "{\"calentamiento\":500,\"capas_codificador\":4,\"capas_decodificador\":3,\"d_model\":384,\"dropout\":0.1,\"heads\":4,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.2,\"tasa_aprendizaje\":0.0003}": {
+      "aptitud": 0.7037037037037037,
+      "estado": "ok",
+      "tiempo": 9.09995287656784e-06,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 0,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 384,
+        "heads": 4,
+        "capas_codificador": 4,
+        "capas_decodificador": 3,
+        "multiplicador_ffn": 4,
+        "dropout": 0.1,
+        "tasa_aprendizaje": 0.0003,
+        "calentamiento": 500,
+        "suavizado_etiquetas": 0.2
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 0,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 3,
+      "evaluacion": 20
+    },
+    "{\"calentamiento\":500,\"capas_codificador\":4,\"capas_decodificador\":3,\"d_model\":512,\"dropout\":0.3,\"heads\":8,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.1,\"tasa_aprendizaje\":0.0001}": {
+      "aptitud": 0.7592592592592593,
+      "estado": "ok",
+      "tiempo": 1.300009898841381e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 0,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 512,
+        "heads": 8,
+        "capas_codificador": 4,
+        "capas_decodificador": 3,
+        "multiplicador_ffn": 4,
+        "dropout": 0.3,
+        "tasa_aprendizaje": 0.0001,
+        "calentamiento": 500,
+        "suavizado_etiquetas": 0.1
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 0,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 3,
+      "evaluacion": 21
+    },
+    "{\"calentamiento\":2000,\"capas_codificador\":4,\"capas_decodificador\":6,\"d_model\":384,\"dropout\":0.1,\"heads\":8,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.1,\"tasa_aprendizaje\":0.0003}": {
+      "aptitud": 0.8425925925925927,
+      "estado": "ok",
+      "tiempo": 1.309998333454132e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 0,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 384,
+        "heads": 8,
+        "capas_codificador": 4,
+        "capas_decodificador": 6,
+        "multiplicador_ffn": 4,
+        "dropout": 0.1,
+        "tasa_aprendizaje": 0.0003,
+        "calentamiento": 2000,
+        "suavizado_etiquetas": 0.1
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 0,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 3,
+      "evaluacion": 22
+    },
+    "{\"calentamiento\":1000,\"capas_codificador\":4,\"capas_decodificador\":3,\"d_model\":512,\"dropout\":0.2,\"heads\":4,\"multiplicador_ffn\":2,\"suavizado_etiquetas\":0.1,\"tasa_aprendizaje\":0.0005}": {
+      "aptitud": 0.6388888888888888,
+      "estado": "ok",
+      "tiempo": 9.400071576237679e-06,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 0,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 512,
+        "heads": 4,
+        "capas_codificador": 4,
+        "capas_decodificador": 3,
+        "multiplicador_ffn": 2,
+        "dropout": 0.2,
+        "tasa_aprendizaje": 0.0005,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.1
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 0,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 3,
+      "evaluacion": 23
+    },
+    "{\"calentamiento\":500,\"capas_codificador\":4,\"capas_decodificador\":4,\"d_model\":512,\"dropout\":0.3,\"heads\":8,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.2,\"tasa_aprendizaje\":0.0005}": {
+      "aptitud": 0.7592592592592593,
+      "estado": "ok",
+      "tiempo": 1.2899981811642647e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 0,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 512,
+        "heads": 8,
+        "capas_codificador": 4,
+        "capas_decodificador": 4,
+        "multiplicador_ffn": 4,
+        "dropout": 0.3,
+        "tasa_aprendizaje": 0.0005,
+        "calentamiento": 500,
+        "suavizado_etiquetas": 0.2
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 0,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 3,
+      "evaluacion": 24
+    },
+    "{\"calentamiento\":500,\"capas_codificador\":4,\"capas_decodificador\":6,\"d_model\":512,\"dropout\":0.2,\"heads\":4,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.1,\"tasa_aprendizaje\":0.0003}": {
+      "aptitud": 0.712962962962963,
+      "estado": "ok",
+      "tiempo": 9.499955922365189e-06,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 0,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 512,
+        "heads": 4,
+        "capas_codificador": 4,
+        "capas_decodificador": 6,
+        "multiplicador_ffn": 4,
+        "dropout": 0.2,
+        "tasa_aprendizaje": 0.0003,
+        "calentamiento": 500,
+        "suavizado_etiquetas": 0.1
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 0,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 4,
+      "evaluacion": 25
+    },
+    "{\"calentamiento\":500,\"capas_codificador\":4,\"capas_decodificador\":2,\"d_model\":256,\"dropout\":0.2,\"heads\":8,\"multiplicador_ffn\":2,\"suavizado_etiquetas\":0.2,\"tasa_aprendizaje\":0.0005}": {
+      "aptitud": 0.6296296296296297,
+      "estado": "ok",
+      "tiempo": 1.0299962013959885e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 0,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 256,
+        "heads": 8,
+        "capas_codificador": 4,
+        "capas_decodificador": 2,
+        "multiplicador_ffn": 2,
+        "dropout": 0.2,
+        "tasa_aprendizaje": 0.0005,
+        "calentamiento": 500,
+        "suavizado_etiquetas": 0.2
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 0,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 4,
+      "evaluacion": 26
+    },
+    "{\"calentamiento\":2000,\"capas_codificador\":4,\"capas_decodificador\":2,\"d_model\":256,\"dropout\":0.1,\"heads\":8,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.0,\"tasa_aprendizaje\":0.0005}": {
+      "aptitud": 0.7037037037037037,
+      "estado": "ok",
+      "tiempo": 9.999843314290047e-06,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 0,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 256,
+        "heads": 8,
+        "capas_codificador": 4,
+        "capas_decodificador": 2,
+        "multiplicador_ffn": 4,
+        "dropout": 0.1,
+        "tasa_aprendizaje": 0.0005,
+        "calentamiento": 2000,
+        "suavizado_etiquetas": 0.0
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 0,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 4,
+      "evaluacion": 27
+    },
+    "{\"calentamiento\":2000,\"capas_codificador\":4,\"capas_decodificador\":6,\"d_model\":384,\"dropout\":0.0,\"heads\":8,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.1,\"tasa_aprendizaje\":0.0001}": {
+      "aptitud": 0.75,
+      "estado": "ok",
+      "tiempo": 9.599840268492699e-06,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 0,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 384,
+        "heads": 8,
+        "capas_codificador": 4,
+        "capas_decodificador": 6,
+        "multiplicador_ffn": 4,
+        "dropout": 0.0,
+        "tasa_aprendizaje": 0.0001,
+        "calentamiento": 2000,
+        "suavizado_etiquetas": 0.1
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 0,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 4,
+      "evaluacion": 28
+    },
+    "{\"calentamiento\":2000,\"capas_codificador\":6,\"capas_decodificador\":2,\"d_model\":512,\"dropout\":0.2,\"heads\":8,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.2,\"tasa_aprendizaje\":0.0005}": {
+      "aptitud": 0.7407407407407408,
+      "estado": "ok",
+      "tiempo": 1.0200077667832375e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 0,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 512,
+        "heads": 8,
+        "capas_codificador": 6,
+        "capas_decodificador": 2,
+        "multiplicador_ffn": 4,
+        "dropout": 0.2,
+        "tasa_aprendizaje": 0.0005,
+        "calentamiento": 2000,
+        "suavizado_etiquetas": 0.2
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 0,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 4,
+      "evaluacion": 29
+    },
+    "{\"calentamiento\":1000,\"capas_codificador\":4,\"capas_decodificador\":3,\"d_model\":512,\"dropout\":0.0,\"heads\":8,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.1,\"tasa_aprendizaje\":0.0002}": {
+      "aptitud": 0.787037037037037,
+      "estado": "ok",
+      "tiempo": 1.3299984857439995e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 0,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 512,
+        "heads": 8,
+        "capas_codificador": 4,
+        "capas_decodificador": 3,
+        "multiplicador_ffn": 4,
+        "dropout": 0.0,
+        "tasa_aprendizaje": 0.0002,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.1
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 0,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 4,
+      "evaluacion": 30
+    },
+    "{\"calentamiento\":1000,\"capas_codificador\":4,\"capas_decodificador\":2,\"d_model\":512,\"dropout\":0.3,\"heads\":8,\"multiplicador_ffn\":2,\"suavizado_etiquetas\":0.1,\"tasa_aprendizaje\":0.0003}": {
+      "aptitud": 0.712962962962963,
+      "estado": "ok",
+      "tiempo": 1.200009137392044e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 0,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 512,
+        "heads": 8,
+        "capas_codificador": 4,
+        "capas_decodificador": 2,
+        "multiplicador_ffn": 2,
+        "dropout": 0.3,
+        "tasa_aprendizaje": 0.0003,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.1
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 0,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 4,
+      "evaluacion": 31
+    },
+    "{\"calentamiento\":1000,\"capas_codificador\":4,\"capas_decodificador\":2,\"d_model\":384,\"dropout\":0.1,\"heads\":8,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.1,\"tasa_aprendizaje\":0.0001}": {
+      "aptitud": 0.8240740740740741,
+      "estado": "ok",
+      "tiempo": 1.3699987903237343e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 0,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 384,
+        "heads": 8,
+        "capas_codificador": 4,
+        "capas_decodificador": 2,
+        "multiplicador_ffn": 4,
+        "dropout": 0.1,
+        "tasa_aprendizaje": 0.0001,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.1
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 0,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 4,
+      "evaluacion": 32
+    },
+    "{\"calentamiento\":2000,\"capas_codificador\":6,\"capas_decodificador\":4,\"d_model\":384,\"dropout\":0.3,\"heads\":4,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.1,\"tasa_aprendizaje\":0.0003}": {
+      "aptitud": 0.7870370370370371,
+      "estado": "ok",
+      "tiempo": 2.410006709396839e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 0,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 384,
+        "heads": 4,
+        "capas_codificador": 6,
+        "capas_decodificador": 4,
+        "multiplicador_ffn": 4,
+        "dropout": 0.3,
+        "tasa_aprendizaje": 0.0003,
+        "calentamiento": 2000,
+        "suavizado_etiquetas": 0.1
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 0,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 5,
+      "evaluacion": 33
+    },
+    "{\"calentamiento\":4000,\"capas_codificador\":4,\"capas_decodificador\":6,\"d_model\":384,\"dropout\":0.1,\"heads\":8,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.1,\"tasa_aprendizaje\":0.0003}": {
+      "aptitud": 0.8055555555555556,
+      "estado": "ok",
+      "tiempo": 1.1899974197149277e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 0,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 384,
+        "heads": 8,
+        "capas_codificador": 4,
+        "capas_decodificador": 6,
+        "multiplicador_ffn": 4,
+        "dropout": 0.1,
+        "tasa_aprendizaje": 0.0003,
+        "calentamiento": 4000,
+        "suavizado_etiquetas": 0.1
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 0,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 5,
+      "evaluacion": 34
+    },
+    "{\"calentamiento\":2000,\"capas_codificador\":4,\"capas_decodificador\":2,\"d_model\":256,\"dropout\":0.1,\"heads\":4,\"multiplicador_ffn\":2,\"suavizado_etiquetas\":0.1,\"tasa_aprendizaje\":0.0003}": {
+      "aptitud": 0.5648148148148149,
+      "estado": "ok",
+      "tiempo": 1.0100193321704865e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 0,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 256,
+        "heads": 4,
+        "capas_codificador": 4,
+        "capas_decodificador": 2,
+        "multiplicador_ffn": 2,
+        "dropout": 0.1,
+        "tasa_aprendizaje": 0.0003,
+        "calentamiento": 2000,
+        "suavizado_etiquetas": 0.1
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 0,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 5,
+      "evaluacion": 35
+    },
+    "{\"calentamiento\":2000,\"capas_codificador\":4,\"capas_decodificador\":4,\"d_model\":384,\"dropout\":0.1,\"heads\":8,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.1,\"tasa_aprendizaje\":0.0005}": {
+      "aptitud": 0.8703703703703705,
+      "estado": "ok",
+      "tiempo": 2.210005186498165e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 0,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 384,
+        "heads": 8,
+        "capas_codificador": 4,
+        "capas_decodificador": 4,
+        "multiplicador_ffn": 4,
+        "dropout": 0.1,
+        "tasa_aprendizaje": 0.0005,
+        "calentamiento": 2000,
+        "suavizado_etiquetas": 0.1
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 0,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 5,
+      "evaluacion": 36
+    },
+    "{\"calentamiento\":1000,\"capas_codificador\":4,\"capas_decodificador\":6,\"d_model\":256,\"dropout\":0.2,\"heads\":8,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.1,\"tasa_aprendizaje\":0.0002}": {
+      "aptitud": 0.8333333333333334,
+      "estado": "ok",
+      "tiempo": 1.4999881386756897e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 0,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 256,
+        "heads": 8,
+        "capas_codificador": 4,
+        "capas_decodificador": 6,
+        "multiplicador_ffn": 4,
+        "dropout": 0.2,
+        "tasa_aprendizaje": 0.0002,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.1
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 0,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 5,
+      "evaluacion": 37
+    },
+    "{\"calentamiento\":500,\"capas_codificador\":4,\"capas_decodificador\":3,\"d_model\":256,\"dropout\":0.1,\"heads\":8,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.2,\"tasa_aprendizaje\":0.0003}": {
+      "aptitud": 0.7592592592592593,
+      "estado": "ok",
+      "tiempo": 2.3700064048171043e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 0,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 256,
+        "heads": 8,
+        "capas_codificador": 4,
+        "capas_decodificador": 3,
+        "multiplicador_ffn": 4,
+        "dropout": 0.1,
+        "tasa_aprendizaje": 0.0003,
+        "calentamiento": 500,
+        "suavizado_etiquetas": 0.2
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 0,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 5,
+      "evaluacion": 38
+    },
+    "{\"calentamiento\":1000,\"capas_codificador\":4,\"capas_decodificador\":6,\"d_model\":512,\"dropout\":0.1,\"heads\":8,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.1,\"tasa_aprendizaje\":0.001}": {
+      "aptitud": 0.7685185185185186,
+      "estado": "ok",
+      "tiempo": 1.4099990949034691e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 0,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 512,
+        "heads": 8,
+        "capas_codificador": 4,
+        "capas_decodificador": 6,
+        "multiplicador_ffn": 4,
+        "dropout": 0.1,
+        "tasa_aprendizaje": 0.001,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.1
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 0,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 5,
+      "evaluacion": 39
+    },
+    "{\"calentamiento\":4000,\"capas_codificador\":4,\"capas_decodificador\":6,\"d_model\":384,\"dropout\":0.1,\"heads\":8,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.1,\"tasa_aprendizaje\":0.001}": {
+      "aptitud": 0.75,
+      "estado": "ok",
+      "tiempo": 1.4099990949034691e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 0,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 384,
+        "heads": 8,
+        "capas_codificador": 4,
+        "capas_decodificador": 6,
+        "multiplicador_ffn": 4,
+        "dropout": 0.1,
+        "tasa_aprendizaje": 0.001,
+        "calentamiento": 4000,
+        "suavizado_etiquetas": 0.1
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 0,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 5,
+      "evaluacion": 40
+    },
+    "{\"calentamiento\":4000,\"capas_codificador\":5,\"capas_decodificador\":3,\"d_model\":256,\"dropout\":0.1,\"heads\":8,\"multiplicador_ffn\":2,\"suavizado_etiquetas\":0.0,\"tasa_aprendizaje\":0.0005}": {
+      "aptitud": 0.6111111111111112,
+      "estado": "ok",
+      "tiempo": 1.700012944638729e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 1,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 256,
+        "heads": 8,
+        "capas_codificador": 5,
+        "capas_decodificador": 3,
+        "multiplicador_ffn": 2,
+        "dropout": 0.1,
+        "tasa_aprendizaje": 0.0005,
+        "calentamiento": 4000,
+        "suavizado_etiquetas": 0.0
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 1,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 1,
+      "evaluacion": 1
+    },
+    "{\"calentamiento\":500,\"capas_codificador\":4,\"capas_decodificador\":5,\"d_model\":256,\"dropout\":0.1,\"heads\":8,\"multiplicador_ffn\":2,\"suavizado_etiquetas\":0.2,\"tasa_aprendizaje\":0.0005}": {
+      "aptitud": 0.6203703703703705,
+      "estado": "ok",
+      "tiempo": 1.5399884432554245e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 1,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 256,
+        "heads": 8,
+        "capas_codificador": 4,
+        "capas_decodificador": 5,
+        "multiplicador_ffn": 2,
+        "dropout": 0.1,
+        "tasa_aprendizaje": 0.0005,
+        "calentamiento": 500,
+        "suavizado_etiquetas": 0.2
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 1,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 1,
+      "evaluacion": 2
+    },
+    "{\"calentamiento\":1000,\"capas_codificador\":2,\"capas_decodificador\":4,\"d_model\":512,\"dropout\":0.1,\"heads\":4,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.0,\"tasa_aprendizaje\":0.0002}": {
+      "aptitud": 0.6296296296296297,
+      "estado": "ok",
+      "tiempo": 1.8399907276034355e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 1,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 512,
+        "heads": 4,
+        "capas_codificador": 2,
+        "capas_decodificador": 4,
+        "multiplicador_ffn": 4,
+        "dropout": 0.1,
+        "tasa_aprendizaje": 0.0002,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.0
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 1,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 1,
+      "evaluacion": 3
+    },
+    "{\"calentamiento\":1000,\"capas_codificador\":4,\"capas_decodificador\":3,\"d_model\":256,\"dropout\":0.0,\"heads\":4,\"multiplicador_ffn\":2,\"suavizado_etiquetas\":0.0,\"tasa_aprendizaje\":0.0003}": {
+      "aptitud": 0.537037037037037,
+      "estado": "ok",
+      "tiempo": 1.4999881386756897e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 1,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 256,
+        "heads": 4,
+        "capas_codificador": 4,
+        "capas_decodificador": 3,
+        "multiplicador_ffn": 2,
+        "dropout": 0.0,
+        "tasa_aprendizaje": 0.0003,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.0
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 1,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 1,
+      "evaluacion": 4
+    },
+    "{\"calentamiento\":1000,\"capas_codificador\":5,\"capas_decodificador\":2,\"d_model\":512,\"dropout\":0.3,\"heads\":8,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.2,\"tasa_aprendizaje\":0.0001}": {
+      "aptitud": 0.7407407407407408,
+      "estado": "ok",
+      "tiempo": 1.6200123354792595e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 1,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 512,
+        "heads": 8,
+        "capas_codificador": 5,
+        "capas_decodificador": 2,
+        "multiplicador_ffn": 4,
+        "dropout": 0.3,
+        "tasa_aprendizaje": 0.0001,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.2
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 1,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 1,
+      "evaluacion": 5
+    },
+    "{\"calentamiento\":4000,\"capas_codificador\":4,\"capas_decodificador\":6,\"d_model\":512,\"dropout\":0.1,\"heads\":8,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.2,\"tasa_aprendizaje\":0.0003}": {
+      "aptitud": 0.6944444444444444,
+      "estado": "ok",
+      "tiempo": 1.6999896615743637e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 1,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 512,
+        "heads": 8,
+        "capas_codificador": 4,
+        "capas_decodificador": 6,
+        "multiplicador_ffn": 4,
+        "dropout": 0.1,
+        "tasa_aprendizaje": 0.0003,
+        "calentamiento": 4000,
+        "suavizado_etiquetas": 0.2
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 1,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 1,
+      "evaluacion": 6
+    },
+    "{\"calentamiento\":2000,\"capas_codificador\":2,\"capas_decodificador\":3,\"d_model\":384,\"dropout\":0.1,\"heads\":8,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.2,\"tasa_aprendizaje\":0.0001}": {
+      "aptitud": 0.7037037037037037,
+      "estado": "ok",
+      "tiempo": 1.559988595545292e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 1,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 384,
+        "heads": 8,
+        "capas_codificador": 2,
+        "capas_decodificador": 3,
+        "multiplicador_ffn": 4,
+        "dropout": 0.1,
+        "tasa_aprendizaje": 0.0001,
+        "calentamiento": 2000,
+        "suavizado_etiquetas": 0.2
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 1,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 1,
+      "evaluacion": 7
+    },
+    "{\"calentamiento\":1000,\"capas_codificador\":4,\"capas_decodificador\":4,\"d_model\":512,\"dropout\":0.2,\"heads\":4,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.0,\"tasa_aprendizaje\":0.0002}": {
+      "aptitud": 0.7222222222222222,
+      "estado": "ok",
+      "tiempo": 1.610000617802143e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 1,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 512,
+        "heads": 4,
+        "capas_codificador": 4,
+        "capas_decodificador": 4,
+        "multiplicador_ffn": 4,
+        "dropout": 0.2,
+        "tasa_aprendizaje": 0.0002,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.0
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 1,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 1,
+      "evaluacion": 8
+    },
+    "{\"calentamiento\":4000,\"capas_codificador\":6,\"capas_decodificador\":4,\"d_model\":256,\"dropout\":0.0,\"heads\":8,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.2,\"tasa_aprendizaje\":0.0003}": {
+      "aptitud": 0.712962962962963,
+      "estado": "ok",
+      "tiempo": 1.4899997040629387e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 1,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 256,
+        "heads": 8,
+        "capas_codificador": 6,
+        "capas_decodificador": 4,
+        "multiplicador_ffn": 4,
+        "dropout": 0.0,
+        "tasa_aprendizaje": 0.0003,
+        "calentamiento": 4000,
+        "suavizado_etiquetas": 0.2
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 1,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 2,
+      "evaluacion": 9
+    },
+    "{\"calentamiento\":1000,\"capas_codificador\":3,\"capas_decodificador\":4,\"d_model\":512,\"dropout\":0.2,\"heads\":8,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.2,\"tasa_aprendizaje\":0.0002}": {
+      "aptitud": 0.8055555555555556,
+      "estado": "ok",
+      "tiempo": 1.5700003132224083e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 1,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 512,
+        "heads": 8,
+        "capas_codificador": 3,
+        "capas_decodificador": 4,
+        "multiplicador_ffn": 4,
+        "dropout": 0.2,
+        "tasa_aprendizaje": 0.0002,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.2
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 1,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 2,
+      "evaluacion": 10
+    },
+    "{\"calentamiento\":1000,\"capas_codificador\":5,\"capas_decodificador\":5,\"d_model\":512,\"dropout\":0.3,\"heads\":4,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.2,\"tasa_aprendizaje\":0.0005}": {
+      "aptitud": 0.6851851851851852,
+      "estado": "ok",
+      "tiempo": 1.650000922381878e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 1,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 512,
+        "heads": 4,
+        "capas_codificador": 5,
+        "capas_decodificador": 5,
+        "multiplicador_ffn": 4,
+        "dropout": 0.3,
+        "tasa_aprendizaje": 0.0005,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.2
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 1,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 2,
+      "evaluacion": 11
+    },
+    "{\"calentamiento\":1000,\"capas_codificador\":6,\"capas_decodificador\":4,\"d_model\":384,\"dropout\":0.2,\"heads\":4,\"multiplicador_ffn\":2,\"suavizado_etiquetas\":0.1,\"tasa_aprendizaje\":0.0002}": {
+      "aptitud": 0.7222222222222222,
+      "estado": "ok",
+      "tiempo": 1.6799895092844963e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 1,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 384,
+        "heads": 4,
+        "capas_codificador": 6,
+        "capas_decodificador": 4,
+        "multiplicador_ffn": 2,
+        "dropout": 0.2,
+        "tasa_aprendizaje": 0.0002,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.1
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 1,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 2,
+      "evaluacion": 12
+    },
+    "{\"calentamiento\":1000,\"capas_codificador\":5,\"capas_decodificador\":3,\"d_model\":512,\"dropout\":0.1,\"heads\":8,\"multiplicador_ffn\":2,\"suavizado_etiquetas\":0.2,\"tasa_aprendizaje\":0.0001}": {
+      "aptitud": 0.6574074074074074,
+      "estado": "ok",
+      "tiempo": 2.0700041204690933e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 1,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 512,
+        "heads": 8,
+        "capas_codificador": 5,
+        "capas_decodificador": 3,
+        "multiplicador_ffn": 2,
+        "dropout": 0.1,
+        "tasa_aprendizaje": 0.0001,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.2
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 1,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 2,
+      "evaluacion": 13
+    },
+    "{\"calentamiento\":500,\"capas_codificador\":5,\"capas_decodificador\":2,\"d_model\":512,\"dropout\":0.3,\"heads\":8,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.0,\"tasa_aprendizaje\":0.0001}": {
+      "aptitud": 0.7037037037037037,
+      "estado": "ok",
+      "tiempo": 1.3499986380338669e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 1,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 512,
+        "heads": 8,
+        "capas_codificador": 5,
+        "capas_decodificador": 2,
+        "multiplicador_ffn": 4,
+        "dropout": 0.3,
+        "tasa_aprendizaje": 0.0001,
+        "calentamiento": 500,
+        "suavizado_etiquetas": 0.0
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 1,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 2,
+      "evaluacion": 14
+    },
+    "{\"calentamiento\":1000,\"capas_codificador\":2,\"capas_decodificador\":4,\"d_model\":512,\"dropout\":0.0,\"heads\":4,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.0,\"tasa_aprendizaje\":0.0001}": {
+      "aptitud": 0.5648148148148148,
+      "estado": "ok",
+      "tiempo": 2.6700086891651154e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 1,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 512,
+        "heads": 4,
+        "capas_codificador": 2,
+        "capas_decodificador": 4,
+        "multiplicador_ffn": 4,
+        "dropout": 0.0,
+        "tasa_aprendizaje": 0.0001,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.0
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 1,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 2,
+      "evaluacion": 15
+    },
+    "{\"calentamiento\":1000,\"capas_codificador\":4,\"capas_decodificador\":2,\"d_model\":384,\"dropout\":0.0,\"heads\":8,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.0,\"tasa_aprendizaje\":0.0002}": {
+      "aptitud": 0.7592592592592592,
+      "estado": "ok",
+      "tiempo": 1.7399899661540985e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 1,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 384,
+        "heads": 8,
+        "capas_codificador": 4,
+        "capas_decodificador": 2,
+        "multiplicador_ffn": 4,
+        "dropout": 0.0,
+        "tasa_aprendizaje": 0.0002,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.0
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 1,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 2,
+      "evaluacion": 16
+    },
+    "{\"calentamiento\":500,\"capas_codificador\":4,\"capas_decodificador\":2,\"d_model\":256,\"dropout\":0.3,\"heads\":8,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.0,\"tasa_aprendizaje\":0.0001}": {
+      "aptitud": 0.675925925925926,
+      "estado": "ok",
+      "tiempo": 1.3699987903237343e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 1,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 256,
+        "heads": 8,
+        "capas_codificador": 4,
+        "capas_decodificador": 2,
+        "multiplicador_ffn": 4,
+        "dropout": 0.3,
+        "tasa_aprendizaje": 0.0001,
+        "calentamiento": 500,
+        "suavizado_etiquetas": 0.0
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 1,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 3,
+      "evaluacion": 17
+    },
+    "{\"calentamiento\":2000,\"capas_codificador\":5,\"capas_decodificador\":4,\"d_model\":512,\"dropout\":0.1,\"heads\":4,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.2,\"tasa_aprendizaje\":0.001}": {
+      "aptitud": 0.6481481481481483,
+      "estado": "ok",
+      "tiempo": 1.5700003132224083e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 1,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 512,
+        "heads": 4,
+        "capas_codificador": 5,
+        "capas_decodificador": 4,
+        "multiplicador_ffn": 4,
+        "dropout": 0.1,
+        "tasa_aprendizaje": 0.001,
+        "calentamiento": 2000,
+        "suavizado_etiquetas": 0.2
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 1,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 3,
+      "evaluacion": 18
+    },
+    "{\"calentamiento\":1000,\"capas_codificador\":3,\"capas_decodificador\":4,\"d_model\":384,\"dropout\":0.2,\"heads\":8,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.2,\"tasa_aprendizaje\":0.0001}": {
+      "aptitud": 0.8333333333333334,
+      "estado": "ok",
+      "tiempo": 1.4699995517730713e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 1,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 384,
+        "heads": 8,
+        "capas_codificador": 3,
+        "capas_decodificador": 4,
+        "multiplicador_ffn": 4,
+        "dropout": 0.2,
+        "tasa_aprendizaje": 0.0001,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.2
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 1,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 3,
+      "evaluacion": 19
+    },
+    "{\"calentamiento\":1000,\"capas_codificador\":5,\"capas_decodificador\":3,\"d_model\":512,\"dropout\":0.3,\"heads\":8,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.0,\"tasa_aprendizaje\":0.0002}": {
+      "aptitud": 0.7962962962962963,
+      "estado": "ok",
+      "tiempo": 1.550000160932541e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 1,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 512,
+        "heads": 8,
+        "capas_codificador": 5,
+        "capas_decodificador": 3,
+        "multiplicador_ffn": 4,
+        "dropout": 0.3,
+        "tasa_aprendizaje": 0.0002,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.0
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 1,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 3,
+      "evaluacion": 20
+    },
+    "{\"calentamiento\":4000,\"capas_codificador\":5,\"capas_decodificador\":6,\"d_model\":512,\"dropout\":0.1,\"heads\":4,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.2,\"tasa_aprendizaje\":0.001}": {
+      "aptitud": 0.5555555555555556,
+      "estado": "ok",
+      "tiempo": 1.859990879893303e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 1,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 512,
+        "heads": 4,
+        "capas_codificador": 5,
+        "capas_decodificador": 6,
+        "multiplicador_ffn": 4,
+        "dropout": 0.1,
+        "tasa_aprendizaje": 0.001,
+        "calentamiento": 4000,
+        "suavizado_etiquetas": 0.2
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 1,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 3,
+      "evaluacion": 21
+    },
+    "{\"calentamiento\":500,\"capas_codificador\":3,\"capas_decodificador\":2,\"d_model\":512,\"dropout\":0.2,\"heads\":8,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.2,\"tasa_aprendizaje\":0.0001}": {
+      "aptitud": 0.6851851851851852,
+      "estado": "ok",
+      "tiempo": 1.5900004655122757e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 1,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 512,
+        "heads": 8,
+        "capas_codificador": 3,
+        "capas_decodificador": 2,
+        "multiplicador_ffn": 4,
+        "dropout": 0.2,
+        "tasa_aprendizaje": 0.0001,
+        "calentamiento": 500,
+        "suavizado_etiquetas": 0.2
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 1,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 3,
+      "evaluacion": 22
+    },
+    "{\"calentamiento\":1000,\"capas_codificador\":3,\"capas_decodificador\":6,\"d_model\":384,\"dropout\":0.0,\"heads\":8,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.2,\"tasa_aprendizaje\":0.0001}": {
+      "aptitud": 0.7037037037037037,
+      "estado": "ok",
+      "tiempo": 1.5099998563528061e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 1,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 384,
+        "heads": 8,
+        "capas_codificador": 3,
+        "capas_decodificador": 6,
+        "multiplicador_ffn": 4,
+        "dropout": 0.0,
+        "tasa_aprendizaje": 0.0001,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.2
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 1,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 3,
+      "evaluacion": 23
+    },
+    "{\"calentamiento\":4000,\"capas_codificador\":3,\"capas_decodificador\":4,\"d_model\":512,\"dropout\":0.3,\"heads\":8,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.2,\"tasa_aprendizaje\":0.0002}": {
+      "aptitud": 0.6944444444444444,
+      "estado": "ok",
+      "tiempo": 1.6300007700920105e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 1,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 512,
+        "heads": 8,
+        "capas_codificador": 3,
+        "capas_decodificador": 4,
+        "multiplicador_ffn": 4,
+        "dropout": 0.3,
+        "tasa_aprendizaje": 0.0002,
+        "calentamiento": 4000,
+        "suavizado_etiquetas": 0.2
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 1,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 3,
+      "evaluacion": 24
+    },
+    "{\"calentamiento\":1000,\"capas_codificador\":3,\"capas_decodificador\":4,\"d_model\":384,\"dropout\":0.1,\"heads\":8,\"multiplicador_ffn\":2,\"suavizado_etiquetas\":0.2,\"tasa_aprendizaje\":0.001}": {
+      "aptitud": 0.6851851851851852,
+      "estado": "ok",
+      "tiempo": 1.54001172631979e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 1,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 384,
+        "heads": 8,
+        "capas_codificador": 3,
+        "capas_decodificador": 4,
+        "multiplicador_ffn": 2,
+        "dropout": 0.1,
+        "tasa_aprendizaje": 0.001,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.2
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 1,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 4,
+      "evaluacion": 25
+    },
+    "{\"calentamiento\":2000,\"capas_codificador\":2,\"capas_decodificador\":2,\"d_model\":256,\"dropout\":0.3,\"heads\":8,\"multiplicador_ffn\":2,\"suavizado_etiquetas\":0.2,\"tasa_aprendizaje\":0.0005}": {
+      "aptitud": 0.5370370370370371,
+      "estado": "ok",
+      "tiempo": 4.329998046159744e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 1,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 256,
+        "heads": 8,
+        "capas_codificador": 2,
+        "capas_decodificador": 2,
+        "multiplicador_ffn": 2,
+        "dropout": 0.3,
+        "tasa_aprendizaje": 0.0005,
+        "calentamiento": 2000,
+        "suavizado_etiquetas": 0.2
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 1,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 4,
+      "evaluacion": 26
+    },
+    "{\"calentamiento\":4000,\"capas_codificador\":3,\"capas_decodificador\":4,\"d_model\":512,\"dropout\":0.0,\"heads\":8,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.2,\"tasa_aprendizaje\":0.0001}": {
+      "aptitud": 0.6296296296296297,
+      "estado": "ok",
+      "tiempo": 1.1400086805224419e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 1,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 512,
+        "heads": 8,
+        "capas_codificador": 3,
+        "capas_decodificador": 4,
+        "multiplicador_ffn": 4,
+        "dropout": 0.0,
+        "tasa_aprendizaje": 0.0001,
+        "calentamiento": 4000,
+        "suavizado_etiquetas": 0.2
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 1,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 4,
+      "evaluacion": 27
+    },
+    "{\"calentamiento\":500,\"capas_codificador\":3,\"capas_decodificador\":5,\"d_model\":512,\"dropout\":0.0,\"heads\":8,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.0,\"tasa_aprendizaje\":0.0003}": {
+      "aptitud": 0.6944444444444444,
+      "estado": "ok",
+      "tiempo": 1.0400079190731049e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 1,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 512,
+        "heads": 8,
+        "capas_codificador": 3,
+        "capas_decodificador": 5,
+        "multiplicador_ffn": 4,
+        "dropout": 0.0,
+        "tasa_aprendizaje": 0.0003,
+        "calentamiento": 500,
+        "suavizado_etiquetas": 0.0
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 1,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 4,
+      "evaluacion": 28
+    },
+    "{\"calentamiento\":1000,\"capas_codificador\":3,\"capas_decodificador\":6,\"d_model\":512,\"dropout\":0.0,\"heads\":4,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.2,\"tasa_aprendizaje\":0.0001}": {
+      "aptitud": 0.537037037037037,
+      "estado": "ok",
+      "tiempo": 2.3799948394298553e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 1,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 512,
+        "heads": 4,
+        "capas_codificador": 3,
+        "capas_decodificador": 6,
+        "multiplicador_ffn": 4,
+        "dropout": 0.0,
+        "tasa_aprendizaje": 0.0001,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.2
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 1,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 4,
+      "evaluacion": 29
+    },
+    "{\"calentamiento\":1000,\"capas_codificador\":3,\"capas_decodificador\":6,\"d_model\":256,\"dropout\":0.2,\"heads\":8,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.0,\"tasa_aprendizaje\":0.0001}": {
+      "aptitud": 0.7222222222222222,
+      "estado": "ok",
+      "tiempo": 1.7300015315413475e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 1,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 256,
+        "heads": 8,
+        "capas_codificador": 3,
+        "capas_decodificador": 6,
+        "multiplicador_ffn": 4,
+        "dropout": 0.2,
+        "tasa_aprendizaje": 0.0001,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.0
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 1,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 4,
+      "evaluacion": 30
+    },
+    "{\"calentamiento\":1000,\"capas_codificador\":2,\"capas_decodificador\":6,\"d_model\":512,\"dropout\":0.2,\"heads\":4,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.0,\"tasa_aprendizaje\":0.0002}": {
+      "aptitud": 0.6111111111111112,
+      "estado": "ok",
+      "tiempo": 1.5799887478351593e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 1,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 512,
+        "heads": 4,
+        "capas_codificador": 2,
+        "capas_decodificador": 6,
+        "multiplicador_ffn": 4,
+        "dropout": 0.2,
+        "tasa_aprendizaje": 0.0002,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.0
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 1,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 4,
+      "evaluacion": 31
+    },
+    "{\"calentamiento\":1000,\"capas_codificador\":6,\"capas_decodificador\":2,\"d_model\":512,\"dropout\":0.2,\"heads\":8,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.2,\"tasa_aprendizaje\":0.001}": {
+      "aptitud": 0.75,
+      "estado": "ok",
+      "tiempo": 1.640012487769127e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 1,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 512,
+        "heads": 8,
+        "capas_codificador": 6,
+        "capas_decodificador": 2,
+        "multiplicador_ffn": 4,
+        "dropout": 0.2,
+        "tasa_aprendizaje": 0.001,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.2
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 1,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 4,
+      "evaluacion": 32
+    },
+    "{\"calentamiento\":2000,\"capas_codificador\":6,\"capas_decodificador\":4,\"d_model\":512,\"dropout\":0.2,\"heads\":8,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.2,\"tasa_aprendizaje\":0.0001}": {
+      "aptitud": 0.7685185185185186,
+      "estado": "ok",
+      "tiempo": 1.5900004655122757e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 1,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 512,
+        "heads": 8,
+        "capas_codificador": 6,
+        "capas_decodificador": 4,
+        "multiplicador_ffn": 4,
+        "dropout": 0.2,
+        "tasa_aprendizaje": 0.0001,
+        "calentamiento": 2000,
+        "suavizado_etiquetas": 0.2
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 1,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 5,
+      "evaluacion": 33
+    },
+    "{\"calentamiento\":1000,\"capas_codificador\":3,\"capas_decodificador\":4,\"d_model\":384,\"dropout\":0.2,\"heads\":8,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.0,\"tasa_aprendizaje\":0.0001}": {
+      "aptitud": 0.8333333333333334,
+      "estado": "ok",
+      "tiempo": 1.6300007700920105e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 1,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 384,
+        "heads": 8,
+        "capas_codificador": 3,
+        "capas_decodificador": 4,
+        "multiplicador_ffn": 4,
+        "dropout": 0.2,
+        "tasa_aprendizaje": 0.0001,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.0
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 1,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 5,
+      "evaluacion": 34
+    },
+    "{\"calentamiento\":2000,\"capas_codificador\":2,\"capas_decodificador\":4,\"d_model\":384,\"dropout\":0.2,\"heads\":4,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.1,\"tasa_aprendizaje\":0.0001}": {
+      "aptitud": 0.712962962962963,
+      "estado": "ok",
+      "tiempo": 2.5300076231360435e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 1,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 384,
+        "heads": 4,
+        "capas_codificador": 2,
+        "capas_decodificador": 4,
+        "multiplicador_ffn": 4,
+        "dropout": 0.2,
+        "tasa_aprendizaje": 0.0001,
+        "calentamiento": 2000,
+        "suavizado_etiquetas": 0.1
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 1,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 5,
+      "evaluacion": 35
+    },
+    "{\"calentamiento\":2000,\"capas_codificador\":2,\"capas_decodificador\":6,\"d_model\":384,\"dropout\":0.2,\"heads\":8,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.2,\"tasa_aprendizaje\":0.001}": {
+      "aptitud": 0.712962962962963,
+      "estado": "ok",
+      "tiempo": 1.750001683831215e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 1,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 384,
+        "heads": 8,
+        "capas_codificador": 2,
+        "capas_decodificador": 6,
+        "multiplicador_ffn": 4,
+        "dropout": 0.2,
+        "tasa_aprendizaje": 0.001,
+        "calentamiento": 2000,
+        "suavizado_etiquetas": 0.2
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 1,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 5,
+      "evaluacion": 36
+    },
+    "{\"calentamiento\":500,\"capas_codificador\":6,\"capas_decodificador\":4,\"d_model\":256,\"dropout\":0.1,\"heads\":8,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.2,\"tasa_aprendizaje\":0.001}": {
+      "aptitud": 0.7314814814814815,
+      "estado": "ok",
+      "tiempo": 1.6300007700920105e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 1,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 256,
+        "heads": 8,
+        "capas_codificador": 6,
+        "capas_decodificador": 4,
+        "multiplicador_ffn": 4,
+        "dropout": 0.1,
+        "tasa_aprendizaje": 0.001,
+        "calentamiento": 500,
+        "suavizado_etiquetas": 0.2
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 1,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 5,
+      "evaluacion": 37
+    },
+    "{\"calentamiento\":1000,\"capas_codificador\":6,\"capas_decodificador\":5,\"d_model\":512,\"dropout\":0.2,\"heads\":8,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.1,\"tasa_aprendizaje\":0.0001}": {
+      "aptitud": 0.8333333333333334,
+      "estado": "ok",
+      "tiempo": 1.4099990949034691e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 1,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 512,
+        "heads": 8,
+        "capas_codificador": 6,
+        "capas_decodificador": 5,
+        "multiplicador_ffn": 4,
+        "dropout": 0.2,
+        "tasa_aprendizaje": 0.0001,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.1
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 1,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 5,
+      "evaluacion": 38
+    },
+    "{\"calentamiento\":1000,\"capas_codificador\":3,\"capas_decodificador\":2,\"d_model\":512,\"dropout\":0.3,\"heads\":8,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.2,\"tasa_aprendizaje\":0.0002}": {
+      "aptitud": 0.712962962962963,
+      "estado": "ok",
+      "tiempo": 1.6300007700920105e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 1,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 512,
+        "heads": 8,
+        "capas_codificador": 3,
+        "capas_decodificador": 2,
+        "multiplicador_ffn": 4,
+        "dropout": 0.3,
+        "tasa_aprendizaje": 0.0002,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.2
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 1,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 5,
+      "evaluacion": 39
+    },
+    "{\"calentamiento\":1000,\"capas_codificador\":3,\"capas_decodificador\":3,\"d_model\":384,\"dropout\":0.2,\"heads\":8,\"multiplicador_ffn\":2,\"suavizado_etiquetas\":0.0,\"tasa_aprendizaje\":0.0001}": {
+      "aptitud": 0.6944444444444444,
+      "estado": "ok",
+      "tiempo": 4.1499966755509377e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 1,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 384,
+        "heads": 8,
+        "capas_codificador": 3,
+        "capas_decodificador": 3,
+        "multiplicador_ffn": 2,
+        "dropout": 0.2,
+        "tasa_aprendizaje": 0.0001,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.0
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 1,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 5,
+      "evaluacion": 40
+    },
+    "{\"calentamiento\":1000,\"capas_codificador\":2,\"capas_decodificador\":2,\"d_model\":512,\"dropout\":0.2,\"heads\":8,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.1,\"tasa_aprendizaje\":0.0005}": {
+      "aptitud": 0.7777777777777778,
+      "estado": "ok",
+      "tiempo": 1.640012487769127e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 2,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 512,
+        "heads": 8,
+        "capas_codificador": 2,
+        "capas_decodificador": 2,
+        "multiplicador_ffn": 4,
+        "dropout": 0.2,
+        "tasa_aprendizaje": 0.0005,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.1
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 2,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 1,
+      "evaluacion": 1
+    },
+    "{\"calentamiento\":4000,\"capas_codificador\":2,\"capas_decodificador\":4,\"d_model\":384,\"dropout\":0.2,\"heads\":8,\"multiplicador_ffn\":2,\"suavizado_etiquetas\":0.1,\"tasa_aprendizaje\":0.001}": {
+      "aptitud": 0.6759259259259259,
+      "estado": "ok",
+      "tiempo": 1.7799902707338333e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 2,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 384,
+        "heads": 8,
+        "capas_codificador": 2,
+        "capas_decodificador": 4,
+        "multiplicador_ffn": 2,
+        "dropout": 0.2,
+        "tasa_aprendizaje": 0.001,
+        "calentamiento": 4000,
+        "suavizado_etiquetas": 0.1
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 2,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 1,
+      "evaluacion": 2
+    },
+    "{\"calentamiento\":4000,\"capas_codificador\":2,\"capas_decodificador\":2,\"d_model\":384,\"dropout\":0.1,\"heads\":4,\"multiplicador_ffn\":2,\"suavizado_etiquetas\":0.1,\"tasa_aprendizaje\":0.0002}": {
+      "aptitud": 0.5,
+      "estado": "ok",
+      "tiempo": 1.700012944638729e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 2,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 384,
+        "heads": 4,
+        "capas_codificador": 2,
+        "capas_decodificador": 2,
+        "multiplicador_ffn": 2,
+        "dropout": 0.1,
+        "tasa_aprendizaje": 0.0002,
+        "calentamiento": 4000,
+        "suavizado_etiquetas": 0.1
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 2,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 1,
+      "evaluacion": 3
+    },
+    "{\"calentamiento\":2000,\"capas_codificador\":2,\"capas_decodificador\":3,\"d_model\":384,\"dropout\":0.2,\"heads\":4,\"multiplicador_ffn\":2,\"suavizado_etiquetas\":0.0,\"tasa_aprendizaje\":0.001}": {
+      "aptitud": 0.5185185185185186,
+      "estado": "ok",
+      "tiempo": 1.71000137925148e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 2,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 384,
+        "heads": 4,
+        "capas_codificador": 2,
+        "capas_decodificador": 3,
+        "multiplicador_ffn": 2,
+        "dropout": 0.2,
+        "tasa_aprendizaje": 0.001,
+        "calentamiento": 2000,
+        "suavizado_etiquetas": 0.0
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 2,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 1,
+      "evaluacion": 4
+    },
+    "{\"calentamiento\":4000,\"capas_codificador\":5,\"capas_decodificador\":6,\"d_model\":512,\"dropout\":0.3,\"heads\":8,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.2,\"tasa_aprendizaje\":0.0002}": {
+      "aptitud": 0.6944444444444444,
+      "estado": "ok",
+      "tiempo": 0.00019699987024068832,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 2,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 512,
+        "heads": 8,
+        "capas_codificador": 5,
+        "capas_decodificador": 6,
+        "multiplicador_ffn": 4,
+        "dropout": 0.3,
+        "tasa_aprendizaje": 0.0002,
+        "calentamiento": 4000,
+        "suavizado_etiquetas": 0.2
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 2,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 1,
+      "evaluacion": 5
+    },
+    "{\"calentamiento\":2000,\"capas_codificador\":5,\"capas_decodificador\":4,\"d_model\":256,\"dropout\":0.1,\"heads\":8,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.2,\"tasa_aprendizaje\":0.001}": {
+      "aptitud": 0.7592592592592593,
+      "estado": "ok",
+      "tiempo": 1.7999904230237007e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 2,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 256,
+        "heads": 8,
+        "capas_codificador": 5,
+        "capas_decodificador": 4,
+        "multiplicador_ffn": 4,
+        "dropout": 0.1,
+        "tasa_aprendizaje": 0.001,
+        "calentamiento": 2000,
+        "suavizado_etiquetas": 0.2
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 2,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 1,
+      "evaluacion": 6
+    },
+    "{\"calentamiento\":1000,\"capas_codificador\":6,\"capas_decodificador\":4,\"d_model\":384,\"dropout\":0.3,\"heads\":8,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.0,\"tasa_aprendizaje\":0.0005}": {
+      "aptitud": 0.8518518518518519,
+      "estado": "ok",
+      "tiempo": 2.7799978852272034e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 2,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 384,
+        "heads": 8,
+        "capas_codificador": 6,
+        "capas_decodificador": 4,
+        "multiplicador_ffn": 4,
+        "dropout": 0.3,
+        "tasa_aprendizaje": 0.0005,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.0
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 2,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 1,
+      "evaluacion": 7
+    },
+    "{\"calentamiento\":4000,\"capas_codificador\":2,\"capas_decodificador\":6,\"d_model\":256,\"dropout\":0.3,\"heads\":8,\"multiplicador_ffn\":2,\"suavizado_etiquetas\":0.2,\"tasa_aprendizaje\":0.0002}": {
+      "aptitud": 0.5,
+      "estado": "ok",
+      "tiempo": 1.8700025975704193e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 2,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 256,
+        "heads": 8,
+        "capas_codificador": 2,
+        "capas_decodificador": 6,
+        "multiplicador_ffn": 2,
+        "dropout": 0.3,
+        "tasa_aprendizaje": 0.0002,
+        "calentamiento": 4000,
+        "suavizado_etiquetas": 0.2
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 2,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 1,
+      "evaluacion": 8
+    },
+    "{\"calentamiento\":4000,\"capas_codificador\":5,\"capas_decodificador\":4,\"d_model\":384,\"dropout\":0.1,\"heads\":8,\"multiplicador_ffn\":2,\"suavizado_etiquetas\":0.1,\"tasa_aprendizaje\":0.0005}": {
+      "aptitud": 0.75,
+      "estado": "ok",
+      "tiempo": 1.4600111171603203e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 2,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 384,
+        "heads": 8,
+        "capas_codificador": 5,
+        "capas_decodificador": 4,
+        "multiplicador_ffn": 2,
+        "dropout": 0.1,
+        "tasa_aprendizaje": 0.0005,
+        "calentamiento": 4000,
+        "suavizado_etiquetas": 0.1
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 2,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 2,
+      "evaluacion": 9
+    },
+    "{\"calentamiento\":2000,\"capas_codificador\":6,\"capas_decodificador\":6,\"d_model\":256,\"dropout\":0.3,\"heads\":8,\"multiplicador_ffn\":2,\"suavizado_etiquetas\":0.0,\"tasa_aprendizaje\":0.0001}": {
+      "aptitud": 0.5648148148148149,
+      "estado": "ok",
+      "tiempo": 1.6700010746717453e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 2,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 256,
+        "heads": 8,
+        "capas_codificador": 6,
+        "capas_decodificador": 6,
+        "multiplicador_ffn": 2,
+        "dropout": 0.3,
+        "tasa_aprendizaje": 0.0001,
+        "calentamiento": 2000,
+        "suavizado_etiquetas": 0.0
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 2,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 2,
+      "evaluacion": 10
+    },
+    "{\"calentamiento\":4000,\"capas_codificador\":2,\"capas_decodificador\":4,\"d_model\":256,\"dropout\":0.1,\"heads\":8,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.0,\"tasa_aprendizaje\":0.0002}": {
+      "aptitud": 0.6666666666666666,
+      "estado": "ok",
+      "tiempo": 1.919991336762905e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 2,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 256,
+        "heads": 8,
+        "capas_codificador": 2,
+        "capas_decodificador": 4,
+        "multiplicador_ffn": 4,
+        "dropout": 0.1,
+        "tasa_aprendizaje": 0.0002,
+        "calentamiento": 4000,
+        "suavizado_etiquetas": 0.0
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 2,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 2,
+      "evaluacion": 11
+    },
+    "{\"calentamiento\":500,\"capas_codificador\":4,\"capas_decodificador\":3,\"d_model\":384,\"dropout\":0.0,\"heads\":4,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.1,\"tasa_aprendizaje\":0.001}": {
+      "aptitud": 0.6666666666666666,
+      "estado": "ok",
+      "tiempo": 1.800013706088066e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 2,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 384,
+        "heads": 4,
+        "capas_codificador": 4,
+        "capas_decodificador": 3,
+        "multiplicador_ffn": 4,
+        "dropout": 0.0,
+        "tasa_aprendizaje": 0.001,
+        "calentamiento": 500,
+        "suavizado_etiquetas": 0.1
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 2,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 2,
+      "evaluacion": 12
+    },
+    "{\"calentamiento\":500,\"capas_codificador\":6,\"capas_decodificador\":2,\"d_model\":256,\"dropout\":0.3,\"heads\":4,\"multiplicador_ffn\":2,\"suavizado_etiquetas\":0.2,\"tasa_aprendizaje\":0.0003}": {
+      "aptitud": 0.5092592592592593,
+      "estado": "ok",
+      "tiempo": 1.759990118443966e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 2,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 256,
+        "heads": 4,
+        "capas_codificador": 6,
+        "capas_decodificador": 2,
+        "multiplicador_ffn": 2,
+        "dropout": 0.3,
+        "tasa_aprendizaje": 0.0003,
+        "calentamiento": 500,
+        "suavizado_etiquetas": 0.2
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 2,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 2,
+      "evaluacion": 13
+    },
+    "{\"calentamiento\":500,\"capas_codificador\":4,\"capas_decodificador\":4,\"d_model\":256,\"dropout\":0.0,\"heads\":4,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.0,\"tasa_aprendizaje\":0.0003}": {
+      "aptitud": 0.6388888888888888,
+      "estado": "ok",
+      "tiempo": 1.840014010667801e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 2,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 256,
+        "heads": 4,
+        "capas_codificador": 4,
+        "capas_decodificador": 4,
+        "multiplicador_ffn": 4,
+        "dropout": 0.0,
+        "tasa_aprendizaje": 0.0003,
+        "calentamiento": 500,
+        "suavizado_etiquetas": 0.0
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 2,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 2,
+      "evaluacion": 14
+    },
+    "{\"calentamiento\":1000,\"capas_codificador\":6,\"capas_decodificador\":5,\"d_model\":512,\"dropout\":0.3,\"heads\":8,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.1,\"tasa_aprendizaje\":0.0003}": {
+      "aptitud": 0.8518518518518519,
+      "estado": "ok",
+      "tiempo": 1.840014010667801e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 2,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 512,
+        "heads": 8,
+        "capas_codificador": 6,
+        "capas_decodificador": 5,
+        "multiplicador_ffn": 4,
+        "dropout": 0.3,
+        "tasa_aprendizaje": 0.0003,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.1
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 2,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 2,
+      "evaluacion": 15
+    },
+    "{\"calentamiento\":1000,\"capas_codificador\":4,\"capas_decodificador\":6,\"d_model\":384,\"dropout\":0.2,\"heads\":4,\"multiplicador_ffn\":2,\"suavizado_etiquetas\":0.0,\"tasa_aprendizaje\":0.0003}": {
+      "aptitud": 0.6388888888888888,
+      "estado": "ok",
+      "tiempo": 1.650000922381878e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 2,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 384,
+        "heads": 4,
+        "capas_codificador": 4,
+        "capas_decodificador": 6,
+        "multiplicador_ffn": 2,
+        "dropout": 0.2,
+        "tasa_aprendizaje": 0.0003,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.0
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 2,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 2,
+      "evaluacion": 16
+    },
+    "{\"calentamiento\":500,\"capas_codificador\":6,\"capas_decodificador\":4,\"d_model\":512,\"dropout\":0.3,\"heads\":8,\"multiplicador_ffn\":2,\"suavizado_etiquetas\":0.0,\"tasa_aprendizaje\":0.0002}": {
+      "aptitud": 0.6481481481481483,
+      "estado": "ok",
+      "tiempo": 1.6700010746717453e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 2,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 512,
+        "heads": 8,
+        "capas_codificador": 6,
+        "capas_decodificador": 4,
+        "multiplicador_ffn": 2,
+        "dropout": 0.3,
+        "tasa_aprendizaje": 0.0002,
+        "calentamiento": 500,
+        "suavizado_etiquetas": 0.0
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 2,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 3,
+      "evaluacion": 17
+    },
+    "{\"calentamiento\":1000,\"capas_codificador\":6,\"capas_decodificador\":4,\"d_model\":256,\"dropout\":0.3,\"heads\":4,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.1,\"tasa_aprendizaje\":0.001}": {
+      "aptitud": 0.712962962962963,
+      "estado": "ok",
+      "tiempo": 1.759990118443966e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 2,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 256,
+        "heads": 4,
+        "capas_codificador": 6,
+        "capas_decodificador": 4,
+        "multiplicador_ffn": 4,
+        "dropout": 0.3,
+        "tasa_aprendizaje": 0.001,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.1
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 2,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 3,
+      "evaluacion": 18
+    },
+    "{\"calentamiento\":1000,\"capas_codificador\":6,\"capas_decodificador\":5,\"d_model\":384,\"dropout\":0.1,\"heads\":8,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.0,\"tasa_aprendizaje\":0.0003}": {
+      "aptitud": 0.8518518518518519,
+      "estado": "ok",
+      "tiempo": 1.800013706088066e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 2,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 384,
+        "heads": 8,
+        "capas_codificador": 6,
+        "capas_decodificador": 5,
+        "multiplicador_ffn": 4,
+        "dropout": 0.1,
+        "tasa_aprendizaje": 0.0003,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.0
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 2,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 3,
+      "evaluacion": 19
+    },
+    "{\"calentamiento\":1000,\"capas_codificador\":2,\"capas_decodificador\":5,\"d_model\":256,\"dropout\":0.0,\"heads\":8,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.0,\"tasa_aprendizaje\":0.0002}": {
+      "aptitud": 0.6759259259259259,
+      "estado": "ok",
+      "tiempo": 2.319994382560253e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 2,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 256,
+        "heads": 8,
+        "capas_codificador": 2,
+        "capas_decodificador": 5,
+        "multiplicador_ffn": 4,
+        "dropout": 0.0,
+        "tasa_aprendizaje": 0.0002,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.0
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 2,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 3,
+      "evaluacion": 20
+    },
+    "{\"calentamiento\":2000,\"capas_codificador\":4,\"capas_decodificador\":5,\"d_model\":384,\"dropout\":0.3,\"heads\":8,\"multiplicador_ffn\":2,\"suavizado_etiquetas\":0.1,\"tasa_aprendizaje\":0.001}": {
+      "aptitud": 0.7037037037037037,
+      "estado": "ok",
+      "tiempo": 1.919991336762905e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 2,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 384,
+        "heads": 8,
+        "capas_codificador": 4,
+        "capas_decodificador": 5,
+        "multiplicador_ffn": 2,
+        "dropout": 0.3,
+        "tasa_aprendizaje": 0.001,
+        "calentamiento": 2000,
+        "suavizado_etiquetas": 0.1
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 2,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 3,
+      "evaluacion": 21
+    },
+    "{\"calentamiento\":2000,\"capas_codificador\":2,\"capas_decodificador\":4,\"d_model\":384,\"dropout\":0.1,\"heads\":8,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.0,\"tasa_aprendizaje\":0.0001}": {
+      "aptitud": 0.7314814814814815,
+      "estado": "ok",
+      "tiempo": 1.2899981811642647e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 2,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 384,
+        "heads": 8,
+        "capas_codificador": 2,
+        "capas_decodificador": 4,
+        "multiplicador_ffn": 4,
+        "dropout": 0.1,
+        "tasa_aprendizaje": 0.0001,
+        "calentamiento": 2000,
+        "suavizado_etiquetas": 0.0
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 2,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 3,
+      "evaluacion": 22
+    },
+    "{\"calentamiento\":1000,\"capas_codificador\":6,\"capas_decodificador\":4,\"d_model\":384,\"dropout\":0.2,\"heads\":8,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.0,\"tasa_aprendizaje\":0.0001}": {
+      "aptitud": 0.8611111111111112,
+      "estado": "ok",
+      "tiempo": 1.0499963536858559e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 2,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 384,
+        "heads": 8,
+        "capas_codificador": 6,
+        "capas_decodificador": 4,
+        "multiplicador_ffn": 4,
+        "dropout": 0.2,
+        "tasa_aprendizaje": 0.0001,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.0
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 2,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 3,
+      "evaluacion": 23
+    },
+    "{\"calentamiento\":1000,\"capas_codificador\":6,\"capas_decodificador\":2,\"d_model\":384,\"dropout\":0.2,\"heads\":8,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.1,\"tasa_aprendizaje\":0.0003}": {
+      "aptitud": 0.9166666666666666,
+      "estado": "ok",
+      "tiempo": 1.0799849405884743e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 2,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 384,
+        "heads": 8,
+        "capas_codificador": 6,
+        "capas_decodificador": 2,
+        "multiplicador_ffn": 4,
+        "dropout": 0.2,
+        "tasa_aprendizaje": 0.0003,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.1
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 2,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 3,
+      "evaluacion": 24
+    },
+    "{\"calentamiento\":1000,\"capas_codificador\":5,\"capas_decodificador\":6,\"d_model\":256,\"dropout\":0.3,\"heads\":8,\"multiplicador_ffn\":2,\"suavizado_etiquetas\":0.1,\"tasa_aprendizaje\":0.0002}": {
+      "aptitud": 0.712962962962963,
+      "estado": "ok",
+      "tiempo": 1.1200085282325745e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 2,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 256,
+        "heads": 8,
+        "capas_codificador": 5,
+        "capas_decodificador": 6,
+        "multiplicador_ffn": 2,
+        "dropout": 0.3,
+        "tasa_aprendizaje": 0.0002,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.1
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 2,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 4,
+      "evaluacion": 25
+    },
+    "{\"calentamiento\":1000,\"capas_codificador\":5,\"capas_decodificador\":2,\"d_model\":384,\"dropout\":0.0,\"heads\":8,\"multiplicador_ffn\":2,\"suavizado_etiquetas\":0.2,\"tasa_aprendizaje\":0.0005}": {
+      "aptitud": 0.6759259259259259,
+      "estado": "ok",
+      "tiempo": 1.6300007700920105e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 2,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 384,
+        "heads": 8,
+        "capas_codificador": 5,
+        "capas_decodificador": 2,
+        "multiplicador_ffn": 2,
+        "dropout": 0.0,
+        "tasa_aprendizaje": 0.0005,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.2
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 2,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 4,
+      "evaluacion": 26
+    },
+    "{\"calentamiento\":1000,\"capas_codificador\":6,\"capas_decodificador\":5,\"d_model\":512,\"dropout\":0.2,\"heads\":4,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.1,\"tasa_aprendizaje\":0.0003}": {
+      "aptitud": 0.7777777777777778,
+      "estado": "ok",
+      "tiempo": 1.6300007700920105e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 2,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 512,
+        "heads": 4,
+        "capas_codificador": 6,
+        "capas_decodificador": 5,
+        "multiplicador_ffn": 4,
+        "dropout": 0.2,
+        "tasa_aprendizaje": 0.0003,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.1
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 2,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 4,
+      "evaluacion": 27
+    },
+    "{\"calentamiento\":1000,\"capas_codificador\":6,\"capas_decodificador\":6,\"d_model\":384,\"dropout\":0.3,\"heads\":8,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.0,\"tasa_aprendizaje\":0.0005}": {
+      "aptitud": 0.7962962962962963,
+      "estado": "ok",
+      "tiempo": 1.950003206729889e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 2,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 384,
+        "heads": 8,
+        "capas_codificador": 6,
+        "capas_decodificador": 6,
+        "multiplicador_ffn": 4,
+        "dropout": 0.3,
+        "tasa_aprendizaje": 0.0005,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.0
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 2,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 4,
+      "evaluacion": 28
+    },
+    "{\"calentamiento\":500,\"capas_codificador\":5,\"capas_decodificador\":5,\"d_model\":384,\"dropout\":0.3,\"heads\":8,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.1,\"tasa_aprendizaje\":0.0005}": {
+      "aptitud": 0.8703703703703705,
+      "estado": "ok",
+      "tiempo": 1.5700003132224083e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 2,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 384,
+        "heads": 8,
+        "capas_codificador": 5,
+        "capas_decodificador": 5,
+        "multiplicador_ffn": 4,
+        "dropout": 0.3,
+        "tasa_aprendizaje": 0.0005,
+        "calentamiento": 500,
+        "suavizado_etiquetas": 0.1
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 2,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 4,
+      "evaluacion": 29
+    },
+    "{\"calentamiento\":1000,\"capas_codificador\":5,\"capas_decodificador\":2,\"d_model\":512,\"dropout\":0.3,\"heads\":4,\"multiplicador_ffn\":2,\"suavizado_etiquetas\":0.0,\"tasa_aprendizaje\":0.001}": {
+      "aptitud": 0.5185185185185186,
+      "estado": "ok",
+      "tiempo": 1.550000160932541e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 2,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 512,
+        "heads": 4,
+        "capas_codificador": 5,
+        "capas_decodificador": 2,
+        "multiplicador_ffn": 2,
+        "dropout": 0.3,
+        "tasa_aprendizaje": 0.001,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.0
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 2,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 4,
+      "evaluacion": 30
+    },
+    "{\"calentamiento\":1000,\"capas_codificador\":6,\"capas_decodificador\":5,\"d_model\":384,\"dropout\":0.2,\"heads\":8,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.2,\"tasa_aprendizaje\":0.0002}": {
+      "aptitud": 0.8611111111111112,
+      "estado": "ok",
+      "tiempo": 1.0200077667832375e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 2,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 384,
+        "heads": 8,
+        "capas_codificador": 6,
+        "capas_decodificador": 5,
+        "multiplicador_ffn": 4,
+        "dropout": 0.2,
+        "tasa_aprendizaje": 0.0002,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.2
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 2,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 4,
+      "evaluacion": 31
+    },
+    "{\"calentamiento\":1000,\"capas_codificador\":6,\"capas_decodificador\":5,\"d_model\":512,\"dropout\":0.3,\"heads\":4,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.1,\"tasa_aprendizaje\":0.0003}": {
+      "aptitud": 0.7407407407407408,
+      "estado": "ok",
+      "tiempo": 1.6799895092844963e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 2,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 512,
+        "heads": 4,
+        "capas_codificador": 6,
+        "capas_decodificador": 5,
+        "multiplicador_ffn": 4,
+        "dropout": 0.3,
+        "tasa_aprendizaje": 0.0003,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.1
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 2,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 4,
+      "evaluacion": 32
+    },
+    "{\"calentamiento\":2000,\"capas_codificador\":6,\"capas_decodificador\":2,\"d_model\":512,\"dropout\":0.0,\"heads\":8,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.0,\"tasa_aprendizaje\":0.0003}": {
+      "aptitud": 0.6944444444444444,
+      "estado": "ok",
+      "tiempo": 1.7700018361210823e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 2,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 512,
+        "heads": 8,
+        "capas_codificador": 6,
+        "capas_decodificador": 2,
+        "multiplicador_ffn": 4,
+        "dropout": 0.0,
+        "tasa_aprendizaje": 0.0003,
+        "calentamiento": 2000,
+        "suavizado_etiquetas": 0.0
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 2,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 5,
+      "evaluacion": 33
+    },
+    "{\"calentamiento\":4000,\"capas_codificador\":6,\"capas_decodificador\":5,\"d_model\":384,\"dropout\":0.3,\"heads\":8,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.1,\"tasa_aprendizaje\":0.0003}": {
+      "aptitud": 0.8333333333333334,
+      "estado": "ok",
+      "tiempo": 1.5200115740299225e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 2,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 384,
+        "heads": 8,
+        "capas_codificador": 6,
+        "capas_decodificador": 5,
+        "multiplicador_ffn": 4,
+        "dropout": 0.3,
+        "tasa_aprendizaje": 0.0003,
+        "calentamiento": 4000,
+        "suavizado_etiquetas": 0.1
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 2,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 5,
+      "evaluacion": 34
+    },
+    "{\"calentamiento\":1000,\"capas_codificador\":6,\"capas_decodificador\":5,\"d_model\":384,\"dropout\":0.2,\"heads\":8,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.2,\"tasa_aprendizaje\":0.0003}": {
+      "aptitud": 0.8888888888888888,
+      "estado": "ok",
+      "tiempo": 1.4699995517730713e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 2,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 384,
+        "heads": 8,
+        "capas_codificador": 6,
+        "capas_decodificador": 5,
+        "multiplicador_ffn": 4,
+        "dropout": 0.2,
+        "tasa_aprendizaje": 0.0003,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.2
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 2,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 5,
+      "evaluacion": 35
+    },
+    "{\"calentamiento\":500,\"capas_codificador\":6,\"capas_decodificador\":5,\"d_model\":384,\"dropout\":0.2,\"heads\":4,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.2,\"tasa_aprendizaje\":0.0005}": {
+      "aptitud": 0.712962962962963,
+      "estado": "ok",
+      "tiempo": 1.5300000086426735e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 2,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 384,
+        "heads": 4,
+        "capas_codificador": 6,
+        "capas_decodificador": 5,
+        "multiplicador_ffn": 4,
+        "dropout": 0.2,
+        "tasa_aprendizaje": 0.0005,
+        "calentamiento": 500,
+        "suavizado_etiquetas": 0.2
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 2,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 5,
+      "evaluacion": 36
+    },
+    "{\"calentamiento\":1000,\"capas_codificador\":6,\"capas_decodificador\":5,\"d_model\":384,\"dropout\":0.3,\"heads\":8,\"multiplicador_ffn\":2,\"suavizado_etiquetas\":0.1,\"tasa_aprendizaje\":0.0005}": {
+      "aptitud": 0.7685185185185186,
+      "estado": "ok",
+      "tiempo": 1.550000160932541e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 2,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 384,
+        "heads": 8,
+        "capas_codificador": 6,
+        "capas_decodificador": 5,
+        "multiplicador_ffn": 2,
+        "dropout": 0.3,
+        "tasa_aprendizaje": 0.0005,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.1
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 2,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 5,
+      "evaluacion": 37
+    },
+    "{\"calentamiento\":1000,\"capas_codificador\":2,\"capas_decodificador\":2,\"d_model\":384,\"dropout\":0.3,\"heads\":8,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.1,\"tasa_aprendizaje\":0.0003}": {
+      "aptitud": 0.8240740740740741,
+      "estado": "ok",
+      "tiempo": 1.5099998563528061e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 2,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 384,
+        "heads": 8,
+        "capas_codificador": 2,
+        "capas_decodificador": 2,
+        "multiplicador_ffn": 4,
+        "dropout": 0.3,
+        "tasa_aprendizaje": 0.0003,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.1
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 2,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 5,
+      "evaluacion": 38
+    },
+    "{\"calentamiento\":1000,\"capas_codificador\":4,\"capas_decodificador\":3,\"d_model\":384,\"dropout\":0.0,\"heads\":8,\"multiplicador_ffn\":2,\"suavizado_etiquetas\":0.1,\"tasa_aprendizaje\":0.0005}": {
+      "aptitud": 0.7314814814814814,
+      "estado": "ok",
+      "tiempo": 1.5099998563528061e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 2,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 384,
+        "heads": 8,
+        "capas_codificador": 4,
+        "capas_decodificador": 3,
+        "multiplicador_ffn": 2,
+        "dropout": 0.0,
+        "tasa_aprendizaje": 0.0005,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.1
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 2,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 5,
+      "evaluacion": 39
+    },
+    "{\"calentamiento\":1000,\"capas_codificador\":6,\"capas_decodificador\":5,\"d_model\":512,\"dropout\":0.1,\"heads\":8,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.1,\"tasa_aprendizaje\":0.0002}": {
+      "aptitud": 0.8240740740740741,
+      "estado": "ok",
+      "tiempo": 2.2999942302703857e-05,
+      "metodo": "mmas",
+      "par": "en-la",
+      "semilla": 2,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "2b2aa245dedbdfcf990faeac2e5a8df28b095775",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 512,
+        "heads": 8,
+        "capas_codificador": 6,
+        "capas_decodificador": 5,
+        "multiplicador_ffn": 4,
+        "dropout": 0.1,
+        "tasa_aprendizaje": 0.0002,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.1
+      },
+      "origen": {
+        "metodo": "mmas",
+        "semilla": 2,
+        "par": "en-la",
+        "tipo_aptitud": "falsa",
+        "hormigas": 8,
+        "iteraciones": 5,
+        "alfa": 1.0,
+        "rho": 0.2,
+        "razon_tau": 0.1,
+        "iteraciones_mejor_global": 2
+      },
+      "iteracion": 5,
+      "evaluacion": 40
+    }
+  }
+}
