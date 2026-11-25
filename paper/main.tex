@@ -1,0 +1,513 @@
+% =====================================================================
+% Artículo IEEE (conferencia) - Sistema de traducción automática
+% inglés -> latín/griego con ajuste de hiperparámetros mediante
+% MAX-MIN Ant System.
+%
+% Compilar: pdflatex main -> bibtex main -> pdflatex main -> pdflatex main
+% (o subir la carpeta paper/ a Overleaf).
+%
+% Todo dato aún no disponible está marcado con \pendiente{...}, que se
+% imprime en rojo. Antes de entregar: buscar "\pendiente" y eliminarlos.
+% =====================================================================
+\documentclass[conference]{IEEEtran}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish,es-noshorthands,es-tabla]{babel}
+\usepackage{cite}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{xcolor}
+\usepackage{url}
+
+% --- Utilidades -------------------------------------------------------
+\newcommand{\pendiente}[1]{\textcolor{red}{[PENDIENTE: #1]}}
+\newcommand{\chrf}{chrF}
+\newcommand{\mmas}{$\mathcal{MAX}$--$\mathcal{MIN}$ Ant System}
+
+% Incluye la figura si existe; si no, dibuja un recuadro de marcador.
+\newcommand{\figuraopcional}[2]{%
+  \IfFileExists{#1}{\includegraphics[width=#2]{#1}}{%
+    \fbox{\parbox[c][3.5cm][c]{0.9#2}{\centering\pendiente{figura \texttt{\detokenize{#1}}}}}}}
+
+\floatname{algorithm}{Algoritmo}
+\renewcommand{\algorithmicrequire}{\textbf{Entrada:}}
+\renewcommand{\algorithmicensure}{\textbf{Salida:}}
+
+\begin{document}
+
+\title{Traducción automática del inglés al latín y al griego antiguo con
+ajuste de hiperparámetros mediante colonia de hormigas \mmas}
+
+% TODO: completar nombres, afiliación y correos de los 4 integrantes.
+\author{
+\IEEEauthorblockN{Integrante 1, Integrante 2, Integrante 3, Integrante 4}
+\IEEEauthorblockA{\pendiente{Departamento, Universidad}\\
+\pendiente{Ciudad, País}\\
+\pendiente{correos}}
+}
+
+\maketitle
+
+% =====================================================================
+\begin{abstract}
+La traducción automática hacia lenguas clásicas es un problema de bajos
+recursos con morfología flexiva rica, en el que la elección de
+hiperparámetros de un modelo neuronal influye de forma importante en la
+calidad. Este trabajo presenta un sistema de traducción del inglés al
+latín y al griego antiguo basado en un Transformer codificador--decodificador
+entrenado desde cero, cuyos hiperparámetros se ajustan con \mmas{} (MMAS),
+un algoritmo de optimización por colonia de hormigas. El espacio de
+búsqueda se discretiza en un grafo con nueve hiperparámetros, y la aptitud
+de cada hormiga es el \chrf{} en validación tras un entrenamiento de
+presupuesto fijo. MMAS se compara con una configuración por defecto y con
+una búsqueda aleatoria de igual presupuesto. En el conjunto de prueba de
+latín, la configuración encontrada por MMAS obtiene \pendiente{X} de
+\chrf{} frente a \pendiente{Y} de la búsqueda aleatoria y \pendiente{Z}
+de la configuración por defecto; transferida al griego, obtiene
+\pendiente{W}. \pendiente{Conclusión principal en una frase.}
+\end{abstract}
+
+\begin{IEEEkeywords}
+traducción automática neuronal, optimización por colonia de hormigas,
+MAX--MIN Ant System, ajuste de hiperparámetros, latín, griego antiguo,
+Transformer
+\end{IEEEkeywords}
+
+% =====================================================================
+\section{Introducción}
+
+La traducción automática neuronal basada en la arquitectura Transformer
+\cite{vaswani2017attention} es hoy el enfoque dominante para pares de
+lenguas con abundantes datos paralelos. Las lenguas clásicas, como el
+latín y el griego antiguo, presentan en cambio dos dificultades: los
+corpus paralelos son pequeños o heterogéneos, y su morfología flexiva hace
+que una misma palabra aparezca en muchas formas distintas. En este
+contexto, la calidad del modelo depende en gran medida de decisiones de
+diseño como la profundidad, el tamaño de las representaciones, la
+regularización y la tasa de aprendizaje.
+
+Ajustar estos hiperparámetros es costoso: cada configuración candidata
+exige entrenar un modelo. La búsqueda manual depende de la experiencia
+del investigador, y la búsqueda en rejilla crece exponencialmente con el
+número de hiperparámetros. La búsqueda aleatoria es una alternativa
+sólida y difícil de superar \cite{bergstra2012random}, pero no aprovecha
+la información de las evaluaciones anteriores.
+
+Los algoritmos de optimización por colonia de hormigas (ACO)
+\cite{dorigo2004aco} construyen soluciones de forma incremental guiados
+por un rastro de feromona que acumula la experiencia de la colonia. En
+particular, \mmas{} (MMAS) \cite{stutzle2000mmas} limita la feromona a un
+intervalo acotado para evitar el estancamiento prematuro de la búsqueda,
+lo que lo hace atractivo cuando el número de evaluaciones es pequeño.
+
+Las contribuciones de este trabajo son:
+\begin{itemize}
+  \item Un sistema de traducción del inglés al latín y al griego antiguo
+  basado en un Transformer entrenado desde cero con tokenizadores de
+  subpalabras propios.
+  \item La formulación del ajuste de hiperparámetros como la construcción
+  de un camino en un grafo discretizado, resuelto con MMAS.
+  \item Una comparación con igual presupuesto entre MMAS, la búsqueda
+  aleatoria y una configuración por defecto, con pruebas de significancia
+  estadística.
+  \item Un análisis de la transferencia de la configuración ajustada en
+  latín al griego antiguo.
+\end{itemize}
+
+% =====================================================================
+\section{Trabajo relacionado}
+
+\subsection{Traducción automática neuronal}
+El Transformer \cite{vaswani2017attention} sustituyó a las redes
+recurrentes mediante mecanismos de atención, y es la base de herramientas
+como Marian \cite{junczys2018marian}, cuya arquitectura está disponible en
+la biblioteca Transformers \cite{wolf2020transformers}. La segmentación en
+subpalabras mediante \emph{byte pair encoding} (BPE)
+\cite{sennrich2016bpe}, implementada en SentencePiece
+\cite{kudo2018sentencepiece}, permite modelar vocabularios abiertos, lo
+que resulta especialmente útil en lenguas de morfología rica.
+
+\subsection{Optimización por colonia de hormigas}
+ACO \cite{dorigo2004aco} se inspira en el comportamiento de forrajeo de
+las hormigas, que depositan feromona en los caminos y prefieren los
+caminos con más feromona. MMAS \cite{stutzle2000mmas} introduce dos
+modificaciones al Ant System original: solo la mejor hormiga deposita
+feromona, y la feromona se acota en $[\tau_{\min}, \tau_{\max}]$; con
+ellas se encuentra entre los algoritmos de mejor desempeño en problemas
+como el del agente viajero y el de asignación cuadrática. Para dominios
+continuos, ACO$_\mathbb{R}$ \cite{socha2008acor} representa la feromona
+como un archivo de soluciones y muestrea de mezclas de gaussianas, y
+ACO$_\text{MV}$ \cite{liao2014acomv} lo extiende a problemas con
+variables continuas, ordinales y categóricas.
+
+\subsection{ACO para el diseño de redes neuronales}
+DeepSwarm \cite{byla2019deepswarm} aplica ACO a la búsqueda de
+arquitecturas de redes convolucionales: cada hormiga recorre un grafo de
+capas candidatas, el camino completo define una red que se evalúa, y la
+mejor hormiga refuerza su camino. Nuestro trabajo adopta la misma
+representación de grafo de opciones, pero la aplica al ajuste de
+hiperparámetros de un modelo de traducción.
+
+\subsection{Evaluación de la traducción}
+BLEU \cite{papineni2002bleu} mide la coincidencia de $n$-gramas de
+palabras, mientras que \chrf{} \cite{popovic2015chrf} usa $n$-gramas de
+caracteres y otorga crédito parcial a formas flexionadas distintas de la
+referencia. Seguimos las recomendaciones de sacreBLEU
+\cite{post2018sacrebleu} para reportar puntuaciones reproducibles, y el
+remuestreo \emph{bootstrap} pareado \cite{koehn2004bootstrap} para la
+significancia estadística.
+
+% =====================================================================
+\section{Datos y preprocesamiento}
+
+\subsection{Corpus}
+Se usan dos corpus paralelos públicos: latín--inglés
+\cite{dataset_latin} y griego antiguo--inglés \cite{dataset_griego}. La
+Tabla~\ref{tab:corpus} resume su tamaño tras el preprocesamiento.
+
+\subsection{Normalización y partición}
+Cada oración se normaliza a la forma Unicode NFC, se colapsan los espacios
+en blanco y se convierte a minúsculas. Los pares nulos y duplicados se
+eliminan \emph{antes} de la partición, para evitar fuga de información
+entre particiones. Cada corpus se divide aleatoriamente (semilla 42) en
+80\,\% entrenamiento, 10\,\% validación y 10\,\% prueba.
+
+\subsection{Tokenización}
+Para cada par de lenguas se entrena un tokenizador SentencePiece BPE
+conjunto, sobre ambos lados del corpus de entrenamiento, con cobertura de
+caracteres completa, sin normalización adicional y con \emph{byte
+fallback} para evitar símbolos desconocidos. El tamaño del vocabulario se
+eligió comparando la fertilidad (tokens por palabra) en validación para
+varios tamaños (Tabla~\ref{tab:tokenizadores}): 8\,000 para latín y
+16\,000 para griego (este último entrenado sobre una muestra de 300\,000
+oraciones). Los símbolos \texttt{<2en>}, \texttt{<2la>} y \texttt{<2el>}
+se reservan como etiquetas de dirección indivisibles para una futura
+versión bidireccional.
+
+\subsection{Filtrado por longitud}
+Se descartan los pares con más de 160 tokens (latín) o 128 tokens
+(griego) en cualquiera de los lados. En entrenamiento se descartan además
+los pares cuya razón de longitudes supera 3, como indicio de mala
+alineación; este filtro no se aplica a validación ni a prueba, para no
+facilitar artificialmente la evaluación.
+
+\begin{table}[t]
+\centering
+\caption{Tamaño de los corpus (pares de oraciones) tras deduplicación,
+partición y filtrado por longitud}
+\label{tab:corpus}
+\begin{tabular}{lrrr}
+\toprule
+Corpus & Entrenamiento & Validación & Prueba \\
+\midrule
+Latín--inglés  & 78\,463 & 9\,821 & 9\,812 \\
+Griego--inglés & 1\,101\,526 & 139\,093 & 138\,900 \\
+\midrule
+Griego (submuestra) & 300\,000 & -- & -- \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% NOTA: cifras preliminares, obtenidas con tokenizadores sin etiquetas
+% reservadas. Recalcular tras reentrenar (las diferencias deben ser mínimas).
+\begin{table}[t]
+\centering
+\caption{Fertilidad (tokens por palabra) en validación según el tamaño
+del vocabulario. En negrita, el tamaño elegido. \pendiente{recalcular}}
+\label{tab:tokenizadores}
+\begin{tabular}{llrr}
+\toprule
+Par & Vocabulario & Lengua clásica & Inglés \\
+\midrule
+\multirow{3}{*}{la--en} & 4\,000  & 2.012 & 1.526 \\
+                        & \textbf{8\,000}  & \textbf{1.756} & \textbf{1.365} \\
+                        & 16\,000 & 1.551 & 1.260 \\
+\midrule
+\multirow{3}{*}{el--en} & 8\,000  & 1.565 & 1.364 \\
+                        & \textbf{16\,000} & \textbf{1.346} & \textbf{1.233} \\
+                        & 32\,000 & 1.220 & 1.166 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% =====================================================================
+\section{Modelo de traducción}
+
+Se usa la arquitectura Marian \cite{junczys2018marian}, un Transformer
+codificador--decodificador \cite{vaswani2017attention}, en su
+implementación de la biblioteca Transformers \cite{wolf2020transformers},
+\emph{inicializada aleatoriamente} (sin preentrenamiento). Las matrices de
+\emph{embeddings} del codificador, del decodificador y de la capa de
+salida se comparten, dado que el vocabulario es conjunto. Los
+identificadores especiales coinciden con los del tokenizador
+(desconocido 0, inicio 1, fin 2, relleno 3).
+
+El entrenamiento usa un bucle propio con AdamW, calendario de raíz
+cuadrada inversa con calentamiento, precisión mixta (fp16) y lotes
+formados por número de tokens (aproximadamente 8\,000 tokens por lote).
+Durante la búsqueda, cada candidato se entrena con un \emph{presupuesto
+fijo de tokens objetivo}, equivalente a unas dos épocas del corpus de
+latín, con la misma semilla para todos los candidatos. Un presupuesto en
+tokens, a diferencia de uno en tiempo o en pasos, no favorece a los
+modelos más rápidos ni a los de lotes más grandes.
+
+% =====================================================================
+\section{Ajuste de hiperparámetros con MMAS}
+
+\subsection{Espacio de búsqueda como grafo}
+El espacio de búsqueda se discretiza en nueve hiperparámetros
+(Tabla~\ref{tab:espacio}). Se representa como un grafo por capas: la capa
+$h$ contiene un nodo por cada valor $v \in V_h$ del hiperparámetro $h$.
+Una hormiga construye una configuración recorriendo las capas en orden y
+eligiendo un nodo en cada una. El espacio contiene
+$3 \cdot 2 \cdot 5 \cdot 5 \cdot 2 \cdot 4 \cdot 5 \cdot 4 \cdot 3 = 144\,000$
+configuraciones, todas válidas, pues cada dimensión del modelo es
+divisible entre cada número de cabezas.
+
+\begin{table}[t]
+\centering
+\caption{Espacio de búsqueda discretizado}
+\label{tab:espacio}
+\begin{tabular}{ll}
+\toprule
+Hiperparámetro & Valores \\
+\midrule
+Dimensión del modelo $d_\text{model}$ & 256, 384, 512 \\
+Cabezas de atención & 4, 8 \\
+Capas del codificador & 2, 3, 4, 5, 6 \\
+Capas del decodificador & 2, 3, 4, 5, 6 \\
+Multiplicador de la red \emph{feed-forward} & 2, 4 \\
+\emph{Dropout} & 0.0, 0.1, 0.2, 0.3 \\
+Tasa de aprendizaje & $10^{-4}$, $2{\cdot}10^{-4}$, $3{\cdot}10^{-4}$, $5{\cdot}10^{-4}$, $10^{-3}$ \\
+Pasos de calentamiento & 500, 1\,000, 2\,000, 4\,000 \\
+Suavizado de etiquetas & 0.0, 0.1, 0.2 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Función de aptitud}
+La aptitud $f(s) \in [0, 1]$ de una configuración $s$ es el \chrf{}
+(dividido entre 100) obtenido con decodificación voraz sobre una muestra
+fija de 1\,000 pares de validación, tras entrenar con el presupuesto fijo
+de tokens. Las configuraciones con más de 40 millones de parámetros, o
+que agotan la memoria de la GPU, reciben aptitud 0. Todas las
+evaluaciones se almacenan en una caché, de modo que un camino repetido no
+se vuelve a entrenar.
+
+\subsection{Construcción de soluciones}
+Sea $\tau_{h,v}$ la feromona del valor $v$ en la capa $h$. La hormiga
+elige el valor $v$ con probabilidad
+\begin{equation}
+  p_{h,v} = \frac{\tau_{h,v}^{\alpha}}{\sum_{u \in V_h} \tau_{h,u}^{\alpha}},
+  \label{eq:transicion}
+\end{equation}
+con $\alpha = 1$. No se usa información heurística ($\beta = 0$), para no
+introducir conocimiento previo que favorezca a MMAS frente a la búsqueda
+aleatoria. La feromona inicial es uniforme, por lo que la primera
+iteración de MMAS equivale a un muestreo aleatorio.
+
+\subsection{Actualización de la feromona}
+Tras evaluar las $m$ hormigas de la iteración, la feromona se evapora y
+solo la mejor hormiga $s^{\text{best}}$ deposita:
+\begin{equation}
+  \tau_{h,v} \leftarrow (1 - \rho)\,\tau_{h,v} +
+  \begin{cases}
+    f(s^{\text{best}}) & \text{si } v \in s^{\text{best}},\\
+    0 & \text{en otro caso,}
+  \end{cases}
+  \label{eq:actualizacion}
+\end{equation}
+donde $s^{\text{best}}$ es la mejor hormiga de la iteración, y en las
+últimas iteraciones la mejor encontrada hasta el momento
+$s^{\text{gb}}$. Finalmente, la feromona se acota:
+\begin{equation}
+  \tau_{h,v} \leftarrow \min\bigl(\tau_{\max}, \max(\tau_{\min}, \tau_{h,v})\bigr),
+  \quad
+  \tau_{\max} = \frac{f(s^{\text{gb}})}{\rho},
+  \quad
+  \tau_{\min} = \frac{\tau_{\max}}{a}.
+  \label{eq:cotas}
+\end{equation}
+Las cotas impiden que la probabilidad de un valor llegue a cero, lo que
+mantiene la exploración con un número reducido de evaluaciones. El
+Algoritmo~\ref{alg:mmas} resume el procedimiento.
+
+\begin{algorithm}[t]
+\caption{MMAS para el ajuste de hiperparámetros}
+\label{alg:mmas}
+\begin{algorithmic}[1]
+\Require capas $\{V_h\}$, hormigas $m$, iteraciones $T$, $\alpha$, $\rho$, $a$
+\Ensure mejor configuración $s^{\text{gb}}$
+\State $\tau_{h,v} \gets 1$ para todo $h, v$; \quad $s^{\text{gb}} \gets \varnothing$
+\For{$t = 1$ \textbf{to} $T$}
+  \For{$k = 1$ \textbf{to} $m$}
+    \State construir $s_k$ eligiendo $v \in V_h$ con la Ec.~\eqref{eq:transicion}
+    \If{$s_k$ está en la caché}
+       \State reutilizar $f(s_k)$ y construir una hormiga adicional
+    \Else
+       \State entrenar y evaluar: $f(s_k)$; guardar en la caché
+    \EndIf
+  \EndFor
+  \State actualizar $s^{\text{gb}}$; elegir $s^{\text{best}}$ (iteración o global)
+  \State evaporar y depositar con la Ec.~\eqref{eq:actualizacion}
+  \State acotar con la Ec.~\eqref{eq:cotas}
+\EndFor
+\State \Return $s^{\text{gb}}$
+\end{algorithmic}
+\end{algorithm}
+
+% =====================================================================
+\section{Configuración experimental}
+
+\subsection{Métodos comparados}
+\begin{itemize}
+  \item \textbf{Por defecto}: $d_\text{model}=512$, 8 cabezas, 3+3 capas,
+  multiplicador 4, \emph{dropout} 0.1, tasa de aprendizaje
+  $5{\cdot}10^{-4}$, 2\,000 pasos de calentamiento y suavizado 0.1.
+  \item \textbf{Búsqueda aleatoria}: muestreo uniforme sobre la misma
+  rejilla de la Tabla~\ref{tab:espacio}.
+  \item \textbf{MMAS}: $m = 8$ hormigas, $T = 5$ iteraciones,
+  $\alpha = 1$, $\beta = 0$, $\rho = 0.2$, $a = $ \pendiente{valor de $a$}.
+\end{itemize}
+La búsqueda aleatoria y MMAS disponen del mismo presupuesto de 40
+evaluaciones, la misma función de aptitud, las mismas semillas, el mismo
+tope de parámetros y la misma muestra de validación.
+
+\subsection{Búsqueda sobre latín y transferencia al griego}
+La búsqueda se ejecuta sobre el par inglés$\to$latín, cuyo tamaño permite
+decenas de evaluaciones. La mejor configuración se transfiere sin cambios
+al par inglés$\to$griego, entrenado sobre una submuestra fija de 300\,000
+pares por un máximo de 6 épocas.
+
+\subsection{Entrenamiento final y evaluación}
+La configuración por defecto, la mejor de la búsqueda aleatoria y la
+mejor de MMAS se entrenan hasta convergencia, con parada temprana según
+el \chrf{} sobre la validación completa. El conjunto de prueba se usa una
+sola vez, al final. La decodificación usa búsqueda en haz de tamaño 5 y
+penalización de longitud 1.0. Se reportan \chrf{} (métrica principal) y
+BLEU con sacreBLEU \cite{post2018sacrebleu} sobre el texto destokenizado,
+y la significancia de las diferencias se estima con \emph{bootstrap}
+pareado \cite{koehn2004bootstrap}.
+
+\subsection{Infraestructura}
+MMAS y el entrenamiento final de latín se ejecutan en una GPU NVIDIA RTX
+4060 Laptop (8\,GB); la búsqueda aleatoria y los modelos griegos, en GPU
+NVIDIA T4 de Google Colab. Cada resultado registra el \emph{commit} del
+código, la huella del tokenizador, la GPU y las versiones de las
+bibliotecas. \pendiente{versiones de PyTorch, Transformers, SentencePiece
+y sacreBLEU}.
+
+% =====================================================================
+\section{Resultados}
+
+\subsection{Búsqueda de hiperparámetros}
+La Fig.~\ref{fig:convergencia} muestra la mejor aptitud alcanzada en
+función del número de evaluaciones para MMAS y la búsqueda aleatoria, y
+la Fig.~\ref{fig:feromona} la evolución de la feromona.
+\pendiente{describir la convergencia y la configuración encontrada}.
+
+\begin{figure}[t]
+\centering
+\figuraopcional{figuras/convergencia.pdf}{\columnwidth}
+\caption{Mejor aptitud (\chrf{} en validación) frente al número de
+evaluaciones en inglés$\to$latín.}
+\label{fig:convergencia}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\figuraopcional{figuras/feromona.pdf}{\columnwidth}
+\caption{Distribución de la feromona por hiperparámetro al final de cada
+iteración de MMAS.}
+\label{fig:feromona}
+\end{figure}
+
+\begin{table}[t]
+\centering
+\caption{Mejores configuraciones encontradas}
+\label{tab:configuraciones}
+\begin{tabular}{lccc}
+\toprule
+Hiperparámetro & Por defecto & Aleatoria & MMAS \\
+\midrule
+$d_\text{model}$ & 512 & -- & -- \\
+Cabezas & 8 & -- & -- \\
+Capas cod./dec. & 3/3 & -- & -- \\
+Multiplicador FFN & 4 & -- & -- \\
+\emph{Dropout} & 0.1 & -- & -- \\
+Tasa de aprendizaje & $5{\cdot}10^{-4}$ & -- & -- \\
+Calentamiento & 2\,000 & -- & -- \\
+Suavizado & 0.1 & -- & -- \\
+Parámetros (M) & -- & -- & -- \\
+\chrf{} validación (búsqueda) & -- & -- & -- \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Evaluación en prueba}
+\pendiente{describir la Tabla~\ref{tab:resultados}}.
+
+\begin{table}[t]
+\centering
+\caption{Resultados en el conjunto de prueba (haz 5). $^\dagger$:
+diferencia significativa respecto a MMAS ($p < 0.05$, \emph{bootstrap}
+pareado)}
+\label{tab:resultados}
+\begin{tabular}{llrr}
+\toprule
+Par & Configuración & \chrf{} & BLEU \\
+\midrule
+\multirow{3}{*}{en$\to$la} & Por defecto & -- & -- \\
+                           & Aleatoria   & -- & -- \\
+                           & MMAS        & -- & -- \\
+\midrule
+\multirow{2}{*}{en$\to$el} & Por defecto & -- & -- \\
+                           & MMAS (transferida) & -- & -- \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Análisis cualitativo}
+\pendiente{unas 10 traducciones de ejemplo y análisis de errores:
+desinencias, orden de palabras, nombres propios}.
+
+% =====================================================================
+\section{Discusión}
+
+\pendiente{interpretar los resultados}.
+
+\textbf{Limitaciones.} El presupuesto corto de la función de aptitud
+favorece configuraciones que aprenden rápido, que no necesariamente son
+las mejores a convergencia; por ello los finalistas se entrenan hasta
+convergencia antes de compararlos. La rejilla se eligió a mano, y con
+40 evaluaciones solo se explora una fracción mínima de las 144\,000
+configuraciones. La búsqueda aleatoria y MMAS se ejecutaron en GPU
+distintas, lo que se mitigó con semillas fijas, presupuesto en tokens y
+la reevaluación de los mejores candidatos aleatorios en la misma GPU que
+MMAS. El texto se normaliza a minúsculas, por lo que las métricas no
+distinguen mayúsculas. El griego se entrenó sobre una submuestra de
+300\,000 pares, y su filtrado conserva solo el 91\,\% de los pares, lo
+que sugiere ruido de alineación.
+
+% =====================================================================
+\section{Conclusiones y trabajo futuro}
+
+\pendiente{conclusiones}.
+
+Como trabajo futuro se propone sustituir la discretización manual por
+ACO$_\text{MV}$ \cite{liao2014acomv}, que trata de forma nativa variables
+continuas, ordinales y categóricas; repetir la búsqueda con varias
+semillas; ajustar directamente sobre el griego; y entrenar un modelo
+bidireccional usando las etiquetas de dirección ya reservadas en los
+tokenizadores.
+
+% =====================================================================
+\bibliographystyle{IEEEtran}
+\bibliography{referencias}
+
+\end{document}
