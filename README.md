@@ -212,28 +212,61 @@ python -m ipykernel install --user --name mi-entorno --display-name "Python (.ve
 ```
 
 Una vez completados estos pasos, abrir el notebook en Visual Studio Code, seleccionar el kernel `Python (.venv)` y comenzar a trabajar.
-## 11. Búsqueda de hiperparámetros con MMAS
+## 11. Búsqueda de hiperparámetros
 
 El código de la búsqueda está en el paquete `traduccion/`:
 
 - `traduccion/mmas.py`: MAX–MIN Ant System puro (sin PyTorch): espacio discretizado, construcción de caminos, evaporación, depósito, cotas de feromona y muestreo uniforme sobre la rejilla.
-- `traduccion/busqueda.py`: caché de aptitud en JSON, aptitud falsa con óptimo conocido y registro de la feromona por iteración.
-- `buscar.py`: script de línea de comandos.
+- `traduccion/busqueda.py`: caché de aptitud en JSON, aptitud falsa con óptimo conocido, registro de la feromona por iteración, líneas base (configuración por defecto y búsqueda aleatoria por fragmentos), huella por resultado y fusión de JSON.
+- `buscar.py`: script para lanzar la búsqueda.
+- `fusionar.py`: script para unir los JSON de varias máquinas.
 
-Lanzar una búsqueda MMAS con la aptitud falsa (no requiere GPU):
+Hay tres métodos, todos con la misma aptitud, la misma semilla y el mismo formato de JSON:
 
 ```bash
+# MMAS (8 hormigas × 5 iteraciones = 40 evaluaciones)
 python buscar.py --metodo mmas --semilla 0 --par en-la --aptitud falsa
+
+# Configuración por defecto del PRD (d=512, 8 cabezas, 3+3 capas, FFN×4, lr 5e-4,
+# dropout 0.1, suavizado 0.1, calentamiento 2000): una sola evaluación
+python buscar.py --metodo defecto --semilla 0 --par en-la --aptitud falsa
+
+# Búsqueda aleatoria uniforme sobre la misma rejilla, con el mismo presupuesto (40)
+python buscar.py --metodo aleatoria --semilla 0 --par en-la --aptitud falsa
 ```
 
-Opciones: `--par` (`en-la` o `en-el`), `--aptitud` (`falsa` o `real`; la real depende del issue 003 y por ahora termina con un error explicativo), `--salida` (carpeta de resultados, por defecto `resultados/`), `--hormigas` (8) e `--iteraciones` (5).
+Opciones: `--par` (`en-la` o `en-el`), `--aptitud` (`falsa` o `real`; la real depende del issue 003 y por ahora termina con un error explicativo), `--salida` (carpeta de resultados, por defecto `resultados/`), `--hormigas` (8) e `--iteraciones` (5) para MMAS, y `--presupuesto` (por defecto hormigas × iteraciones), `--fragmento` y `--fragmentos` para la aleatoria.
 
-Se escriben dos archivos en `resultados/<par>/<aptitud>/`:
+### Búsqueda aleatoria repartida en varias cuentas
 
-- `cache_aptitud.json`: un resultado por configuración evaluada (se guarda tras cada evaluación).
+La secuencia de configuraciones aleatorias depende solo de la semilla y del presupuesto; cada fragmento evalúa por turnos su parte (la evaluación *k* va al fragmento ((*k* − 1) mod *n*) + 1) y escribe su propio JSON. Por ejemplo, con 3 cuentas de Colab, cada una ejecuta su fragmento:
+
+```bash
+python buscar.py --metodo aleatoria --semilla 0 --par en-la --fragmento 1 --fragmentos 3
+python buscar.py --metodo aleatoria --semilla 0 --par en-la --fragmento 2 --fragmentos 3
+python buscar.py --metodo aleatoria --semilla 0 --par en-la --fragmento 3 --fragmentos 3
+```
+
+Después se reúnen los tres JSON en una carpeta y se fusionan:
+
+```bash
+python fusionar.py "resultados/en-la/falsa/aleatoria_semilla0_fragmento*de3.json" --salida resultados/en-la/falsa/aleatoria_semilla0.json
+```
+
+La fusión conserva una sola vez las configuraciones repetidas y **no mezcla** los resultados cuya huella no coincide con la mayoritaria (commit de git, MD5 del tokenizador, tamaño del conjunto de entrenamiento, par o tipo de aptitud): los reporta y termina con código 1. Unidos, los fragmentos dan exactamente las mismas configuraciones y números de evaluación que la búsqueda sin repartir.
+
+### Archivos de resultados
+
+Se escriben en `resultados/<par>/<aptitud>/`, todos con el formato `{"resultados": {configuración canónica: registro}}`:
+
+- `cache_aptitud.json`: resultados de MMAS (se guarda tras cada evaluación).
 - `feromona_mmas_semilla<semilla>.json`: la matriz de feromona tras cada iteración y el historial de hormigas.
+- `defecto_semilla<semilla>.json`: la configuración por defecto.
+- `aleatoria_semilla<semilla>.json` o `aleatoria_semilla<semilla>_fragmento<k>de<n>.json`: la búsqueda aleatoria.
 
-Si el proceso se interrumpe, basta con relanzar el mismo comando: continúa desde la caché sin repetir evaluaciones.
+Cada registro incluye la configuración, la aptitud, el tiempo, el estado, el `metodo`, el número de `evaluacion` (para trazar la mejor aptitud frente a evaluaciones con `busqueda.curva_mejor_aptitud`) y la `huella`: commit de git (y si el árbol tenía cambios sin confirmar), MD5 del tokenizador, tamaño del entrenamiento, GPU, versión de Python, plataforma y versiones de las bibliotecas. Con la aptitud falsa, el tokenizador, el tamaño del entrenamiento y la GPU quedan en `null`; la aptitud real (issue 003) debe rellenarlos con `busqueda.calcular_huella(...)`.
+
+Si el proceso se interrumpe, basta con relanzar el mismo comando: continúa desde el JSON sin repetir evaluaciones.
 
 ## 12. Pruebas
 
