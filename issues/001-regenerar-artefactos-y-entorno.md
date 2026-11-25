@@ -16,12 +16,12 @@ Ver PRD: secciones *Datos y preprocesamiento* y *Reproducibilidad*.
 
 ## Criterios de aceptación
 
-- [ ] El notebook de preprocesamiento corre completo sin errores en el entorno del dueño de la GPU.
-- [ ] La celda final muestra las etiquetas `<2en>`/`<2la>` y `<2en>`/`<2el>` con identificadores propios y las comprobaciones de reconstrucción dan `True` en entrada y salida.
-- [ ] Las carpetas antiguas invertidas de datos se eliminaron; solo existen las de inglés → latín e inglés → griego.
+- [x] El notebook de preprocesamiento corre completo sin errores en el entorno del dueño de la GPU.
+- [x] La celda final muestra las etiquetas `<2en>`/`<2la>` y `<2en>`/`<2el>` con identificadores propios y las comprobaciones de reconstrucción dan `True` en entrada y salida.
+- [x] Las carpetas antiguas invertidas de datos se eliminaron; solo existen las de inglés → latín e inglés → griego.
 - [x] Las dependencias tienen versiones exactas y el README explica la instalación de PyTorch con CUDA.
-- [ ] En la 4060, `torch.cuda.is_available()` devuelve `True` dentro del entorno virtual.
-- [ ] La carpeta compartida de Drive contiene los dos tokenizadores elegidos y los datos tokenizados, con sus MD5 anotados.
+- [x] En la 4060, `torch.cuda.is_available()` devuelve `True` dentro del entorno virtual.
+- [x] La carpeta compartida de Drive contiene los dos tokenizadores elegidos y los datos tokenizados, con sus MD5 anotados.
 - [ ] Los cambios del notebook, dependencias, `.gitignore`, PRD y artículo están confirmados en git.
 
 ## Bloqueado por
