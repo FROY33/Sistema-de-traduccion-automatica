@@ -298,3 +298,34 @@ Si el proceso se interrumpe, basta con relanzar el mismo comando: continúa desd
 ```bash
 python -m pytest
 ```
+
+## 13. Ejecutor en Colab (integrantes sin GPU)
+
+`notebooks/ejecutor_colab.ipynb` permite aportar cómputo desde Google Colab sin configurar nada a mano. La lógica está en `traduccion/ejecutor.py` (probada en `tests/test_ejecutor.py`); el notebook solo la orquesta.
+
+1. Añadir a "Mi unidad" un acceso directo a la carpeta compartida del equipo. Debe tener esta estructura (los artefactos los sube el dueño de la GPU, issue 001):
+
+```
+<carpeta compartida>/
+  artefactos/tok_la_8000.model
+  artefactos/tok_el_16000.model
+  artefactos/datos/en_la/   (train, validation, test)
+  artefactos/datos/en_el/
+  resultados/               (lo crea el ejecutor: JSON de buscar.py)
+  ejecuciones/              (lo crea el ejecutor: un registro por ejecución)
+```
+
+2. Abrir el notebook en Colab (*Archivo → Abrir notebook → GitHub*) y elegir *Entorno de ejecución → Cambiar tipo de entorno → GPU T4*.
+3. Editar solo la celda de **configuración**: `CARPETA_DRIVE`, `COMMIT` (el mismo para todas las cuentas), `METODO`, `PAR`, `SEMILLA`, `FRAGMENTO`/`FRAGMENTOS` (cada cuenta, el suyo) y `APTITUD`. En `HUELLA_ESPERADA` se copian el MD5 del tokenizador, el MD5 de la carpeta de datos y su tamaño en bytes anotados en el issue 001.
+4. *Entorno de ejecución → Ejecutar todas*. El notebook monta Drive, clona el repositorio en el commit fijado y comprueba que `HEAD` coincide, instala las dependencias fijadas **sin reinstalar PyTorch** (avisa si la versión de Colab difiere; queda en la huella), verifica la GPU y la huella de los artefactos (se detiene si no coinciden) y lanza `buscar.py` con `--salida` en Drive.
+5. Si Colab corta la sesión, volver a ejecutar todo con la misma configuración: la caché JSON en Drive se reescribe tras cada evaluación y la búsqueda continúa sin repetir evaluaciones.
+
+La huella de los artefactos se puede calcular en el equipo que los generó con:
+
+```bash
+python -c "from pathlib import Path; from traduccion import ejecutor; r = ejecutor.RutasEjecutor(Path('CARPETA')); print(ejecutor.huella_artefactos(r, 'en-la'))"
+```
+
+donde `CARPETA` contiene `artefactos/` con la estructura de arriba.
+
+Fuera de Colab el notebook entra en **modo local**: simula Drive en una carpeta temporal, clona el repositorio local en su `HEAD` y crea artefactos simulados; sirve para probar el flujo completo con `APTITUD = "falsa"` sin GPU. El entrenamiento completo (`TAREA = "entrenamiento"`) queda pendiente del issue 009. Azure no se usa: las cuentas del equipo no tienen cuota de GPU (issue 002).
