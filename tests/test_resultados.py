@@ -59,9 +59,23 @@ def test_curva_aleatoria_se_lee_de_la_cache():
     assert resultados.mejor_por_metodo(cache)["aleatoria"]["aptitud"] == 0.6
 
 
+def test_une_fragmentos_de_aleatoria_y_defecto(entrada):
+    for fragmento in (1, 2, 3):
+        busqueda.buscar_aleatoria("en-la", 0, "falsa", entrada, presupuesto=12, fragmento=fragmento, fragmentos=3)
+    defecto = busqueda.evaluar_defecto("en-la", 0, "falsa", entrada)
+    registros = resultados.cargar_cache(entrada, "en-la", "falsa")
+    curvas = resultados.curvas_convergencia(registros)
+    sin_repartir = [a for _, a in busqueda.curva_mejor_aptitud(
+        busqueda.buscar_aleatoria("en-la", 0, "falsa", entrada / "otra", presupuesto=12)
+    )]
+    assert curvas["aleatoria"][0] == sin_repartir
+    assert resultados.registro_defecto(registros)["aptitud"] == defecto["aptitud"]
+    assert set(resultados.mejor_por_metodo(registros)) == {"aleatoria", "mmas"}
+
+
 def test_faltan_resultados_avisa_sin_fallar(tmp_path):
     with pytest.warns(UserWarning):
-        assert resultados.cargar_cache(tmp_path, "en-la", "real") == {}
+        assert resultados.cargar_cache(tmp_path, "en-la", "real") == []
     with pytest.warns(UserWarning):
         assert resultados.cargar_registros_feromona(tmp_path, "en-la", "real") == {}
     with pytest.warns(UserWarning):

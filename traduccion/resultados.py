@@ -7,8 +7,10 @@ y ``figura_feromona`` (matplotlib se importa solo ahí).
 
 Estructura de la carpeta de entrada (la que escribe ``buscar.py --salida``)::
 
-    <entrada>/<par>/<tipo_aptitud>/cache_aptitud.json            # caché compartida
+    <entrada>/<par>/<tipo_aptitud>/cache_aptitud.json            # evaluaciones de MMAS
     <entrada>/<par>/<tipo_aptitud>/feromona_mmas_semilla<k>.json # registro de MMAS
+    <entrada>/<par>/<tipo_aptitud>/defecto_semilla<k>.json       # configuración por defecto
+    <entrada>/<par>/<tipo_aptitud>/aleatoria_semilla<k>*.json    # búsqueda aleatoria (o sus fragmentos)
     <entrada>/prueba/resultados_prueba.json                      # evaluación final (issue 009)
     <entrada>/prueba/ejemplos_<par>.json                         # traducciones de ejemplo (issue 009)
 
@@ -93,13 +95,42 @@ def detectar_tipo_aptitud(entrada: str | Path, par: str = "en-la") -> str | None
     return None
 
 
-def cargar_cache(entrada: str | Path, par: str, tipo_aptitud: str) -> dict[str, dict[str, Any]]:
-    """Registros de la caché de aptitud (vacío si no existe)."""
-    ruta = Path(entrada) / par / tipo_aptitud / "cache_aptitud.json"
-    if not ruta.exists():
-        avisar(f"No existe la caché de aptitud {ruta}.")
-        return {}
-    return _leer_json(ruta).get("resultados", {})
+def cargar_cache(entrada: str | Path, par: str, tipo_aptitud: str) -> list[dict[str, Any]]:
+    """Todos los registros de evaluación de ``<entrada>/<par>/<tipo_aptitud>``.
+
+    Une la caché de MMAS (``cache_aptitud.json``), la configuración por defecto
+    (``defecto_semilla<s>.json``), la búsqueda aleatoria
+    (``aleatoria_semilla<s>[_fragmento<k>de<n>].json``) y cualquier JSON fusionado
+    con el mismo formato ``{"resultados": {clave: registro}}``. Un mismo registro
+    presente en varios archivos (p. ej. fragmentos y su fusión) se cuenta una vez.
+    Devuelve una lista vacía (con aviso) si no hay ninguno.
+    """
+    base = Path(entrada) / par / tipo_aptitud
+    registros: list[dict[str, Any]] = []
+    vistos: set[tuple] = set()
+    for ruta in sorted(base.glob("*.json")):
+        if ruta.name.startswith("feromona_"):
+            continue
+        datos = _leer_json(ruta)
+        if not isinstance(datos, dict) or not isinstance(datos.get("resultados"), dict):
+            continue
+        for clave, registro in datos["resultados"].items():
+            identidad = (clave, metodo_de(registro), str(semilla_de(registro)), registro.get("evaluacion"))
+            if identidad not in vistos:
+                vistos.add(identidad)
+                registros.append(dict(registro))
+    if not registros:
+        avisar(f"No hay registros de evaluación en {base}.")
+    return registros
+
+
+#: Una lista de registros o un diccionario clave canónica → registro (caché).
+RegistrosEntrada = Iterable[Mapping[str, Any]] | Mapping[str, Mapping[str, Any]]
+
+
+def _lista(registros: RegistrosEntrada) -> list[Mapping[str, Any]]:
+    """Acepta una lista de registros o un diccionario clave → registro (caché)."""
+    return list(registros.values()) if isinstance(registros, Mapping) else list(registros)
 
 
 def cargar_registros_feromona(entrada: str | Path, par: str, tipo_aptitud: str) -> dict[int, dict[str, Any]]:
@@ -126,14 +157,15 @@ def semilla_de(registro: Mapping[str, Any]) -> Any:
     return origen.get("semilla", registro.get("semilla"))
 
 
-def evaluaciones_por_corrida(cache: Mapping[str, Mapping[str, Any]], metodo: str) -> dict[Any, list[dict[str, Any]]]:
+def evaluaciones_por_corrida(cache: RegistrosEntrada, metodo: str) -> dict[Any, list[dict[str, Any]]]:
     """Registros de un método agrupados por semilla y ordenados por número de evaluación.
 
-    Si una corrida se repartió en fragmentos, se espera que la fusión (issue 005)
-    haya dejado un único ``evaluacion`` global por semilla.
+    En la búsqueda aleatoria repartida en fragmentos, ``evaluacion`` es la
+    posición en la secuencia completa (issue 005), así que los fragmentos se
+    unen sin más.
     """
     corridas: dict[Any, list[dict[str, Any]]] = {}
-    for registro in cache.values():
+    for registro in _lista(cache):
         if metodo_de(registro) != metodo or registro.get("evaluacion") is None:
             continue
         corridas.setdefault(semilla_de(registro), []).append(dict(registro))
@@ -151,7 +183,7 @@ def mejor_acumulada(aptitudes: Iterable[float]) -> list[float]:
 
 
 def curvas_convergencia(
-    cache: Mapping[str, Mapping[str, Any]],
+    cache: RegistrosEntrada,
     registros_mmas: Mapping[int, Mapping[str, Any]] | None = None,
 ) -> dict[str, dict[Any, list[float]]]:
     """Curvas de mejor aptitud frente a evaluaciones: método → semilla → curva.
@@ -183,30 +215,29 @@ def curvas_convergencia(
     return curvas
 
 
-def registro_de_configuracion(
-    cache: Mapping[str, Mapping[str, Any]], configuracion: Mapping[str, Any]
-) -> dict[str, Any] | None:
-    """Registro de la caché para una configuración concreta (o ``None``)."""
-    clave = json.dumps(dict(configuracion), sort_keys=True, separators=(",", ":"))
-    registro = cache.get(clave)
-    return dict(registro) if registro is not None else None
+def registro_defecto(cache: RegistrosEntrada) -> dict[str, Any] | None:
+    """Registro de la configuración por defecto (el de menor semilla del método ``defecto``).
 
-
-def registro_defecto(cache: Mapping[str, Mapping[str, Any]]) -> dict[str, Any] | None:
-    """Registro de la configuración por defecto: el del método ``defecto`` o, si no, el de su clave."""
-    for registro in cache.values():
-        if metodo_de(registro) == "defecto":
+    Si no hay ninguno, se busca la configuración por defecto entre las
+    evaluadas por otros métodos; si tampoco está, ``None``.
+    """
+    registros = _lista(cache)
+    propios = [r for r in registros if metodo_de(r) == "defecto"]
+    if propios:
+        return dict(min(propios, key=lambda r: str(semilla_de(r))))
+    for registro in registros:
+        if registro.get("configuracion") == CONFIGURACION_DEFECTO:
             return dict(registro)
-    return registro_de_configuracion(cache, CONFIGURACION_DEFECTO)
+    return None
 
 
 def mejor_por_metodo(
-    cache: Mapping[str, Mapping[str, Any]],
+    cache: RegistrosEntrada,
     registros_mmas: Mapping[int, Mapping[str, Any]] | None = None,
 ) -> dict[str, dict[str, Any]]:
     """Mejor registro (mayor aptitud) de cada método de búsqueda presente."""
     mejores: dict[str, dict[str, Any]] = {}
-    for registro in cache.values():
+    for registro in _lista(cache):
         metodo = metodo_de(registro)
         if metodo not in METODOS_BUSQUEDA or registro.get("estado", "ok") != "ok":
             continue

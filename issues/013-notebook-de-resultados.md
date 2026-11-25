@@ -22,9 +22,9 @@ Ver PRD: historias 41, 56 y 64.
 
 ## Estado
 
-- Notebook: `notebooks/resultados.ipynb`; lógica y pruebas en `traduccion/resultados.py` y `tests/test_resultados.py`. Datos de ejemplo con aptitud falsa (MMAS, semillas 0–2) en `notebooks/resultados_ejemplo/`.
+- Notebook: `notebooks/resultados.ipynb`; lógica y pruebas en `traduccion/resultados.py` y `tests/test_resultados.py`. Datos de ejemplo con aptitud falsa (MMAS y aleatoria con semillas 0–2, la aleatoria de la semilla 0 en 3 fragmentos, y configuración por defecto) en `notebooks/resultados_ejemplo/`.
 - Exporta `paper/figuras/convergencia.pdf`, `paper/figuras/feromona.pdf`, `paper/tablas/configuraciones.tex`, `paper/tablas/resultados.tex` y `paper/tablas/ejemplos_en-la.tex` / `ejemplos_en-el.tex` (fragmentos `tabular`, sin `table`). Los PDF y tablas generados con la aptitud falsa no se confirman en git.
-- El cambio de carpeta se comprobó con una copia simulada de «resultados reales» (subcarpeta `real`, `prueba/resultados_prueba.json`, `prueba/ejemplos_en-la.json`). Los formatos de la búsqueda aleatoria, la configuración por defecto (issue 005) y la evaluación en prueba (issue 009) están documentados en `traduccion/resultados.py`; esos issues deben escribirlos así (o adaptar el lector).
+- El cambio de carpeta se comprobó con una copia simulada de «resultados reales» (subcarpeta `real`, `prueba/resultados_prueba.json`, `prueba/ejemplos_en-la.json`). El notebook lee los JSON de la búsqueda aleatoria (también por fragmentos) y de la configuración por defecto tal como los escribe el issue 005. El formato de la evaluación en prueba y de los ejemplos (issue 009) aún no existe: el que se espera está documentado en `traduccion/resultados.py`; el issue 009 debe escribirlo así (o adaptar el lector).
 - Pendiente:
   - Compilar el artículo: aquí no hay LaTeX instalado. Las figuras entran solas por `\figuraopcional`; falta sustituir el cuerpo de `tab:configuraciones` y `tab:resultados` en `paper/main.tex` por `\input{tablas/...}` (issue 014).
   - Regenerar con los resultados reales cuando existan (aleatoria, por defecto, prueba, griego).
