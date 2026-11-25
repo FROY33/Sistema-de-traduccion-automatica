@@ -16,14 +16,14 @@ Ver PRD: sección *Colonia de hormigas (MMAS)* y *Decisiones de pruebas*.
 
 ## Criterios de aceptación
 
-- [ ] El script de búsqueda acepta método, semilla, par de idiomas y tipo de aptitud (falsa o real) y escribe la caché JSON y el registro de feromona.
-- [ ] Prueba: todo camino construido tiene exactamente un valor válido de cada rejilla.
-- [ ] Prueba: la feromona permanece siempre dentro de [τ_min, τ_max].
-- [ ] Prueba: con feromona uniforme, la frecuencia de elección por capa es aproximadamente uniforme.
-- [ ] Prueba: con la aptitud falsa, la feromona se concentra en los valores óptimos y la mejor aptitud final supera claramente a la de la primera iteración.
-- [ ] Prueba: con la misma semilla se obtiene el mismo historial.
-- [ ] Prueba: un camino ya en caché no se vuelve a evaluar y el número de evaluaciones nuevas es exactamente el presupuesto (8 hormigas × 5 iteraciones).
-- [ ] Si el proceso se interrumpe y se relanza, continúa desde la caché sin repetir evaluaciones.
+- [x] El script de búsqueda acepta método, semilla, par de idiomas y tipo de aptitud (falsa o real) y escribe la caché JSON y el registro de feromona.
+- [x] Prueba: todo camino construido tiene exactamente un valor válido de cada rejilla.
+- [x] Prueba: la feromona permanece siempre dentro de [τ_min, τ_max].
+- [x] Prueba: con feromona uniforme, la frecuencia de elección por capa es aproximadamente uniforme.
+- [x] Prueba: con la aptitud falsa, la feromona se concentra en los valores óptimos y la mejor aptitud final supera claramente a la de la primera iteración.
+- [x] Prueba: con la misma semilla se obtiene el mismo historial.
+- [x] Prueba: un camino ya en caché no se vuelve a evaluar y el número de evaluaciones nuevas es exactamente el presupuesto (8 hormigas × 5 iteraciones).
+- [x] Si el proceso se interrumpe y se relanza, continúa desde la caché sin repetir evaluaciones.
 
 ## Bloqueado por
 

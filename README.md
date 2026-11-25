@@ -212,3 +212,31 @@ python -m ipykernel install --user --name mi-entorno --display-name "Python (.ve
 ```
 
 Una vez completados estos pasos, abrir el notebook en Visual Studio Code, seleccionar el kernel `Python (.venv)` y comenzar a trabajar.
+## 11. Búsqueda de hiperparámetros con MMAS
+
+El código de la búsqueda está en el paquete `traduccion/`:
+
+- `traduccion/mmas.py`: MAX–MIN Ant System puro (sin PyTorch): espacio discretizado, construcción de caminos, evaporación, depósito, cotas de feromona y muestreo uniforme sobre la rejilla.
+- `traduccion/busqueda.py`: caché de aptitud en JSON, aptitud falsa con óptimo conocido y registro de la feromona por iteración.
+- `buscar.py`: script de línea de comandos.
+
+Lanzar una búsqueda MMAS con la aptitud falsa (no requiere GPU):
+
+```bash
+python buscar.py --metodo mmas --semilla 0 --par en-la --aptitud falsa
+```
+
+Opciones: `--par` (`en-la` o `en-el`), `--aptitud` (`falsa` o `real`; la real depende del issue 003 y por ahora termina con un error explicativo), `--salida` (carpeta de resultados, por defecto `resultados/`), `--hormigas` (8) e `--iteraciones` (5).
+
+Se escriben dos archivos en `resultados/<par>/<aptitud>/`:
+
+- `cache_aptitud.json`: un resultado por configuración evaluada (se guarda tras cada evaluación).
+- `feromona_mmas_semilla<semilla>.json`: la matriz de feromona tras cada iteración y el historial de hormigas.
+
+Si el proceso se interrumpe, basta con relanzar el mismo comando: continúa desde la caché sin repetir evaluaciones.
+
+## 12. Pruebas
+
+```bash
+python -m pytest
+```

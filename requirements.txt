@@ -6,3 +6,4 @@ pyarrow
 sentencepiece
 ipykernel
 jupyter
+pytest==9.0.3
