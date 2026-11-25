@@ -102,6 +102,30 @@ Si se desea comprobar las bibliotecas instaladas:
 pip list
 ```
 
+### 5.1 PyTorch con CUDA (equipo con GPU NVIDIA, p. ej. RTX 4060)
+
+`pip install -r requirements.txt` instala desde PyPI la versión de PyTorch **solo CPU** en Windows. En el equipo con GPU hay que instalar primero la versión con CUDA desde el índice de PyTorch y después el resto de dependencias:
+
+1. Actualizar el controlador de NVIDIA. Ejecutar `nvidia-smi`: la esquina superior derecha muestra la versión máxima de CUDA que soporta el controlador (*CUDA Version*). Debe ser **13.2 o superior**, porque `torch==2.15.0` para Windows y Python 3.14 solo se publica compilado con CUDA 13.2. No hace falta instalar el CUDA Toolkit: las bibliotecas de CUDA vienen dentro de la rueda de PyTorch.
+2. Con el entorno virtual activado:
+
+```powershell
+pip install torch==2.15.0 --index-url https://download.pytorch.org/whl/cu132
+pip install -r requirements.txt
+```
+
+pip respeta el PyTorch ya instalado (`2.15.0+cu132` cumple `torch==2.15.0`).
+
+3. Comprobar que la GPU es visible desde el entorno virtual:
+
+```powershell
+python -c "import torch; print(torch.__version__, torch.cuda.is_available(), torch.cuda.get_device_name(0))"
+```
+
+Debe imprimir `2.15.0+cu132 True NVIDIA GeForce RTX 4060 ...`. Si imprime `+cpu` o `False`, desinstalar (`pip uninstall torch`) y repetir el paso 2; si sigue en `False`, revisar el controlador (paso 1).
+
+En equipos sin GPU basta con `pip install -r requirements.txt` (PyTorch en CPU sirve para el preprocesamiento y las pruebas).
+
 ## 6. Configurar Jupyter Notebook
 
 Para ejecutar los archivos `.ipynb`, es necesario instalar y registrar el kernel de Jupyter dentro del entorno virtual.
@@ -180,10 +204,11 @@ __pycache__/
 
 Si durante el desarrollo se agregan nuevas bibliotecas, se debe actualizar el archivo `requirements.txt`.
 
-Con el entorno virtual activado, ejecutar:
+`requirements.txt` lista solo las dependencias directas, cada una con su versión exacta (`paquete==versión`). No usar `pip freeze > requirements.txt`: añadiría paquetes propios de Windows y la variante `+cu132` de PyTorch, que no se instalan en Colab ni en equipos sin GPU. Para añadir una biblioteca, instalarla y copiar su versión exacta:
 
 ```bash
-pip freeze > requirements.txt
+pip install nueva-biblioteca
+pip show nueva-biblioteca   # copiar la línea "Version" como nueva-biblioteca==X.Y.Z
 ```
 
 Después, subir el archivo actualizado al repositorio para que los demás integrantes puedan instalar las nuevas dependencias.
@@ -201,7 +226,7 @@ python -m venv .venv
 # 2. Activar el entorno
 .\.venv\Scripts\Activate.ps1
 
-# 3. Instalar dependencias
+# 3. Instalar dependencias (en el equipo con GPU, antes: ver sección 5.1)
 pip install -r requirements.txt
 
 # 4. Instalar Jupyter Kernel
