@@ -1,6 +1,7 @@
 
 # Entorno virtual
 .venv/
+.claude/
 
 # Archivos temporales de Python
 __pycache__/
@@ -15,3 +16,9 @@ __pycache__/
 # Archivos del sistema operativo
 .DS_Store
 Thumbs.db
+
+# Artefactos generados por el notebook (tokenizadores y datos tokenizados)
+*.model
+*.vocab
+datos/
+notebooks/datos/

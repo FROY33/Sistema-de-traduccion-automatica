@@ -1,0 +1,47 @@
+{
+  "resultados": {
+    "{\"calentamiento\":2000,\"capas_codificador\":3,\"capas_decodificador\":3,\"d_model\":512,\"dropout\":0.1,\"heads\":8,\"multiplicador_ffn\":4,\"suavizado_etiquetas\":0.1,\"tasa_aprendizaje\":0.0005}": {
+      "aptitud": 0.7592592592592593,
+      "estado": "ok",
+      "tiempo": 1.1299969628453255e-05,
+      "metodo": "defecto",
+      "par": "en-la",
+      "semilla": 0,
+      "tipo_aptitud": "falsa",
+      "huella": {
+        "commit": "0a16cb41eaeed09bbef9ab60b936141aedd69d1a",
+        "arbol_sucio": true,
+        "md5_tokenizador": null,
+        "tamano_entrenamiento": null,
+        "gpu": null,
+        "python": "3.14.0",
+        "plataforma": "Windows-11-10.0.26200-SP0",
+        "versiones": {
+          "torch": "2.11.0",
+          "transformers": "5.8.0",
+          "sentencepiece": "0.2.1",
+          "sacrebleu": null,
+          "datasets": "4.8.5"
+        }
+      },
+      "configuracion": {
+        "d_model": 512,
+        "heads": 8,
+        "capas_codificador": 3,
+        "capas_decodificador": 3,
+        "multiplicador_ffn": 4,
+        "dropout": 0.1,
+        "tasa_aprendizaje": 0.0005,
+        "calentamiento": 2000,
+        "suavizado_etiquetas": 0.1
+      },
+      "origen": {
+        "metodo": "defecto",
+        "semilla": 0,
+        "par": "en-la",
+        "tipo_aptitud": "falsa"
+      },
+      "evaluacion": 1
+    }
+  }
+}

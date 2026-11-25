@@ -102,6 +102,30 @@ Si se desea comprobar las bibliotecas instaladas:
 pip list
 ```
 
+### 5.1 PyTorch con CUDA (equipo con GPU NVIDIA, p. ej. RTX 4060)
+
+`pip install -r requirements.txt` instala desde PyPI la versión de PyTorch **solo CPU** en Windows. En el equipo con GPU hay que instalar primero la versión con CUDA desde el índice de PyTorch y después el resto de dependencias:
+
+1. Actualizar el controlador de NVIDIA. Ejecutar `nvidia-smi`: la esquina superior derecha muestra la versión máxima de CUDA que soporta el controlador (*CUDA Version*). Debe ser **13.2 o superior**, porque `torch==2.15.0` para Windows y Python 3.14 solo se publica compilado con CUDA 13.2. No hace falta instalar el CUDA Toolkit: las bibliotecas de CUDA vienen dentro de la rueda de PyTorch.
+2. Con el entorno virtual activado:
+
+```powershell
+pip install torch==2.15.0 --index-url https://download.pytorch.org/whl/cu132
+pip install -r requirements.txt
+```
+
+pip respeta el PyTorch ya instalado (`2.15.0+cu132` cumple `torch==2.15.0`).
+
+3. Comprobar que la GPU es visible desde el entorno virtual:
+
+```powershell
+python -c "import torch; print(torch.__version__, torch.cuda.is_available(), torch.cuda.get_device_name(0))"
+```
+
+Debe imprimir `2.15.0+cu132 True NVIDIA GeForce RTX 4060 ...`. Si imprime `+cpu` o `False`, desinstalar (`pip uninstall torch`) y repetir el paso 2; si sigue en `False`, revisar el controlador (paso 1).
+
+En equipos sin GPU basta con `pip install -r requirements.txt` (PyTorch en CPU sirve para el preprocesamiento y las pruebas).
+
 ## 6. Configurar Jupyter Notebook
 
 Para ejecutar los archivos `.ipynb`, es necesario instalar y registrar el kernel de Jupyter dentro del entorno virtual.
@@ -180,10 +204,11 @@ __pycache__/
 
 Si durante el desarrollo se agregan nuevas bibliotecas, se debe actualizar el archivo `requirements.txt`.
 
-Con el entorno virtual activado, ejecutar:
+`requirements.txt` lista solo las dependencias directas, cada una con su versión exacta (`paquete==versión`). No usar `pip freeze > requirements.txt`: añadiría paquetes propios de Windows y la variante `+cu132` de PyTorch, que no se instalan en Colab ni en equipos sin GPU. Para añadir una biblioteca, instalarla y copiar su versión exacta:
 
 ```bash
-pip freeze > requirements.txt
+pip install nueva-biblioteca
+pip show nueva-biblioteca   # copiar la línea "Version" como nueva-biblioteca==X.Y.Z
 ```
 
 Después, subir el archivo actualizado al repositorio para que los demás integrantes puedan instalar las nuevas dependencias.
@@ -201,7 +226,7 @@ python -m venv .venv
 # 2. Activar el entorno
 .\.venv\Scripts\Activate.ps1
 
-# 3. Instalar dependencias
+# 3. Instalar dependencias (en el equipo con GPU, antes: ver sección 5.1)
 pip install -r requirements.txt
 
 # 4. Instalar Jupyter Kernel
@@ -212,3 +237,64 @@ python -m ipykernel install --user --name mi-entorno --display-name "Python (.ve
 ```
 
 Una vez completados estos pasos, abrir el notebook en Visual Studio Code, seleccionar el kernel `Python (.venv)` y comenzar a trabajar.
+## 11. Búsqueda de hiperparámetros
+
+El código de la búsqueda está en el paquete `traduccion/`:
+
+- `traduccion/mmas.py`: MAX–MIN Ant System puro (sin PyTorch): espacio discretizado, construcción de caminos, evaporación, depósito, cotas de feromona y muestreo uniforme sobre la rejilla.
+- `traduccion/busqueda.py`: caché de aptitud en JSON, aptitud falsa con óptimo conocido, registro de la feromona por iteración, líneas base (configuración por defecto y búsqueda aleatoria por fragmentos), huella por resultado y fusión de JSON.
+- `buscar.py`: script para lanzar la búsqueda.
+- `fusionar.py`: script para unir los JSON de varias máquinas.
+
+Hay tres métodos, todos con la misma aptitud, la misma semilla y el mismo formato de JSON:
+
+```bash
+# MMAS (8 hormigas × 5 iteraciones = 40 evaluaciones)
+python buscar.py --metodo mmas --semilla 0 --par en-la --aptitud falsa
+
+# Configuración por defecto del PRD (d=512, 8 cabezas, 3+3 capas, FFN×4, lr 5e-4,
+# dropout 0.1, suavizado 0.1, calentamiento 2000): una sola evaluación
+python buscar.py --metodo defecto --semilla 0 --par en-la --aptitud falsa
+
+# Búsqueda aleatoria uniforme sobre la misma rejilla, con el mismo presupuesto (40)
+python buscar.py --metodo aleatoria --semilla 0 --par en-la --aptitud falsa
+```
+
+Opciones: `--par` (`en-la` o `en-el`), `--aptitud` (`falsa` o `real`; la real depende del issue 003 y por ahora termina con un error explicativo), `--salida` (carpeta de resultados, por defecto `resultados/`), `--hormigas` (8) e `--iteraciones` (5) para MMAS, y `--presupuesto` (por defecto hormigas × iteraciones), `--fragmento` y `--fragmentos` para la aleatoria.
+
+### Búsqueda aleatoria repartida en varias cuentas
+
+La secuencia de configuraciones aleatorias depende solo de la semilla y del presupuesto; cada fragmento evalúa por turnos su parte (la evaluación *k* va al fragmento ((*k* − 1) mod *n*) + 1) y escribe su propio JSON. Por ejemplo, con 3 cuentas de Colab, cada una ejecuta su fragmento:
+
+```bash
+python buscar.py --metodo aleatoria --semilla 0 --par en-la --fragmento 1 --fragmentos 3
+python buscar.py --metodo aleatoria --semilla 0 --par en-la --fragmento 2 --fragmentos 3
+python buscar.py --metodo aleatoria --semilla 0 --par en-la --fragmento 3 --fragmentos 3
+```
+
+Después se reúnen los tres JSON en una carpeta y se fusionan:
+
+```bash
+python fusionar.py "resultados/en-la/falsa/aleatoria_semilla0_fragmento*de3.json" --salida resultados/en-la/falsa/aleatoria_semilla0.json
+```
+
+La fusión conserva una sola vez las configuraciones repetidas y **no mezcla** los resultados cuya huella no coincide con la mayoritaria (commit de git, MD5 del tokenizador, tamaño del conjunto de entrenamiento, par o tipo de aptitud): los reporta y termina con código 1. Unidos, los fragmentos dan exactamente las mismas configuraciones y números de evaluación que la búsqueda sin repartir.
+
+### Archivos de resultados
+
+Se escriben en `resultados/<par>/<aptitud>/`, todos con el formato `{"resultados": {configuración canónica: registro}}`:
+
+- `cache_aptitud.json`: resultados de MMAS (se guarda tras cada evaluación).
+- `feromona_mmas_semilla<semilla>.json`: la matriz de feromona tras cada iteración y el historial de hormigas.
+- `defecto_semilla<semilla>.json`: la configuración por defecto.
+- `aleatoria_semilla<semilla>.json` o `aleatoria_semilla<semilla>_fragmento<k>de<n>.json`: la búsqueda aleatoria.
+
+Cada registro incluye la configuración, la aptitud, el tiempo, el estado, el `metodo`, el número de `evaluacion` (para trazar la mejor aptitud frente a evaluaciones con `busqueda.curva_mejor_aptitud`) y la `huella`: commit de git (y si el árbol tenía cambios sin confirmar), MD5 del tokenizador, tamaño del entrenamiento, GPU, versión de Python, plataforma y versiones de las bibliotecas. Con la aptitud falsa, el tokenizador, el tamaño del entrenamiento y la GPU quedan en `null`; la aptitud real (issue 003) debe rellenarlos con `busqueda.calcular_huella(...)`.
+
+Si el proceso se interrumpe, basta con relanzar el mismo comando: continúa desde el JSON sin repetir evaluaciones.
+
+## 12. Pruebas
+
+```bash
+python -m pytest
+```

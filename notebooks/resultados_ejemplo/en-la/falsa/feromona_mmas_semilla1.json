@@ -1,0 +1,1150 @@
+{
+  "metodo": "mmas",
+  "par": "en-la",
+  "semilla": 1,
+  "tipo_aptitud": "falsa",
+  "parametros": {
+    "hormigas": 8,
+    "iteraciones": 5,
+    "alfa": 1.0,
+    "rho": 0.2,
+    "razon_tau": 0.1,
+    "iteraciones_mejor_global": 2
+  },
+  "espacio": {
+    "d_model": [
+      256,
+      384,
+      512
+    ],
+    "heads": [
+      4,
+      8
+    ],
+    "capas_codificador": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "capas_decodificador": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "multiplicador_ffn": [
+      2,
+      4
+    ],
+    "dropout": [
+      0.0,
+      0.1,
+      0.2,
+      0.3
+    ],
+    "tasa_aprendizaje": [
+      0.0001,
+      0.0002,
+      0.0003,
+      0.0005,
+      0.001
+    ],
+    "calentamiento": [
+      500,
+      1000,
+      2000,
+      4000
+    ],
+    "suavizado_etiquetas": [
+      0.0,
+      0.1,
+      0.2
+    ]
+  },
+  "iteraciones": [
+    {
+      "iteracion": 1,
+      "tau_min": 0.3703703703703704,
+      "tau_max": 3.7037037037037037,
+      "feromona": {
+        "d_model": [
+          0.8,
+          0.8,
+          1.5407407407407407
+        ],
+        "heads": [
+          0.8,
+          1.5407407407407407
+        ],
+        "capas_codificador": [
+          0.8,
+          0.8,
+          0.8,
+          1.5407407407407407,
+          0.8
+        ],
+        "capas_decodificador": [
+          1.5407407407407407,
+          0.8,
+          0.8,
+          0.8,
+          0.8
+        ],
+        "multiplicador_ffn": [
+          0.8,
+          1.5407407407407407
+        ],
+        "dropout": [
+          0.8,
+          0.8,
+          0.8,
+          1.5407407407407407
+        ],
+        "tasa_aprendizaje": [
+          1.5407407407407407,
+          0.8,
+          0.8,
+          0.8,
+          0.8
+        ],
+        "calentamiento": [
+          0.8,
+          1.5407407407407407,
+          0.8,
+          0.8
+        ],
+        "suavizado_etiquetas": [
+          0.8,
+          0.8,
+          1.5407407407407407
+        ]
+      },
+      "depositante": "mejor_iteracion",
+      "mejor_aptitud_iteracion": 0.7407407407407408,
+      "mejor_aptitud_global": 0.7407407407407408
+    },
+    {
+      "iteracion": 2,
+      "tau_min": 0.4027777777777778,
+      "tau_max": 4.027777777777778,
+      "feromona": {
+        "d_model": [
+          0.6400000000000001,
+          0.6400000000000001,
+          2.0381481481481485
+        ],
+        "heads": [
+          0.6400000000000001,
+          2.0381481481481485
+        ],
+        "capas_codificador": [
+          0.6400000000000001,
+          1.4455555555555557,
+          0.6400000000000001,
+          1.2325925925925927,
+          0.6400000000000001
+        ],
+        "capas_decodificador": [
+          1.2325925925925927,
+          0.6400000000000001,
+          1.4455555555555557,
+          0.6400000000000001,
+          0.6400000000000001
+        ],
+        "multiplicador_ffn": [
+          0.6400000000000001,
+          2.0381481481481485
+        ],
+        "dropout": [
+          0.6400000000000001,
+          0.6400000000000001,
+          1.4455555555555557,
+          1.2325925925925927
+        ],
+        "tasa_aprendizaje": [
+          1.2325925925925927,
+          1.4455555555555557,
+          0.6400000000000001,
+          0.6400000000000001,
+          0.6400000000000001
+        ],
+        "calentamiento": [
+          0.6400000000000001,
+          2.0381481481481485,
+          0.6400000000000001,
+          0.6400000000000001
+        ],
+        "suavizado_etiquetas": [
+          0.6400000000000001,
+          0.6400000000000001,
+          2.0381481481481485
+        ]
+      },
+      "depositante": "mejor_iteracion",
+      "mejor_aptitud_iteracion": 0.8055555555555556,
+      "mejor_aptitud_global": 0.8055555555555556
+    },
+    {
+      "iteracion": 3,
+      "tau_min": 0.41666666666666674,
+      "tau_max": 4.166666666666667,
+      "feromona": {
+        "d_model": [
+          0.5120000000000001,
+          1.3453333333333335,
+          1.630518518518519
+        ],
+        "heads": [
+          0.5120000000000001,
+          2.463851851851852
+        ],
+        "capas_codificador": [
+          0.5120000000000001,
+          1.9897777777777779,
+          0.5120000000000001,
+          0.9860740740740742,
+          0.5120000000000001
+        ],
+        "capas_decodificador": [
+          0.9860740740740742,
+          0.5120000000000001,
+          1.9897777777777779,
+          0.5120000000000001,
+          0.5120000000000001
+        ],
+        "multiplicador_ffn": [
+          0.5120000000000001,
+          2.463851851851852
+        ],
+        "dropout": [
+          0.5120000000000001,
+          0.5120000000000001,
+          1.9897777777777779,
+          0.9860740740740742
+        ],
+        "tasa_aprendizaje": [
+          1.8194074074074076,
+          1.1564444444444446,
+          0.5120000000000001,
+          0.5120000000000001,
+          0.5120000000000001
+        ],
+        "calentamiento": [
+          0.5120000000000001,
+          2.463851851851852,
+          0.5120000000000001,
+          0.5120000000000001
+        ],
+        "suavizado_etiquetas": [
+          0.5120000000000001,
+          0.5120000000000001,
+          2.463851851851852
+        ]
+      },
+      "depositante": "mejor_iteracion",
+      "mejor_aptitud_iteracion": 0.8333333333333334,
+      "mejor_aptitud_global": 0.8333333333333334
+    },
+    {
+      "iteracion": 4,
+      "tau_min": 0.41666666666666674,
+      "tau_max": 4.166666666666667,
+      "feromona": {
+        "d_model": [
+          0.41666666666666674,
+          1.9096000000000002,
+          1.3044148148148151
+        ],
+        "heads": [
+          0.41666666666666674,
+          2.804414814814815
+        ],
+        "capas_codificador": [
+          0.41666666666666674,
+          2.425155555555556,
+          0.41666666666666674,
+          0.7888592592592594,
+          0.41666666666666674
+        ],
+        "capas_decodificador": [
+          0.7888592592592594,
+          0.41666666666666674,
+          2.425155555555556,
+          0.41666666666666674,
+          0.41666666666666674
+        ],
+        "multiplicador_ffn": [
+          0.41666666666666674,
+          2.804414814814815
+        ],
+        "dropout": [
+          0.41666666666666674,
+          0.41666666666666674,
+          2.425155555555556,
+          0.7888592592592594
+        ],
+        "tasa_aprendizaje": [
+          2.2888592592592594,
+          0.9251555555555557,
+          0.41666666666666674,
+          0.41666666666666674,
+          0.41666666666666674
+        ],
+        "calentamiento": [
+          0.41666666666666674,
+          2.804414814814815,
+          0.41666666666666674,
+          0.41666666666666674
+        ],
+        "suavizado_etiquetas": [
+          0.41666666666666674,
+          0.41666666666666674,
+          2.804414814814815
+        ]
+      },
+      "depositante": "mejor_global",
+      "mejor_aptitud_iteracion": 0.75,
+      "mejor_aptitud_global": 0.8333333333333334
+    },
+    {
+      "iteracion": 5,
+      "tau_min": 0.41666666666666674,
+      "tau_max": 4.166666666666667,
+      "feromona": {
+        "d_model": [
+          0.41666666666666674,
+          2.3610133333333336,
+          1.0435318518518522
+        ],
+        "heads": [
+          0.41666666666666674,
+          3.0768651851851856
+        ],
+        "capas_codificador": [
+          0.41666666666666674,
+          2.7734577777777782,
+          0.41666666666666674,
+          0.6310874074074075,
+          0.41666666666666674
+        ],
+        "capas_decodificador": [
+          0.6310874074074075,
+          0.41666666666666674,
+          2.7734577777777782,
+          0.41666666666666674,
+          0.41666666666666674
+        ],
+        "multiplicador_ffn": [
+          0.41666666666666674,
+          3.0768651851851856
+        ],
+        "dropout": [
+          0.41666666666666674,
+          0.41666666666666674,
+          2.7734577777777782,
+          0.6310874074074075
+        ],
+        "tasa_aprendizaje": [
+          2.664420740740741,
+          0.7401244444444446,
+          0.41666666666666674,
+          0.41666666666666674,
+          0.41666666666666674
+        ],
+        "calentamiento": [
+          0.41666666666666674,
+          3.0768651851851856,
+          0.41666666666666674,
+          0.41666666666666674
+        ],
+        "suavizado_etiquetas": [
+          0.41666666666666674,
+          0.41666666666666674,
+          3.0768651851851856
+        ]
+      },
+      "depositante": "mejor_global",
+      "mejor_aptitud_iteracion": 0.8333333333333334,
+      "mejor_aptitud_global": 0.8333333333333334
+    }
+  ],
+  "historial": [
+    {
+      "configuracion": {
+        "d_model": 256,
+        "heads": 8,
+        "capas_codificador": 5,
+        "capas_decodificador": 3,
+        "multiplicador_ffn": 2,
+        "dropout": 0.1,
+        "tasa_aprendizaje": 0.0005,
+        "calentamiento": 4000,
+        "suavizado_etiquetas": 0.0
+      },
+      "aptitud": 0.6111111111111112,
+      "iteracion": 1,
+      "hormiga": 1,
+      "nueva": true,
+      "evaluacion": 1
+    },
+    {
+      "configuracion": {
+        "d_model": 256,
+        "heads": 8,
+        "capas_codificador": 4,
+        "capas_decodificador": 5,
+        "multiplicador_ffn": 2,
+        "dropout": 0.1,
+        "tasa_aprendizaje": 0.0005,
+        "calentamiento": 500,
+        "suavizado_etiquetas": 0.2
+      },
+      "aptitud": 0.6203703703703705,
+      "iteracion": 1,
+      "hormiga": 2,
+      "nueva": true,
+      "evaluacion": 2
+    },
+    {
+      "configuracion": {
+        "d_model": 512,
+        "heads": 4,
+        "capas_codificador": 2,
+        "capas_decodificador": 4,
+        "multiplicador_ffn": 4,
+        "dropout": 0.1,
+        "tasa_aprendizaje": 0.0002,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.0
+      },
+      "aptitud": 0.6296296296296297,
+      "iteracion": 1,
+      "hormiga": 3,
+      "nueva": true,
+      "evaluacion": 3
+    },
+    {
+      "configuracion": {
+        "d_model": 256,
+        "heads": 4,
+        "capas_codificador": 4,
+        "capas_decodificador": 3,
+        "multiplicador_ffn": 2,
+        "dropout": 0.0,
+        "tasa_aprendizaje": 0.0003,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.0
+      },
+      "aptitud": 0.537037037037037,
+      "iteracion": 1,
+      "hormiga": 4,
+      "nueva": true,
+      "evaluacion": 4
+    },
+    {
+      "configuracion": {
+        "d_model": 512,
+        "heads": 8,
+        "capas_codificador": 5,
+        "capas_decodificador": 2,
+        "multiplicador_ffn": 4,
+        "dropout": 0.3,
+        "tasa_aprendizaje": 0.0001,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.2
+      },
+      "aptitud": 0.7407407407407408,
+      "iteracion": 1,
+      "hormiga": 5,
+      "nueva": true,
+      "evaluacion": 5
+    },
+    {
+      "configuracion": {
+        "d_model": 512,
+        "heads": 8,
+        "capas_codificador": 4,
+        "capas_decodificador": 6,
+        "multiplicador_ffn": 4,
+        "dropout": 0.1,
+        "tasa_aprendizaje": 0.0003,
+        "calentamiento": 4000,
+        "suavizado_etiquetas": 0.2
+      },
+      "aptitud": 0.6944444444444444,
+      "iteracion": 1,
+      "hormiga": 6,
+      "nueva": true,
+      "evaluacion": 6
+    },
+    {
+      "configuracion": {
+        "d_model": 384,
+        "heads": 8,
+        "capas_codificador": 2,
+        "capas_decodificador": 3,
+        "multiplicador_ffn": 4,
+        "dropout": 0.1,
+        "tasa_aprendizaje": 0.0001,
+        "calentamiento": 2000,
+        "suavizado_etiquetas": 0.2
+      },
+      "aptitud": 0.7037037037037037,
+      "iteracion": 1,
+      "hormiga": 7,
+      "nueva": true,
+      "evaluacion": 7
+    },
+    {
+      "configuracion": {
+        "d_model": 512,
+        "heads": 4,
+        "capas_codificador": 4,
+        "capas_decodificador": 4,
+        "multiplicador_ffn": 4,
+        "dropout": 0.2,
+        "tasa_aprendizaje": 0.0002,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.0
+      },
+      "aptitud": 0.7222222222222222,
+      "iteracion": 1,
+      "hormiga": 8,
+      "nueva": true,
+      "evaluacion": 8
+    },
+    {
+      "configuracion": {
+        "d_model": 256,
+        "heads": 8,
+        "capas_codificador": 6,
+        "capas_decodificador": 4,
+        "multiplicador_ffn": 4,
+        "dropout": 0.0,
+        "tasa_aprendizaje": 0.0003,
+        "calentamiento": 4000,
+        "suavizado_etiquetas": 0.2
+      },
+      "aptitud": 0.712962962962963,
+      "iteracion": 2,
+      "hormiga": 1,
+      "nueva": true,
+      "evaluacion": 9
+    },
+    {
+      "configuracion": {
+        "d_model": 512,
+        "heads": 8,
+        "capas_codificador": 3,
+        "capas_decodificador": 4,
+        "multiplicador_ffn": 4,
+        "dropout": 0.2,
+        "tasa_aprendizaje": 0.0002,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.2
+      },
+      "aptitud": 0.8055555555555556,
+      "iteracion": 2,
+      "hormiga": 2,
+      "nueva": true,
+      "evaluacion": 10
+    },
+    {
+      "configuracion": {
+        "d_model": 512,
+        "heads": 4,
+        "capas_codificador": 5,
+        "capas_decodificador": 5,
+        "multiplicador_ffn": 4,
+        "dropout": 0.3,
+        "tasa_aprendizaje": 0.0005,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.2
+      },
+      "aptitud": 0.6851851851851852,
+      "iteracion": 2,
+      "hormiga": 3,
+      "nueva": true,
+      "evaluacion": 11
+    },
+    {
+      "configuracion": {
+        "d_model": 384,
+        "heads": 4,
+        "capas_codificador": 6,
+        "capas_decodificador": 4,
+        "multiplicador_ffn": 2,
+        "dropout": 0.2,
+        "tasa_aprendizaje": 0.0002,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.1
+      },
+      "aptitud": 0.7222222222222222,
+      "iteracion": 2,
+      "hormiga": 4,
+      "nueva": true,
+      "evaluacion": 12
+    },
+    {
+      "configuracion": {
+        "d_model": 512,
+        "heads": 8,
+        "capas_codificador": 5,
+        "capas_decodificador": 3,
+        "multiplicador_ffn": 2,
+        "dropout": 0.1,
+        "tasa_aprendizaje": 0.0001,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.2
+      },
+      "aptitud": 0.6574074074074074,
+      "iteracion": 2,
+      "hormiga": 5,
+      "nueva": true,
+      "evaluacion": 13
+    },
+    {
+      "configuracion": {
+        "d_model": 512,
+        "heads": 8,
+        "capas_codificador": 5,
+        "capas_decodificador": 2,
+        "multiplicador_ffn": 4,
+        "dropout": 0.3,
+        "tasa_aprendizaje": 0.0001,
+        "calentamiento": 500,
+        "suavizado_etiquetas": 0.0
+      },
+      "aptitud": 0.7037037037037037,
+      "iteracion": 2,
+      "hormiga": 6,
+      "nueva": true,
+      "evaluacion": 14
+    },
+    {
+      "configuracion": {
+        "d_model": 512,
+        "heads": 4,
+        "capas_codificador": 2,
+        "capas_decodificador": 4,
+        "multiplicador_ffn": 4,
+        "dropout": 0.0,
+        "tasa_aprendizaje": 0.0001,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.0
+      },
+      "aptitud": 0.5648148148148148,
+      "iteracion": 2,
+      "hormiga": 7,
+      "nueva": true,
+      "evaluacion": 15
+    },
+    {
+      "configuracion": {
+        "d_model": 384,
+        "heads": 8,
+        "capas_codificador": 4,
+        "capas_decodificador": 2,
+        "multiplicador_ffn": 4,
+        "dropout": 0.0,
+        "tasa_aprendizaje": 0.0002,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.0
+      },
+      "aptitud": 0.7592592592592592,
+      "iteracion": 2,
+      "hormiga": 8,
+      "nueva": true,
+      "evaluacion": 16
+    },
+    {
+      "configuracion": {
+        "d_model": 256,
+        "heads": 8,
+        "capas_codificador": 4,
+        "capas_decodificador": 2,
+        "multiplicador_ffn": 4,
+        "dropout": 0.3,
+        "tasa_aprendizaje": 0.0001,
+        "calentamiento": 500,
+        "suavizado_etiquetas": 0.0
+      },
+      "aptitud": 0.675925925925926,
+      "iteracion": 3,
+      "hormiga": 1,
+      "nueva": true,
+      "evaluacion": 17
+    },
+    {
+      "configuracion": {
+        "d_model": 512,
+        "heads": 4,
+        "capas_codificador": 5,
+        "capas_decodificador": 4,
+        "multiplicador_ffn": 4,
+        "dropout": 0.1,
+        "tasa_aprendizaje": 0.001,
+        "calentamiento": 2000,
+        "suavizado_etiquetas": 0.2
+      },
+      "aptitud": 0.6481481481481483,
+      "iteracion": 3,
+      "hormiga": 2,
+      "nueva": true,
+      "evaluacion": 18
+    },
+    {
+      "configuracion": {
+        "d_model": 384,
+        "heads": 8,
+        "capas_codificador": 3,
+        "capas_decodificador": 4,
+        "multiplicador_ffn": 4,
+        "dropout": 0.2,
+        "tasa_aprendizaje": 0.0001,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.2
+      },
+      "aptitud": 0.8333333333333334,
+      "iteracion": 3,
+      "hormiga": 3,
+      "nueva": true,
+      "evaluacion": 19
+    },
+    {
+      "configuracion": {
+        "d_model": 512,
+        "heads": 8,
+        "capas_codificador": 5,
+        "capas_decodificador": 3,
+        "multiplicador_ffn": 4,
+        "dropout": 0.3,
+        "tasa_aprendizaje": 0.0002,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.0
+      },
+      "aptitud": 0.7962962962962963,
+      "iteracion": 3,
+      "hormiga": 4,
+      "nueva": true,
+      "evaluacion": 20
+    },
+    {
+      "configuracion": {
+        "d_model": 512,
+        "heads": 4,
+        "capas_codificador": 5,
+        "capas_decodificador": 6,
+        "multiplicador_ffn": 4,
+        "dropout": 0.1,
+        "tasa_aprendizaje": 0.001,
+        "calentamiento": 4000,
+        "suavizado_etiquetas": 0.2
+      },
+      "aptitud": 0.5555555555555556,
+      "iteracion": 3,
+      "hormiga": 5,
+      "nueva": true,
+      "evaluacion": 21
+    },
+    {
+      "configuracion": {
+        "d_model": 512,
+        "heads": 8,
+        "capas_codificador": 3,
+        "capas_decodificador": 2,
+        "multiplicador_ffn": 4,
+        "dropout": 0.2,
+        "tasa_aprendizaje": 0.0001,
+        "calentamiento": 500,
+        "suavizado_etiquetas": 0.2
+      },
+      "aptitud": 0.6851851851851852,
+      "iteracion": 3,
+      "hormiga": 6,
+      "nueva": true,
+      "evaluacion": 22
+    },
+    {
+      "configuracion": {
+        "d_model": 384,
+        "heads": 8,
+        "capas_codificador": 3,
+        "capas_decodificador": 6,
+        "multiplicador_ffn": 4,
+        "dropout": 0.0,
+        "tasa_aprendizaje": 0.0001,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.2
+      },
+      "aptitud": 0.7037037037037037,
+      "iteracion": 3,
+      "hormiga": 7,
+      "nueva": true,
+      "evaluacion": 23
+    },
+    {
+      "configuracion": {
+        "d_model": 512,
+        "heads": 8,
+        "capas_codificador": 3,
+        "capas_decodificador": 4,
+        "multiplicador_ffn": 4,
+        "dropout": 0.3,
+        "tasa_aprendizaje": 0.0002,
+        "calentamiento": 4000,
+        "suavizado_etiquetas": 0.2
+      },
+      "aptitud": 0.6944444444444444,
+      "iteracion": 3,
+      "hormiga": 8,
+      "nueva": true,
+      "evaluacion": 24
+    },
+    {
+      "configuracion": {
+        "d_model": 384,
+        "heads": 8,
+        "capas_codificador": 3,
+        "capas_decodificador": 4,
+        "multiplicador_ffn": 2,
+        "dropout": 0.1,
+        "tasa_aprendizaje": 0.001,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.2
+      },
+      "aptitud": 0.6851851851851852,
+      "iteracion": 4,
+      "hormiga": 1,
+      "nueva": true,
+      "evaluacion": 25
+    },
+    {
+      "configuracion": {
+        "d_model": 512,
+        "heads": 8,
+        "capas_codificador": 3,
+        "capas_decodificador": 4,
+        "multiplicador_ffn": 4,
+        "dropout": 0.3,
+        "tasa_aprendizaje": 0.0002,
+        "calentamiento": 4000,
+        "suavizado_etiquetas": 0.2
+      },
+      "aptitud": 0.6944444444444444,
+      "iteracion": 4,
+      "hormiga": 2,
+      "nueva": false,
+      "evaluacion": null
+    },
+    {
+      "configuracion": {
+        "d_model": 256,
+        "heads": 8,
+        "capas_codificador": 2,
+        "capas_decodificador": 2,
+        "multiplicador_ffn": 2,
+        "dropout": 0.3,
+        "tasa_aprendizaje": 0.0005,
+        "calentamiento": 2000,
+        "suavizado_etiquetas": 0.2
+      },
+      "aptitud": 0.5370370370370371,
+      "iteracion": 4,
+      "hormiga": 3,
+      "nueva": true,
+      "evaluacion": 26
+    },
+    {
+      "configuracion": {
+        "d_model": 512,
+        "heads": 8,
+        "capas_codificador": 3,
+        "capas_decodificador": 4,
+        "multiplicador_ffn": 4,
+        "dropout": 0.0,
+        "tasa_aprendizaje": 0.0001,
+        "calentamiento": 4000,
+        "suavizado_etiquetas": 0.2
+      },
+      "aptitud": 0.6296296296296297,
+      "iteracion": 4,
+      "hormiga": 4,
+      "nueva": true,
+      "evaluacion": 27
+    },
+    {
+      "configuracion": {
+        "d_model": 512,
+        "heads": 8,
+        "capas_codificador": 3,
+        "capas_decodificador": 5,
+        "multiplicador_ffn": 4,
+        "dropout": 0.0,
+        "tasa_aprendizaje": 0.0003,
+        "calentamiento": 500,
+        "suavizado_etiquetas": 0.0
+      },
+      "aptitud": 0.6944444444444444,
+      "iteracion": 4,
+      "hormiga": 5,
+      "nueva": true,
+      "evaluacion": 28
+    },
+    {
+      "configuracion": {
+        "d_model": 512,
+        "heads": 4,
+        "capas_codificador": 3,
+        "capas_decodificador": 6,
+        "multiplicador_ffn": 4,
+        "dropout": 0.0,
+        "tasa_aprendizaje": 0.0001,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.2
+      },
+      "aptitud": 0.537037037037037,
+      "iteracion": 4,
+      "hormiga": 6,
+      "nueva": true,
+      "evaluacion": 29
+    },
+    {
+      "configuracion": {
+        "d_model": 256,
+        "heads": 8,
+        "capas_codificador": 3,
+        "capas_decodificador": 6,
+        "multiplicador_ffn": 4,
+        "dropout": 0.2,
+        "tasa_aprendizaje": 0.0001,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.0
+      },
+      "aptitud": 0.7222222222222222,
+      "iteracion": 4,
+      "hormiga": 7,
+      "nueva": true,
+      "evaluacion": 30
+    },
+    {
+      "configuracion": {
+        "d_model": 512,
+        "heads": 4,
+        "capas_codificador": 2,
+        "capas_decodificador": 6,
+        "multiplicador_ffn": 4,
+        "dropout": 0.2,
+        "tasa_aprendizaje": 0.0002,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.0
+      },
+      "aptitud": 0.6111111111111112,
+      "iteracion": 4,
+      "hormiga": 8,
+      "nueva": true,
+      "evaluacion": 31
+    },
+    {
+      "configuracion": {
+        "d_model": 512,
+        "heads": 8,
+        "capas_codificador": 6,
+        "capas_decodificador": 2,
+        "multiplicador_ffn": 4,
+        "dropout": 0.2,
+        "tasa_aprendizaje": 0.001,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.2
+      },
+      "aptitud": 0.75,
+      "iteracion": 4,
+      "hormiga": 9,
+      "nueva": true,
+      "evaluacion": 32
+    },
+    {
+      "configuracion": {
+        "d_model": 512,
+        "heads": 8,
+        "capas_codificador": 3,
+        "capas_decodificador": 4,
+        "multiplicador_ffn": 4,
+        "dropout": 0.0,
+        "tasa_aprendizaje": 0.0001,
+        "calentamiento": 4000,
+        "suavizado_etiquetas": 0.2
+      },
+      "aptitud": 0.6296296296296297,
+      "iteracion": 5,
+      "hormiga": 1,
+      "nueva": false,
+      "evaluacion": null
+    },
+    {
+      "configuracion": {
+        "d_model": 512,
+        "heads": 8,
+        "capas_codificador": 6,
+        "capas_decodificador": 4,
+        "multiplicador_ffn": 4,
+        "dropout": 0.2,
+        "tasa_aprendizaje": 0.0001,
+        "calentamiento": 2000,
+        "suavizado_etiquetas": 0.2
+      },
+      "aptitud": 0.7685185185185186,
+      "iteracion": 5,
+      "hormiga": 2,
+      "nueva": true,
+      "evaluacion": 33
+    },
+    {
+      "configuracion": {
+        "d_model": 384,
+        "heads": 8,
+        "capas_codificador": 3,
+        "capas_decodificador": 4,
+        "multiplicador_ffn": 4,
+        "dropout": 0.2,
+        "tasa_aprendizaje": 0.0001,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.0
+      },
+      "aptitud": 0.8333333333333334,
+      "iteracion": 5,
+      "hormiga": 3,
+      "nueva": true,
+      "evaluacion": 34
+    },
+    {
+      "configuracion": {
+        "d_model": 384,
+        "heads": 4,
+        "capas_codificador": 2,
+        "capas_decodificador": 4,
+        "multiplicador_ffn": 4,
+        "dropout": 0.2,
+        "tasa_aprendizaje": 0.0001,
+        "calentamiento": 2000,
+        "suavizado_etiquetas": 0.1
+      },
+      "aptitud": 0.712962962962963,
+      "iteracion": 5,
+      "hormiga": 4,
+      "nueva": true,
+      "evaluacion": 35
+    },
+    {
+      "configuracion": {
+        "d_model": 384,
+        "heads": 8,
+        "capas_codificador": 2,
+        "capas_decodificador": 6,
+        "multiplicador_ffn": 4,
+        "dropout": 0.2,
+        "tasa_aprendizaje": 0.001,
+        "calentamiento": 2000,
+        "suavizado_etiquetas": 0.2
+      },
+      "aptitud": 0.712962962962963,
+      "iteracion": 5,
+      "hormiga": 5,
+      "nueva": true,
+      "evaluacion": 36
+    },
+    {
+      "configuracion": {
+        "d_model": 256,
+        "heads": 8,
+        "capas_codificador": 6,
+        "capas_decodificador": 4,
+        "multiplicador_ffn": 4,
+        "dropout": 0.1,
+        "tasa_aprendizaje": 0.001,
+        "calentamiento": 500,
+        "suavizado_etiquetas": 0.2
+      },
+      "aptitud": 0.7314814814814815,
+      "iteracion": 5,
+      "hormiga": 6,
+      "nueva": true,
+      "evaluacion": 37
+    },
+    {
+      "configuracion": {
+        "d_model": 512,
+        "heads": 8,
+        "capas_codificador": 6,
+        "capas_decodificador": 5,
+        "multiplicador_ffn": 4,
+        "dropout": 0.2,
+        "tasa_aprendizaje": 0.0001,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.1
+      },
+      "aptitud": 0.8333333333333334,
+      "iteracion": 5,
+      "hormiga": 7,
+      "nueva": true,
+      "evaluacion": 38
+    },
+    {
+      "configuracion": {
+        "d_model": 512,
+        "heads": 8,
+        "capas_codificador": 3,
+        "capas_decodificador": 2,
+        "multiplicador_ffn": 4,
+        "dropout": 0.3,
+        "tasa_aprendizaje": 0.0002,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.2
+      },
+      "aptitud": 0.712962962962963,
+      "iteracion": 5,
+      "hormiga": 8,
+      "nueva": true,
+      "evaluacion": 39
+    },
+    {
+      "configuracion": {
+        "d_model": 384,
+        "heads": 8,
+        "capas_codificador": 3,
+        "capas_decodificador": 3,
+        "multiplicador_ffn": 2,
+        "dropout": 0.2,
+        "tasa_aprendizaje": 0.0001,
+        "calentamiento": 1000,
+        "suavizado_etiquetas": 0.0
+      },
+      "aptitud": 0.6944444444444444,
+      "iteracion": 5,
+      "hormiga": 9,
+      "nueva": true,
+      "evaluacion": 40
+    }
+  ],
+  "mejor": {
+    "configuracion": {
+      "d_model": 384,
+      "heads": 8,
+      "capas_codificador": 3,
+      "capas_decodificador": 4,
+      "multiplicador_ffn": 4,
+      "dropout": 0.2,
+      "tasa_aprendizaje": 0.0001,
+      "calentamiento": 1000,
+      "suavizado_etiquetas": 0.2
+    },
+    "aptitud": 0.8333333333333334,
+    "iteracion": 3,
+    "hormiga": 3,
+    "nueva": true,
+    "evaluacion": 19
+  }
+}

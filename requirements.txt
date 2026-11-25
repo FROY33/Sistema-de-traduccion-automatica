@@ -1,6 +1,21 @@
-datasets
-pandas
-scikit-learn
-pyarrow
-ipykernel
-jupyter
+# Versiones exactas probadas con Python 3.14.
+# PyTorch con CUDA se instala ANTES que este archivo (ver README, sección 5.1).
+
+# Datos y preprocesamiento
+datasets==5.2.0
+pandas==3.1.1
+numpy==2.5.5
+scikit-learn==1.9.1
+pyarrow==26.0.1
+sentencepiece==0.2.3
+
+# Modelo, entrenamiento y evaluación
+torch==2.15.0
+transformers==5.24.1
+sacrebleu==2.6.0
+
+# Notebooks, figuras y pruebas
+ipykernel==7.4.0
+jupyter==1.1.1
+matplotlib==3.10.8
+pytest==9.0.3
