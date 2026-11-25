@@ -20,7 +20,7 @@ Cada integrante revisa la cuota de GPU de su suscripción en la región que conv
 - [ ] La decisión (Azure o Colab) queda anotada en esta issue y comunicada al equipo.
 - [ ] Si Azure funciona, se propone por separado una issue para entrenar griego con el corpus completo; no se añade al plan sin esa decisión.
 
-## Resultado (2026-11-25, cuenta del dueño de la GPU)
+## Resultado (2026-11-25, cuenta de un integrante sin GPU)
 
 - Oferta: **Azure for Students** (tenant Instituto Politécnico Nacional). Las 4 cuentas del equipo tienen la misma oferta.
 - El proveedor `Microsoft.Compute` estaba sin registrar (por eso `az vm list-usage` devolvía vacío); se registró.
