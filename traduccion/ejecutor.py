@@ -324,6 +324,9 @@ def comando_busqueda(
         "--aptitud", aptitud,
         "--salida", str(rutas.resultados),
     ]  # fmt: skip
+    if aptitud == "real":
+        # La aptitud real lee el tokenizador y los datos de ``artefactos/`` en Drive.
+        comando += ["--artefactos", str(rutas.artefactos)]
     if metodo == "aleatoria":
         comando += ["--fragmento", str(fragmento), "--fragmentos", str(fragmentos)]
     return comando
