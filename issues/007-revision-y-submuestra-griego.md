@@ -20,6 +20,27 @@ Ver PRD: sección *Datos y preprocesamiento* y *Notas adicionales*.
 - [ ] Validación y prueba de griego no se submuestrean (se usan las particiones filtradas completas).
 - [ ] Lo observado se resume en una o dos frases para la sección de limitaciones del artículo.
 
+## Cómo se hace
+
+En Colab (sin GPU), con `notebooks/griego_007_colab.ipynb`:
+
+1. Con `CONTINUAR_CON_GRIEGO = False`: copia `artefactos/datos/en_el` a Colab, verifica su huella del issue 001, muestra 30 pares de `train` (semilla 7) y guarda en Drive `revision/revision_griego_007.md` para calificarlos.
+2. Tras calificar y decidir: con `CONTINUAR_CON_GRIEGO = True`, genera `artefactos/datos/en_el_300k/` (300 000 pares de `train` con semilla 0; `validation` y `test` completas), la sube a Drive, comprueba el MD5 e imprime la fila para la tabla de abajo.
+
+La lógica está en `traduccion/datos.py` (`pares_para_revision`, `tabla_revision`, `guardar_submuestra`), probada en `tests/test_griego.py`. El issue 012 usa la submuestra con `evaluar.py --par en-el --datos <Drive>/artefactos/datos/en_el_300k`.
+
+## Revisión
+
+_Pendiente: tabla de los 30 pares calificados (o resumen y ejemplos), recuento correcto / parcial / incorrecto._
+
+**Decisión del equipo:** _pendiente_
+
+**Para limitaciones del artículo:** _pendiente (1–2 frases)_
+
+## Submuestra en Drive
+
+_Pendiente: fila que imprime la última celda del notebook._
+
 ## Bloqueado por
 
 - Bloqueado por `issues/001-regenerar-artefactos-y-entorno.md`
