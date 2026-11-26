@@ -354,3 +354,28 @@ Cómo funciona (código en `traduccion/datos.py`, `traduccion/modelo.py` y `trad
 - **Falta de memoria**: se captura, se libera la GPU y se registra `sin_memoria` con aptitud 0; la búsqueda sigue.
 
 Con `buscar.py --aptitud real` se puede elegir el presupuesto (`--presupuesto-tokens minimo|real|<n>`, por defecto `real`) y la carpeta de artefactos (`--artefactos`). Con un presupuesto distinto de `real` y sin `--salida`, los resultados van a `resultados_piloto/` para no mezclarse con los reales. El notebook de Colab pasa `--artefactos` automáticamente con la carpeta `artefactos/` de Drive.
+
+## 15. Entrenamiento completo de finalistas y evaluación final (issue 009)
+
+Código en `traduccion/evaluacion.py` (métricas, bootstrap pareado, ejemplos, parada temprana y JSON de resultados) y `traduccion/entrenamiento_completo.py` (bucle por épocas, puntos de control, búsqueda en haz y evaluación en prueba). Script: `entrenar_final.py`.
+
+```bash
+# 1) Entrenar cada finalista a convergencia (se guarda el mejor modelo)
+python entrenar_final.py entrenar --par en-la --nombre defecto
+python entrenar_final.py entrenar --par en-la --nombre mmas --desde resultados/en-la/real/cache_aptitud.json
+python entrenar_final.py entrenar --par en-la --nombre aleatoria --desde resultados/en-la/real/aleatoria_semilla0.json
+
+# 2) Evaluar una sola vez en prueba todos los finalistas del par
+python entrenar_final.py evaluar --par en-la
+
+# Prueba de humo (pocos minutos): una época y validación reducida
+python entrenar_final.py entrenar --par en-la --nombre defecto --max-epocas 1 --n-validacion 500 --salida resultados_piloto
+python entrenar_final.py entrenar --par en-la --nombre mmas --desde notebooks/resultados_ejemplo/en-la/falsa/cache_aptitud.json --max-epocas 1 --n-validacion 500 --salida resultados_piloto
+python entrenar_final.py evaluar --par en-la --salida resultados_piloto
+```
+
+- **Parada temprana**: al final de cada época se decodifica de forma voraz la validación y se mide chrF; si mejora se guarda el modelo. Se para tras `--paciencia` épocas sin mejora (3) o al llegar a `--max-epocas` (20 en latín, 6 en griego). En latín se usa la validación completa; en griego, una muestra fija de 5 000 pares (`--n-validacion`), porque la validación completa (≈110 000 pares) tardaría más que la época.
+- **Evaluación final**: búsqueda en haz de 5 con penalización de longitud 1.0 para todos los modelos; chrF, BLEU (y TER con `--ter`) con la firma de sacreBLEU; bootstrap pareado (1 000 remuestreos) de cada modelo frente a MMAS; 10 ejemplos fijos con semilla. `evaluar_en_prueba` es el único punto del código que carga la partición de prueba (lo comprueba una prueba).
+- **Salidas**: `resultados/modelos/<par>/<nombre>/` (modelo, `metadatos.json`, `entrenamiento.json` con el historial por época) y `resultados/prueba/` (`resultados_prueba.json`, `ejemplos_<par>.json` e `hipotesis/<par>_<nombre>.txt`), el formato que lee `notebooks/resultados.ipynb`.
+- **Griego** (issue 012): añadir `--datos artefactos/datos/en_el_300k`; la mejor de MMAS se transfiere con `--desde` apuntando al JSON de latín.
+- Si el entrenamiento se interrumpe no se reanuda: hay que relanzarlo (el mejor modelo guardado hasta ese momento se conserva en su carpeta).
