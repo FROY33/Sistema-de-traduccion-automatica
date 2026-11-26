@@ -2,22 +2,15 @@
 
 Estado al 2026-11-25:
 
-- **Hechos:** 002, 004 y 005 (en `issues/done/`).
+- **Hechos:** 001, 002, 003, 004, 005 y 007 (en `issues/done/`).
 - **013:** 4 de 5 criterios cumplidos.
-- **001:** solo está marcado el criterio de dependencias fijadas. El de "todo confirmado en git" también puede marcarse, porque el árbol de trabajo está limpio.
 
 ## P1: dueño de la GPU (ruta crítica)
 
 Todo lo de P1 está en la ruta crítica o necesita la 4060, así que no conviene repartirlo.
 
-1. **[001](001-regenerar-artefactos-y-entorno.md):**
-   - Hacer pull, montar el entorno virtual con CUDA y correr el notebook de preprocesamiento.
-   - Verificar las etiquetas `<2en>`/`<2la>`/`<2el>`.
-   - Borrar las carpetas de datos antiguas invertidas.
-   - Subir tokenizadores y datos a Drive con sus MD5.
-
-   **Desbloquea a P3, y a través de 003 desbloquea a P2.**
-2. **[003](003-tracer-bullet-evaluacion-extremo-a-extremo.md):** Tracer bullet: una configuración pasa por datos, Marian, el ciclo de entrenamiento, la decodificación voraz y chrF. Incluye las mediciones de tiempo en la 4060, que dicen si las 40 evaluaciones caben en una noche.
+1. ~~**[001](done/001-regenerar-artefactos-y-entorno.md):** Regenerar artefactos, entorno con CUDA y subida a Drive.~~ Hecho: tokenizadores y datos en Drive con su huella.
+2. ~~**[003](done/003-tracer-bullet-evaluacion-extremo-a-extremo.md):** Tracer bullet de extremo a extremo.~~ Hecho: en la 4060, una evaluación con el presupuesto real (≈2 épocas de latín) tarda 126 s (aptitud 0.116, chrF 11.64); la repetición con la misma semilla difiere en 0.0028.
 3. **[008](008-corrida-piloto.md):** Corrida piloto de MMAS (código de P2) con la aptitud real y un presupuesto mínimo. Apoyan P2 y P3.
 4. **[010](010-noche-1-busquedas.md):** Noche 1. MMAS corre en la 4060 mientras la búsqueda aleatoria corre en Colab (ver P2 a P4).
 5. **[011](011-finalistas-de-latin.md):** Entrenamiento completo de los finalistas de latín (por defecto, mejor aleatoria y mejor MMAS) con el código de 009 de P2.
@@ -28,7 +21,7 @@ Todo lo de P1 está en la ruta crítica o necesita la 4060, así que no conviene
 1. ~~004~~ y ~~005~~: hechos.
 2. **[009](009-entrenamiento-completo-y-evaluacion-final.md):** Se pasa de P1 a P2, que ya está libre.
    - Contenido: entrenamiento completo con parada temprana, haz de 5, chrF/BLEU/TER, bootstrap pareado y 10 ejemplos.
-   - Está bloqueado por 003, pero puede escribirse desde ya contra las interfaces de P1.
+   - Desbloqueado: 003 ya está hecho.
 3. **008:** Con P1, interpretar el piloto y ajustar ρ y la `a` de τ_min (aún pendiente).
 4. **010:** Correr 1 de los 3 fragmentos de búsqueda aleatoria en su cuenta de Colab y luego fusionar los resultados con la verificación de huella.
 
@@ -37,8 +30,8 @@ Todo lo de P1 está en la ruta crítica o necesita la 4060, así que no conviene
 1. **[006](006-ejecutor-en-colab-o-azure.md):** Notebook ejecutor de Colab.
    - Qué hace: clona en un commit fijo, monta Drive, corre un fragmento de búsqueda y guarda los resultados con huella.
    - Azure queda descartado, así que es solo Colab.
-   - Bloqueado por 001, 003 y 005, pero el esqueleto puede escribirse desde ya.
-2. **[007](007-revision-y-submuestra-griego.md):** Revisión de los datos griegos y submuestra fija de 300k. Solo lo bloquea 001, así que puede arrancar en cuanto P1 suba los datos a Drive.
+   - Desbloqueado: 001, 003 y 005 ya están hechos.
+2. ~~**[007](done/007-revision-y-submuestra-griego.md):** Revisión de los datos griegos y submuestra fija de 300k.~~ Hecho: el corpus es griego moderno (Europarl); la submuestra está en `artefactos/datos/en_el_300k`.
 3. **008:** Verificar que el ejecutor funciona en Colab durante el piloto.
 4. **010:** Correr 1 fragmento de búsqueda aleatoria.
 5. **[012](012-modelos-de-griego.md):** Modelos de griego en Colab: la configuración por defecto y la mejor de MMAS transferida desde latín, con 6 épocas como máximo.
@@ -48,7 +41,7 @@ Todo lo de P1 está en la ruta crítica o necesita la 4060, así que no conviene
 1. **[013](013-notebook-de-resultados.md):** Solo falta verificar que el artículo compila con las figuras generadas. Puede hacerse ya en Overleaf con las salidas de la aptitud falsa.
 2. **[014](014-articulo-ieee.md):** Las secciones de método ya están escritas. Pendiente:
    - Revisar las páginas de las referencias escritas de memoria.
-   - Recalcular la tabla de fertilidad después de 001.
+   - Recalcular la tabla de fertilidad (001 ya está hecho).
    - Llenar los resultados cuando terminen 011 y 012.
 
    Bloqueado por 011, 012 y 013.
@@ -66,4 +59,4 @@ Todo lo de P1 está en la ruta crítica o necesita la 4060, así que no conviene
 | Día 2 | 011 | Fusión + apoyo en 011 | 012 | 014: resultados según lleguen |
 | Día 2.5 | 015 (opcional) | Revisión final | Revisión final | Cierre de 014 |
 
-**Lo más urgente:** que P1 haga 001. Hasta que los tokenizadores y los datos estén en Drive, solo pueden avanzar P2 (009 contra interfaces), P3 (esqueleto de 006) y P4.
+**Lo más urgente:** con 001 y 003 hechos, el siguiente paso de la ruta crítica es el piloto 008 en la 4060, con P3 verificando el ejecutor en Colab.
