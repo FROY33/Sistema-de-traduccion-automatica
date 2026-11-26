@@ -46,8 +46,8 @@ Hecho:
 
 Falta:
 
-- Ruta real de la carpeta compartida de Drive (`CARPETA_DRIVE`) y subir los artefactos con la estructura `artefactos/tok_*.model` y `artefactos/datos/en_*` (issue 001).
-- Anotar en el issue 001 la huella de los artefactos (`md5_tokenizador`, `md5_datos`, `bytes_datos`, calculada con `ejecutor.huella_artefactos`) y copiarla en `HUELLA_ESPERADA` del notebook.
+- ~~Ruta real de la carpeta compartida de Drive y artefactos con la estructura `artefactos/tok_*.model` y `artefactos/datos/en_*`.~~ Hecho: el notebook localiza la carpeta por su ID (`ID_CARPETA_DRIVE`) y los artefactos están en Drive.
+- ~~Anotar la huella de los artefactos en el issue 001 y copiarla en `HUELLA_ESPERADA`.~~ Hecho (calculada en Colab el 2026-11-25).
 - Fijar `COMMIT` en el commit que se use para la noche 1 (hoy apunta al commit del módulo del ejecutor) y subirlo a GitHub; si el repositorio es privado, la clonación en Colab necesita un token.
 - Comprobar en Colab que las versiones fijadas (probadas con Python 3.14) se instalan en su versión de Python; si alguna no tiene rueda, decidir qué versión usar allí.
 - Aptitud real (issue 003): hoy `--aptitud real` termina con error; cuando exista, la huella de cada resultado debe incluir la GPU (con la aptitud falsa `gpu` queda en `null`; la GPU sí queda en el registro de la ejecución).

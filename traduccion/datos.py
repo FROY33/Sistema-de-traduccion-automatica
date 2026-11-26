@@ -64,6 +64,16 @@ MAX_LEN = {"en-la": 160, "en-el": 128}
 SEMILLA_MUESTRA_VALIDACION = 0
 TAMANO_MUESTRA_VALIDACION = 1000
 
+#: Submuestra fija del entrenamiento griego (issue 007; PRD, historia 7). Solo se
+#: submuestrea ``train``: validación y prueba se copian completas.
+SEMILLA_SUBMUESTRA_GRIEGO = 0
+TAMANO_SUBMUESTRA_GRIEGO = 300_000
+CARPETA_SUBMUESTRA_GRIEGO = "datos/en_el_300k"
+
+#: Revisión manual de pares griegos antes de gastar GPU (issue 007; PRD, historia 6).
+SEMILLA_REVISION_GRIEGO = 7
+TAMANO_REVISION_GRIEGO = 30
+
 
 # ---------------------------------------------------------------------------
 # Copia de la lógica del notebook (mismo comportamiento)
@@ -285,21 +295,26 @@ def _clave_hash(*partes: Any) -> str:
     return hashlib.md5(":".join(str(p) for p in partes).encode("utf-8")).hexdigest()
 
 
-def indices_muestra_validacion(
-    n_validacion: int, tamano: int = TAMANO_MUESTRA_VALIDACION, semilla: int = SEMILLA_MUESTRA_VALIDACION
-) -> list[int]:
-    """Índices (ordenados) de la muestra fija de validación.
+def indices_muestra(n: int, tamano: int, semilla: int) -> list[int]:
+    """Índices (ordenados) de una muestra fija de ``tamano`` elementos de 0..n−1.
 
     Se ordenan los índices 0..n−1 por el MD5 de ``"<semilla>:<índice>"`` y se
     toman los ``tamano`` primeros. Así la muestra depende solo de la semilla y
     del tamaño de la partición: es la misma en cualquier máquina, sistema
     operativo o versión de Python/NumPy (no depende de ``random`` ni del orden
-    de iteración de conjuntos o diccionarios).
+    de iteración de conjuntos o diccionarios). Si ``tamano >= n`` se devuelven todos.
     """
-    if tamano >= n_validacion:
-        return list(range(n_validacion))
-    ordenados = sorted(range(n_validacion), key=lambda i: _clave_hash(semilla, i))
+    if tamano >= n:
+        return list(range(n))
+    ordenados = sorted(range(n), key=lambda i: _clave_hash(semilla, i))
     return sorted(ordenados[:tamano])
+
+
+def indices_muestra_validacion(
+    n_validacion: int, tamano: int = TAMANO_MUESTRA_VALIDACION, semilla: int = SEMILLA_MUESTRA_VALIDACION
+) -> list[int]:
+    """Índices (ordenados) de la muestra fija de validación (``indices_muestra``)."""
+    return indices_muestra(n_validacion, tamano, semilla)
 
 
 def muestra_validacion(
@@ -308,6 +323,108 @@ def muestra_validacion(
     indices = indices_muestra_validacion(len(validacion), tamano, semilla)
     referencias = [validacion.referencias[i] for i in indices] if validacion.referencias is not None else None
     return Particion([validacion.input_ids[i] for i in indices], [validacion.labels[i] for i in indices], referencias)
+
+
+# ---------------------------------------------------------------------------
+# Griego: revisión manual y submuestra fija de entrenamiento (issue 007)
+# ---------------------------------------------------------------------------
+
+
+def pares_para_revision(
+    ds, tamano: int = TAMANO_REVISION_GRIEGO, semilla: int = SEMILLA_REVISION_GRIEGO
+) -> list[dict[str, Any]]:
+    """Pares elegidos con semilla de una partición (``datasets.Dataset``) para revisarlos a mano.
+
+    Cada par lleva su índice en la partición, los textos y las longitudes en
+    tokens (sin bos/eos), para poder volver a localizarlo y repetir la revisión.
+    """
+    indices = indices_muestra(len(ds), tamano, semilla)
+    filas = ds.select(indices)
+    return [
+        {
+            "indice": indice,
+            "ingles": fila["ingles"],
+            "clasico": fila["clasico"],
+            "tokens_ingles": len(fila["input_ids"]) - 2,
+            "tokens_clasico": len(fila["labels"]) - 2,
+        }
+        for indice, fila in zip(indices, filas)
+    ]
+
+
+def _celda_markdown(texto: Any) -> str:
+    return str(texto).replace("\\", "\\\\").replace("|", "\\|").replace("\n", " ")
+
+
+def tabla_revision(pares: list[dict[str, Any]]) -> str:
+    """Plantilla Markdown de la revisión: una fila por par, con la valoración por llenar.
+
+    Valoración: ``correcto``, ``parcial`` o ``incorrecto``. La nota describe el
+    problema (verso/prosa, desalineación, ruido…).
+    """
+    lineas = [
+        "| # | Índice | Inglés | Griego | Tokens (en/el) | Valoración | Nota |",
+        "|---|---|---|---|---|---|---|",
+    ]
+    for numero, par in enumerate(pares, start=1):
+        lineas.append(
+            f"| {numero} | {par['indice']} | {_celda_markdown(par['ingles'])} | {_celda_markdown(par['clasico'])} "
+            f"| {par['tokens_ingles']}/{par['tokens_clasico']} |  |  |"
+        )
+    return "\n".join(lineas) + "\n"
+
+
+def guardar_submuestra(
+    carpeta_origen: str | Path,
+    carpeta_destino: str | Path,
+    tamano: int = TAMANO_SUBMUESTRA_GRIEGO,
+    semilla: int = SEMILLA_SUBMUESTRA_GRIEGO,
+) -> dict[str, Any]:
+    """Guarda en ``carpeta_destino`` una copia de los datos con ``train`` submuestreado.
+
+    - ``train``: ``tamano`` pares elegidos con ``indices_muestra`` (orden original).
+    - ``validation`` y ``test``: copias completas, archivo por archivo, de las del origen.
+
+    La carpeta resultante tiene la misma estructura que ``datos/en_el``, así que
+    se usa tal cual con ``evaluar.py --datos``. No sobrescribe: si el destino ya
+    existe, se detiene (la submuestra se genera una sola vez).
+
+    Devuelve un resumen con la semilla, los tamaños, el MD5 de los índices
+    elegidos y el MD5 y los bytes de la carpeta resultante.
+    """
+    import shutil
+
+    from datasets import load_from_disk
+
+    from .ejecutor import bytes_carpeta, md5_carpeta
+
+    origen, destino = Path(carpeta_origen), Path(carpeta_destino)
+    if destino.exists():
+        raise FileExistsError(f"{destino} ya existe: la submuestra se genera una sola vez. Bórrala a mano si de verdad hay que rehacerla.")
+    for particion in ("train", "validation", "test"):
+        if not (origen / particion).is_dir():
+            raise FileNotFoundError(f"Falta {origen / particion}")
+
+    entrenamiento_ = load_from_disk(str(origen / "train"))
+    n_origen = len(entrenamiento_)
+    if tamano > n_origen:
+        raise ValueError(f"La submuestra ({tamano}) es mayor que el entrenamiento ({n_origen}).")
+    indices = indices_muestra(n_origen, tamano, semilla)
+
+    destino.mkdir(parents=True)
+    entrenamiento_.select(indices).flatten_indices().save_to_disk(str(destino / "train"))
+    for particion in ("validation", "test"):
+        shutil.copytree(origen / particion, destino / particion)
+
+    return {
+        "origen": origen.name,
+        "semilla": semilla,
+        "tamano": tamano,
+        "n_train_origen": n_origen,
+        "md5_indices": hashlib.md5(",".join(map(str, indices)).encode()).hexdigest(),
+        "md5_datos": md5_carpeta(destino),
+        "bytes_datos": bytes_carpeta(destino),
+    }
 
 
 # ---------------------------------------------------------------------------
