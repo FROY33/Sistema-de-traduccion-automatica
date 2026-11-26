@@ -65,6 +65,7 @@ class RutasEjecutor:
 
     ``<drive>/artefactos/``  tokenizadores y ``datos/`` (solo lectura)
     ``<drive>/resultados/``  JSON de ``buscar.py`` (``<par>/<aptitud>/...``)
+    ``<drive>/resultados_piloto/`` lo mismo con un presupuesto de tokens no real
     ``<drive>/ejecuciones/`` un registro JSON por ejecución del notebook
     """
 
@@ -79,6 +80,12 @@ class RutasEjecutor:
         return self.drive / "resultados"
 
     @property
+    def resultados_piloto(self) -> Path:
+        """Resultados con un presupuesto de tokens no real (piloto, issue 008):
+        nunca se mezclan con los de la noche 1."""
+        return self.drive / "resultados_piloto"
+
+    @property
     def ejecuciones(self) -> Path:
         return self.drive / "ejecuciones"
 
@@ -89,8 +96,9 @@ class RutasEjecutor:
         return self.artefactos / _artefactos_de(par)["datos"]
 
     def crear(self) -> None:
-        """Crea las carpetas de resultados y registros (no las de artefactos)."""
+        """Crea las carpetas de resultados (reales y piloto) y registros (no las de artefactos)."""
         self.resultados.mkdir(parents=True, exist_ok=True)
+        self.resultados_piloto.mkdir(parents=True, exist_ok=True)
         self.ejecuciones.mkdir(parents=True, exist_ok=True)
 
 
@@ -309,12 +317,20 @@ def comando_busqueda(
     fragmento: int = 1,
     fragmentos: int = 1,
     python: str = sys.executable,
+    presupuesto_tokens: str = "real",
+    presupuesto: int | None = None,
 ) -> list[str]:
     """Comando de ``buscar.py`` que escribe directamente en la carpeta de Drive.
 
     La caché JSON se reescribe tras cada evaluación, así que relanzar el mismo
     comando tras un corte de Colab continúa sin repetir evaluaciones.
+
+    Con la aptitud real y ``presupuesto_tokens`` distinto de ``"real"`` (p. ej.
+    ``"minimo"`` en el piloto) se escribe en ``resultados_piloto/``. ``presupuesto``
+    limita las evaluaciones de la búsqueda aleatoria (por defecto, las de ``buscar.py``).
     """
+    presupuesto_tokens = str(presupuesto_tokens).strip().lower()
+    es_piloto = aptitud == "real" and presupuesto_tokens != "real"
     comando = [
         python,
         str(Path(carpeta_repo) / "buscar.py"),
@@ -322,11 +338,13 @@ def comando_busqueda(
         "--semilla", str(semilla),
         "--par", par,
         "--aptitud", aptitud,
-        "--salida", str(rutas.resultados),
+        "--salida", str(rutas.resultados_piloto if es_piloto else rutas.resultados),
     ]  # fmt: skip
     if aptitud == "real":
         # La aptitud real lee el tokenizador y los datos de ``artefactos/`` en Drive.
-        comando += ["--artefactos", str(rutas.artefactos)]
+        comando += ["--artefactos", str(rutas.artefactos), "--presupuesto-tokens", presupuesto_tokens]
+    if presupuesto is not None:
+        comando += ["--presupuesto", str(presupuesto)]
     if metodo == "aleatoria":
         comando += ["--fragmento", str(fragmento), "--fragmentos", str(fragmentos)]
     return comando

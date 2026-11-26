@@ -210,6 +210,34 @@ def test_comando_busqueda_real_lee_los_artefactos_de_drive(rutas):
     real = ejecutor.comando_busqueda("repo", rutas, "mmas", 0, "en-la", "real", python="py")
     assert real[real.index("--artefactos") + 1] == str(rutas.artefactos)
     assert "--artefactos" not in ejecutor.comando_busqueda("repo", rutas, "mmas", 0, "en-la", "falsa")
+    assert real[real.index("--presupuesto-tokens") + 1] == "real"
+    assert real[real.index("--salida") + 1] == str(rutas.resultados)
+
+
+def test_comando_busqueda_piloto_escribe_aparte(rutas):
+    """Con un presupuesto de tokens no real (piloto, issue 008) nunca se escribe en resultados/."""
+    piloto = ejecutor.comando_busqueda(
+        "repo", rutas, "aleatoria", 0, "en-la", "real", 2, 3, python="py", presupuesto_tokens="Minimo", presupuesto=6
+    )
+    assert piloto[piloto.index("--salida") + 1] == str(rutas.resultados_piloto)
+    assert piloto[piloto.index("--presupuesto-tokens") + 1] == "minimo"
+    assert piloto[piloto.index("--presupuesto") + 1] == "6"
+    assert piloto[-4:] == ["--fragmento", "2", "--fragmentos", "3"]
+    # La aptitud falsa no usa presupuesto de tokens: sigue en resultados/.
+    falsa = ejecutor.comando_busqueda("repo", rutas, "mmas", 0, "en-la", "falsa", presupuesto_tokens="minimo")
+    assert falsa[falsa.index("--salida") + 1] == str(rutas.resultados)
+    assert "--presupuesto-tokens" not in falsa and "--presupuesto" not in falsa
+
+
+def test_buscar_py_acepta_el_comando_del_piloto(rutas):
+    import buscar
+
+    comando = ejecutor.comando_busqueda(
+        "repo", rutas, "aleatoria", 0, "en-la", "real", 2, 3, python="py", presupuesto_tokens="minimo", presupuesto=6
+    )
+    args = buscar.analizar_argumentos(comando[2:])
+    assert (args.presupuesto_tokens, args.presupuesto, args.fragmento, args.fragmentos) == ("minimo", 6, 2, 3)
+    assert args.salida == str(rutas.resultados_piloto)
 
 
 def test_relanzar_el_fragmento_en_drive_no_repite_evaluaciones(rutas):
