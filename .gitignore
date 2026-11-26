@@ -22,3 +22,5 @@ Thumbs.db
 *.vocab
 datos/
 notebooks/datos/
+resultados/
+resultados_piloto/
