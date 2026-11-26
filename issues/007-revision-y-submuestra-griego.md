@@ -14,7 +14,7 @@ Ver PRD: sección *Datos y preprocesamiento* y *Notas adicionales*.
 
 ## Criterios de aceptación
 
-- [ ] Se documentan unos 30 pares revisados con una valoración de alineación (correcto / parcial / incorrecto) y ejemplos de los problemas encontrados.
+- [x] Se documentan unos 30 pares revisados con una valoración de alineación (correcto / parcial / incorrecto) y ejemplos de los problemas encontrados.
 - [ ] El equipo decide si continuar con griego; la decisión queda anotada.
 - [ ] La submuestra de 300 000 pares se genera con semilla fija y se guarda como conjunto de datos en Drive con su MD5.
 - [ ] Validación y prueba de griego no se submuestrean (se usan las particiones filtradas completas).
@@ -31,11 +31,56 @@ La lógica está en `traduccion/datos.py` (`pares_para_revision`, `tabla_revisio
 
 ## Revisión
 
-_Pendiente: tabla de los 30 pares calificados (o resumen y ejemplos), recuento correcto / parcial / incorrecto._
+Hecha por P3 en Colab (2026-11-25) con `notebooks/griego_007_colab.ipynb`: 30 pares de `train` (1 101 436 pares) elegidos con semilla 7. La tabla completa, con los textos, está en Drive en `revision/revision_griego_007.md`.
 
-**Decisión del equipo:** _pendiente_
+**Recuento: 26 correctos, 2 parciales, 2 incorrectos** (87 % bien alineados; 93 % al menos en parte).
 
-**Para limitaciones del artículo:** _pendiente (1–2 frases)_
+| # | Índice | Tokens en/el | Valoración | Nota |
+|---|---|---|---|---|
+| 1 | 91569 | 123/84 | incorrecto | El griego es otra intervención (asesinato en Irlanda, ONU), no la de las enmiendas sobre Níger |
+| 2 | 95563 | 31/34 | correcto | |
+| 3 | 167557 | 49/57 | correcto | |
+| 4 | 191805 | 101/67 | incorrecto | El griego es otra intervención (retórica sobre la pobreza, Almunia) |
+| 5 | 214467 | 76/78 | correcto | |
+| 6 | 220747 | 38/38 | correcto | |
+| 7 | 265272 | 51/48 | parcial | Al griego le falta «se ha incluido una línea presupuestaria separada» |
+| 8 | 274411 | 61/59 | correcto | |
+| 9 | 332991 | 34/34 | correcto | |
+| 10 | 421139 | 19/51 | parcial | Una oración de más al inicio del griego (frontera de oración corrida); errata «επως» |
+| 11 | 468615 | 62/67 | correcto | |
+| 12 | 488512 | 14/15 | correcto | |
+| 13 | 589876 | 91/86 | correcto | La última cláusula difiere algo de sentido |
+| 14 | 590312 | 14/19 | correcto | Traducción libre |
+| 15 | 676375 | 15/16 | correcto | |
+| 16 | 686867 | 29/35 | correcto | Ruido: etiqueta `(en)` solo en el griego |
+| 17 | 690851 | 15/14 | correcto | |
+| 18 | 742267 | 81/82 | correcto | Contiene una URL; final parafraseado |
+| 19 | 746001 | 28/33 | correcto | |
+| 20 | 788102 | 9/10 | correcto | |
+| 21 | 860758 | 56/54 | correcto | |
+| 22 | 880951 | 36/47 | correcto | Orden y redacción libres |
+| 23 | 886529 | 41/34 | correcto | |
+| 24 | 895344 | 10/7 | correcto | Traducción libre |
+| 25 | 898691 | 56/64 | correcto | |
+| 26 | 926109 | 105/98 | correcto | |
+| 27 | 947212 | 35/32 | correcto | |
+| 28 | 947940 | 34/33 | correcto | Ruido: `"` en lugar del artículo «η»; `(sv)` en ambos lados |
+| 29 | 1025933 | 31/34 | correcto | Paráfrasis idiomática |
+| 30 | 1067804 | 12/17 | correcto | |
+
+**Observaciones:**
+
+- Todo es prosa parlamentaria; no hay verso.
+- El ruido es poco: etiquetas de idioma (`(en)`, `(sv)`), alguna URL y erratas sueltas.
+- Las desalineaciones vienen de fronteras de oración corridas (pares 1, 4 y 10) y se concentran en los pares largos: los dos incorrectos tienen 123 y 101 tokens en inglés.
+
+> **⚠️ El corpus es griego moderno, no griego antiguo.** Los 30 pares son actas del Parlamento Europeo (Europarl): «κύριε πρόεδρε», van Rompuy, Barroso, el informe Kuhn, ortografía monotónica. La fuente es `alansato/greek-english-dataset` (celda de carga de `notebooks/Proyecto_final_NLP_AB.ipynb`). Esto contradice el artículo (título, resumen y `paper/main.tex`, sección *Corpus*: «griego antiguo») y el PRD, que trata el griego como lengua clásica. Hay que decidir entre:
+> - **Seguir con este corpus** y corregir el artículo y el PRD a «griego moderno (Europarl)», declarando en las limitaciones que es un par de recursos altos y de dominio parlamentario.
+> - **Cambiar a un corpus de griego antiguo**, lo que obliga a rehacer el tokenizador y los datos del issue 001.
+
+**Decisión del equipo:** _pendiente (ver el aviso de arriba)_
+
+**Para limitaciones del artículo (borrador, si se sigue con este corpus):** El corpus griego proviene de actas del Parlamento Europeo en griego moderno; en una revisión manual de 30 pares, 26 estaban correctamente alineados, 2 parcialmente y 2 no, con los errores concentrados en los pares más largos.
 
 ## Submuestra en Drive
 
