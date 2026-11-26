@@ -15,10 +15,10 @@ Ver PRD: sección *Datos y preprocesamiento* y *Notas adicionales*.
 ## Criterios de aceptación
 
 - [x] Se documentan unos 30 pares revisados con una valoración de alineación (correcto / parcial / incorrecto) y ejemplos de los problemas encontrados.
-- [ ] El equipo decide si continuar con griego; la decisión queda anotada.
-- [ ] La submuestra de 300 000 pares se genera con semilla fija y se guarda como conjunto de datos en Drive con su MD5.
-- [ ] Validación y prueba de griego no se submuestrean (se usan las particiones filtradas completas).
-- [ ] Lo observado se resume en una o dos frases para la sección de limitaciones del artículo.
+- [x] El equipo decide si continuar con griego; la decisión queda anotada.
+- [x] La submuestra de 300 000 pares se genera con semilla fija y se guarda como conjunto de datos en Drive con su MD5.
+- [x] Validación y prueba de griego no se submuestrean (se usan las particiones filtradas completas).
+- [x] Lo observado se resume en una o dos frases para la sección de limitaciones del artículo.
 
 ## Cómo se hace
 
@@ -78,13 +78,17 @@ Hecha por P3 en Colab (2026-11-25) con `notebooks/griego_007_colab.ipynb`: 30 pa
 > - **Seguir con este corpus** y corregir el artículo y el PRD a «griego moderno (Europarl)», declarando en las limitaciones que es un par de recursos altos y de dominio parlamentario.
 > - **Cambiar a un corpus de griego antiguo**, lo que obliga a rehacer el tokenizador y los datos del issue 001.
 
-**Decisión del equipo:** _pendiente (ver el aviso de arriba)_
+**Decisión del equipo (2026-11-25):** se sigue con griego **con este corpus** (griego moderno, Europarl). La alineación es aceptable y cambiar a griego antiguo obligaría a rehacer el issue 001. Pendiente para P4 (issue 014): cambiar «griego antiguo» por «griego moderno (Europarl)» en el título, el resumen, las palabras clave y la sección *Corpus* del artículo, y dejar de tratar el griego como «lengua clásica» (el PRD también lo hace).
 
-**Para limitaciones del artículo (borrador, si se sigue con este corpus):** El corpus griego proviene de actas del Parlamento Europeo en griego moderno; en una revisión manual de 30 pares, 26 estaban correctamente alineados, 2 parcialmente y 2 no, con los errores concentrados en los pares más largos.
+**Para limitaciones del artículo:** El corpus griego proviene de actas del Parlamento Europeo en griego moderno; en una revisión manual de 30 pares, 26 estaban correctamente alineados, 2 parcialmente y 2 no, con los errores concentrados en los pares más largos.
 
 ## Submuestra en Drive
 
-_Pendiente: fila que imprime la última celda del notebook._
+Generada por P3 en Colab (2026-11-25) con `notebooks/griego_007_colab.ipynb` en el commit `fa3c048ea8b1e98022086a23d25918745811e544`. Está en `artefactos/datos/en_el_300k/` y su resumen en `artefactos/datos/en_el_300k.json`. El MD5 en Drive se comprobó igual al de la copia local. `validation` y `test` son copias completas de las de `en_el`. El issue 012 debe verificar `md5_datos` antes de entrenar.
+
+| Carpeta | Semilla | Pares train | `md5_indices` | `md5_datos` | `bytes_datos` |
+|---|---|---|---|---|---|
+| `datos/en_el_300k` | 0 | 300 000 de 1 101 436 | `fa814f28e51bef3f743442ae040181ce` | `390bef2101ed0c04669b93af3ad42a82` | 635 653 495 |
 
 ## Bloqueado por
 

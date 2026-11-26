@@ -2,7 +2,7 @@
 
 Estado al 2026-11-25:
 
-- **Hechos:** 002, 004 y 005 (en `issues/done/`).
+- **Hechos:** 002, 004, 005 y 007 (en `issues/done/`).
 - **013:** 4 de 5 criterios cumplidos.
 - **001:** solo está marcado el criterio de dependencias fijadas. El de "todo confirmado en git" también puede marcarse, porque el árbol de trabajo está limpio.
 
@@ -38,7 +38,7 @@ Todo lo de P1 está en la ruta crítica o necesita la 4060, así que no conviene
    - Qué hace: clona en un commit fijo, monta Drive, corre un fragmento de búsqueda y guarda los resultados con huella.
    - Azure queda descartado, así que es solo Colab.
    - Bloqueado por 001, 003 y 005, pero el esqueleto puede escribirse desde ya.
-2. **[007](007-revision-y-submuestra-griego.md):** Revisión de los datos griegos y submuestra fija de 300k. Solo lo bloquea 001, así que puede arrancar en cuanto P1 suba los datos a Drive.
+2. ~~**[007](done/007-revision-y-submuestra-griego.md):** Revisión de los datos griegos y submuestra fija de 300k.~~ Hecho: el corpus es griego moderno (Europarl); la submuestra está en `artefactos/datos/en_el_300k`.
 3. **008:** Verificar que el ejecutor funciona en Colab durante el piloto.
 4. **010:** Correr 1 fragmento de búsqueda aleatoria.
 5. **[012](012-modelos-de-griego.md):** Modelos de griego en Colab: la configuración por defecto y la mejor de MMAS transferida desde latín, con 6 épocas como máximo.

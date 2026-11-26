@@ -23,7 +23,7 @@ Ver PRD: sección *Evaluación final* y *Plan de trabajo* (día 2).
 ## Bloqueado por
 
 - Bloqueado por `issues/006-ejecutor-en-colab-o-azure.md`
-- Bloqueado por `issues/007-revision-y-submuestra-griego.md`
+- Bloqueado por `issues/done/007-revision-y-submuestra-griego.md` (hecho: submuestra en `artefactos/datos/en_el_300k`, `md5_datos` `390bef2101ed0c04669b93af3ad42a82`)
 - Bloqueado por `issues/009-entrenamiento-completo-y-evaluacion-final.md`
 - Bloqueado por `issues/010-noche-1-busquedas.md`
 
