@@ -8,7 +8,7 @@
 
 ## Qué construir
 
-Responder si una configuración ajustada en latín también ayuda en griego. En Colab (o Azure), sobre la submuestra fija de 300 000 pares, se entrenan a convergencia (tope ≈6 épocas) la configuración por defecto y la mejor de MMAS transferida sin cambios, y se evalúan una única vez en el conjunto de prueba de griego con el protocolo de `issues/009-entrenamiento-completo-y-evaluacion-final.md`.
+Responder si una configuración ajustada en latín también ayuda en griego. En Colab (o Azure), sobre la submuestra fija de 300 000 pares, se entrenan a convergencia (tope ≈6 épocas) la configuración por defecto y la mejor de MMAS transferida sin cambios, y se evalúan una única vez en el conjunto de prueba de griego con el protocolo de `issues/done/009-entrenamiento-completo-y-evaluacion-final.md`.
 
 Ver PRD: sección *Evaluación final* y *Plan de trabajo* (día 2).
 
@@ -24,7 +24,7 @@ Ver PRD: sección *Evaluación final* y *Plan de trabajo* (día 2).
 
 - Bloqueado por `issues/006-ejecutor-en-colab-o-azure.md`
 - Bloqueado por `issues/done/007-revision-y-submuestra-griego.md` (hecho: submuestra en `artefactos/datos/en_el_300k`, `md5_datos` `390bef2101ed0c04669b93af3ad42a82`)
-- Bloqueado por `issues/009-entrenamiento-completo-y-evaluacion-final.md`
+- Bloqueado por `issues/done/009-entrenamiento-completo-y-evaluacion-final.md` (hecho)
 - Bloqueado por `issues/010-noche-1-busquedas.md`
 
 ## Historias de usuario cubiertas

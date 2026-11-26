@@ -18,13 +18,13 @@ Ver PRD: sección *Objetivo extendido (fase 2)*.
 
 - [ ] Los datos bidireccionales usan `<2la>` y `<2en>` como primer token de entrada y las mismas particiones que la fase 1.
 - [ ] Prueba: ninguna oración de prueba aparece como entrada de entrenamiento en ninguna de las dos direcciones.
-- [ ] Ambos modelos se entrenan con la mejor configuración de MMAS y el protocolo de `issues/009-entrenamiento-completo-y-evaluacion-final.md`.
+- [ ] Ambos modelos se entrenan con la mejor configuración de MMAS y el protocolo de `issues/done/009-entrenamiento-completo-y-evaluacion-final.md`.
 - [ ] Se reportan chrF y BLEU por dirección, con bootstrap pareado frente al modelo unidireccional correspondiente.
 - [ ] Los resultados se añaden al artículo, o se documenta su paso a trabajo futuro.
 
 ## Bloqueado por
 
-- Bloqueado por `issues/009-entrenamiento-completo-y-evaluacion-final.md`
+- Bloqueado por `issues/done/009-entrenamiento-completo-y-evaluacion-final.md` (hecho)
 - Bloqueado por `issues/011-finalistas-de-latin.md`
 
 ## Historias de usuario cubiertas

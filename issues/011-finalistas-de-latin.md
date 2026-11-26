@@ -8,7 +8,7 @@
 
 ## Qué construir
 
-Cerrar la comparación principal del proyecto. En la 4060 se reevalúan con la aptitud de búsqueda los 3 mejores candidatos de la búsqueda aleatoria (para controlar la diferencia de hardware), se elige el mejor, y se entrenan a convergencia la configuración por defecto, la mejor aleatoria y la mejor de MMAS. Después se evalúan una única vez sobre el conjunto de prueba de latín con el protocolo de `issues/009-entrenamiento-completo-y-evaluacion-final.md`.
+Cerrar la comparación principal del proyecto. En la 4060 se reevalúan con la aptitud de búsqueda los 3 mejores candidatos de la búsqueda aleatoria (para controlar la diferencia de hardware), se elige el mejor, y se entrenan a convergencia la configuración por defecto, la mejor aleatoria y la mejor de MMAS. Después se evalúan una única vez sobre el conjunto de prueba de latín con el protocolo de `issues/done/009-entrenamiento-completo-y-evaluacion-final.md`.
 
 Ver PRD: sección *Evaluación final*.
 
@@ -23,7 +23,7 @@ Ver PRD: sección *Evaluación final*.
 
 ## Bloqueado por
 
-- Bloqueado por `issues/009-entrenamiento-completo-y-evaluacion-final.md`
+- Bloqueado por `issues/done/009-entrenamiento-completo-y-evaluacion-final.md` (hecho)
 - Bloqueado por `issues/010-noche-1-busquedas.md`
 
 ## Historias de usuario cubiertas

@@ -40,7 +40,7 @@ Por número, del PRD de origen:
 - Historia de usuario 53
 - Historia de usuario 54
 
-## Estado (2026-11-25): implementado y probado en CPU; falta la prueba de humo en la 4060
+## Estado (2026-11-25): hecho (probado en CPU y prueba de humo en la 4060)
 
 Código: `traduccion/evaluacion.py`, `traduccion/entrenamiento_completo.py` y `entrenar_final.py`. Pruebas: `tests/test_evaluacion.py` y `tests/test_entrenamiento_completo.py`. Uso en el README, sección 15.
 
@@ -60,3 +60,21 @@ python entrenar_final.py evaluar --par en-la --salida resultados_piloto
 ```
 
 Anotar el tiempo por época, el de validación y el de `evaluar`. El segundo comando toma la configuración del JSON de ejemplo de la aptitud falsa (avisa de ello): solo sirve para tener un modelo `mmas` en la prueba de humo.
+
+## Prueba de humo en la RTX 4060 (2026-11-25)
+
+Los tres comandos terminaron sin errores: se guardó y recargó cada modelo, y la evaluación final escribió `resultados_piloto/prueba/`.
+
+| Medición | defecto | mmas (configuración de ejemplo) |
+|-|-|-|
+| Entrenamiento de 1 época | 53 s | 42 s |
+| Validación voraz (500 pares) | 5 s | 5 s |
+| chrF de validación tras 1 época | 3.82 | 3.78 |
+| Prueba con haz 5 (9 812 oraciones) | 398 s | 346 s |
+| chrF / BLEU en prueba | 4.65 / 0.01 | 4.37 / 0.00 |
+
+- Con 1 época el calentamiento (2 000 pasos) aún no termina (447 pasos por época): un chrF de ≈4 es lo esperado y los números no significan nada; no se reportan.
+- Estimación para el issue 011: la validación completa de latín (≈9 800 pares) tarda ≈100 s, así que cada época cuesta ≈2.5 min y un finalista ≈50 min en el peor caso (20 épocas). La prueba con haz tarda ≈6 min por modelo con modelos sin entrenar (generan hasta la longitud máxima); con modelos entrenados debería ser menor.
+- El valor p de 0.001 es el mínimo posible con 1 000 remuestreos.
+- El aviso «Parallel tests are not supported on Windows» es de sacreBLEU y no afecta: el bootstrap corre en un solo proceso.
+- `resultados_piloto/` está en `.gitignore` y puede borrarse.
