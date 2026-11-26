@@ -16,12 +16,12 @@ Ver PRD: secciones *Modelo y entrenamiento*, *Aptitud* y módulos *Datos*, *Mode
 
 ## Criterios de aceptación
 
-- [ ] Un comando con un presupuesto mínimo (unos pocos lotes) termina en menos de un par de minutos en la 4060 y escribe un JSON con configuración, aptitud, parámetros, tiempo, estado y huella (commit, MD5 del tokenizador, tamaño de entrenamiento, GPU, versiones).
+- [x] Un comando con un presupuesto mínimo (unos pocos lotes) termina en menos de un par de minutos en la 4060 y escribe un JSON con configuración, aptitud, parámetros, tiempo, estado y huella (commit, MD5 del tokenizador, tamaño de entrenamiento, GPU, versiones).
 - [x] La muestra de 1 000 pares de validación es siempre la misma (misma semilla) entre ejecuciones y máquinas. *(Verificado en CPU: los índices se eligen por MD5 con una semilla constante, sin `random` ni orden de conjuntos; la prueba fija valores concretos y corre en cada máquina con `pytest`. Cada JSON trae `md5_muestra_validacion`.)*
-- [ ] Con la misma configuración y semilla, dos ejecuciones dan la misma aptitud (salvo no determinismo mínimo de GPU, documentado).
+- [x] Con la misma configuración y semilla, dos ejecuciones dan la misma aptitud (salvo no determinismo mínimo de GPU, documentado).
 - [x] Una configuración que excede ≈40M parámetros se rechaza sin entrenar y queda registrada con su estado. *(Verificado en CPU: estado `rechazado_parametros`, aptitud 0; el conteo se hace en el dispositivo `meta`.)*
 - [x] Una falta de memoria se captura y se registra como aptitud 0 sin abortar el proceso. *(Verificado en CPU con una falta de memoria simulada: estado `sin_memoria`, aptitud 0, se libera la GPU y la búsqueda sigue.)*
-- [ ] Con el presupuesto real (≈2 épocas de latín), la evaluación de la configuración por defecto tarda unos 2–3 minutos; el tiempo medido se anota.
+- [x] Con el presupuesto real (≈2 épocas de latín), la evaluación de la configuración por defecto tarda unos 2–3 minutos; el tiempo medido se anota.
 - [x] Prueba de humo automatizada: con un presupuesto mínimo devuelve un resultado con el formato correcto y una aptitud en [0, 1]. *(`tests/test_entrenamiento.py`)*
 - [x] Prueba automatizada: el modelo construido usa pad=3, bos=1, eos=2 y el tamaño de vocabulario del tokenizador. *(`tests/test_entrenamiento.py`)*
 
@@ -139,19 +139,21 @@ Escribe en `resultados_piloto/` (no se mezcla con los resultados reales). Debe t
 
 ### Qué anotar (copiar esta tabla en un comentario del issue o editarla aquí)
 
-| Dato | Valor |
-|---|---|
-| Commit (`--verificar`) | |
-| GPU | |
-| Pares de entrenamiento / tokens objetivo por época / lotes por época | |
-| MD5 de la muestra de validación | |
-| Presupuesto `real` (tokens objetivo) | |
-| Paso 3 — tiempo total / memoria GPU pico / estado | |
-| Paso 4 — tiempo total (entrenamiento + decodificación) | |
-| Paso 4 — memoria GPU pico (asignada / reservada) | |
-| Paso 4 — aptitud / chrF / pasos / épocas | |
-| Paso 5 — aptitud de la segunda corrida / diferencia | |
-| Paso 6 — estado | |
-| Paso 7 — terminó sin errores (sí/no) | |
+|Dato|Valor|
+|-|-|
+|Laptop conectada a la corriente (sí/no)|sí|
+|Commit (paso 3)|91c32219dd240f1e47c33cd611f00c98e2a18b80|
+|GPU (paso 3)|NVIDIA GeForce RTX 4060 Laptop GPU \| memoria: 8.0 GiB|
+|Pares de entrenamiento / tokens por época / lotes por época (paso 3)|78,463 pares \| 2,855,064 tokens objetivo por época \| 447 lotes por época|
+|MD5 de la muestra de validación (paso 3)|MD5 de los índices: 563153d1ec72ff0f5a89bbd4db5f56ca|
+|Presupuesto `real` en tokens (paso 3)|5,710,128 tokens objetivo (≈2.00 épocas)|
+|Paso 4: tiempo total / memoria GPU pico / estado|TIEMPO TOTAL: 23.0s \| MEMORIA GPU PICO: 2,569 MiB asignados / 3,008 MiB reservados \| ESTADO: OK|
+|Paso 5: tiempo total (entrenamiento + decodificación)|TIEMPO TOTAL: 126.0s (entrenamiento 105.4s \| decodificación 8.0s)|
+|Paso 5: memoria GPU pico|MEMORIA GPU PICO: 2,609 MiB asignados / 3,508 MiB reservados|
+|Paso 5: aptitud / chrF|APTITUD: 0.116443 \| chrF: 11.64|
+|Paso 5: **pasos** / épocas|PASOS: 894 \| ÉPOCAS: 2.0|
+|Paso 6: aptitud de la segunda corrida / diferencia|APTITUD: 0.119228 \| DIFERENCIA DE APTITUD: 0.002785|
+|Paso 7: estado|rechazado\_parametros (48,234,496 parámetros superan el tope de 40,000,000; no se entrena.)|
+|Paso 8: terminó sin errores (sí/no)|sí|
 
 Después de anotar, marcar las casillas: la 1 si el paso 3 tardó menos de ~2 minutos; la 3 si la diferencia del paso 5 es pequeña (documentarla); la 6 con el tiempo medido en el paso 4. Si el paso 4 tarda mucho más de 3 minutos, anotarlo: habrá que ajustar el presupuesto o el plan de la noche 1.

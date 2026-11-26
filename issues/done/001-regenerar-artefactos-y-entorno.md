@@ -22,7 +22,7 @@ Ver PRD: secciones *Datos y preprocesamiento* y *Reproducibilidad*.
 - [x] Las dependencias tienen versiones exactas y el README explica la instalación de PyTorch con CUDA.
 - [x] En la 4060, `torch.cuda.is_available()` devuelve `True` dentro del entorno virtual.
 - [x] La carpeta compartida de Drive contiene los dos tokenizadores elegidos y los datos tokenizados, con sus MD5 anotados.
-- [ ] Los cambios del notebook, dependencias, `.gitignore`, PRD y artículo están confirmados en git.
+- [x] Los cambios del notebook, dependencias, `.gitignore`, PRD y artículo están confirmados en git.
 
 ## Huella de los artefactos en Drive
 
