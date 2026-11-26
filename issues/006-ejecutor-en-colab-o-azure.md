@@ -17,9 +17,9 @@ Ver PRD: sección *Ejecución* y *Reproducibilidad*.
 ## Criterios de aceptación
 
 - [ ] El ejecutor pide solo: commit, método, fragmento (o modelo a entrenar) y carpeta de Drive.
-- [ ] Antes de entrenar, comprueba que el MD5 de los tokenizadores y el tamaño de los datos coinciden con los anotados en `issues/001-regenerar-artefactos-y-entorno.md`, y se detiene si no.
+- [x] Antes de entrenar, comprueba que el MD5 de los tokenizadores y el tamaño de los datos coinciden con los anotados en `issues/001-regenerar-artefactos-y-entorno.md`, y se detiene si no.
 - [ ] Cada uno de los 3 integrantes sin GPU ejecuta un fragmento mínimo con éxito y sus resultados aparecen en Drive.
-- [ ] La huella de esos resultados indica GPU T4 (o la de Azure) y el commit fijado.
+- [x] La huella de esos resultados indica GPU T4 (o la de Azure) y el commit fijado.
 - [ ] Si la sesión se corta, al relanzar continúa desde la caché sin repetir evaluaciones.
 
 ## Bloqueado por
@@ -35,7 +35,7 @@ Por número, del PRD de origen:
 - Historia de usuario 45
 - Historia de usuario 48
 
-## Estado (2026-11-25): esqueleto listo, falta probarlo con las cuentas reales
+## Estado (2026-11-25): probado en Colab por P3; faltan las cuentas de P2 y P4 y un corte real
 
 Hecho:
 
@@ -49,7 +49,7 @@ Falta:
 - ~~Ruta real de la carpeta compartida de Drive y artefactos con la estructura `artefactos/tok_*.model` y `artefactos/datos/en_*`.~~ Hecho: el notebook localiza la carpeta por su ID (`ID_CARPETA_DRIVE`) y los artefactos están en Drive.
 - ~~Anotar la huella de los artefactos en el issue 001 y copiarla en `HUELLA_ESPERADA`.~~ Hecho (calculada en Colab el 2026-11-25).
 - Fijar `COMMIT` en el commit que se use para la noche 1 (hoy apunta al commit del módulo del ejecutor) y subirlo a GitHub; si el repositorio es privado, la clonación en Colab necesita un token.
-- Comprobar en Colab que las versiones fijadas (probadas con Python 3.14) se instalan en su versión de Python; si alguna no tiene rueda, decidir qué versión usar allí.
-- Aptitud real (issue 003): hoy `--aptitud real` termina con error; cuando exista, la huella de cada resultado debe incluir la GPU (con la aptitud falsa `gpu` queda en `null`; la GPU sí queda en el registro de la ejecución).
+- ~~Comprobar en Colab que las versiones fijadas (probadas con Python 3.14) se instalan en su versión de Python.~~ Hecho: en Colab (Python 3.13.16) se instalan todas; PyTorch queda en el de Colab (2.14.1+cu130 frente al 2.15.0 fijado), con aviso y registrado en la huella.
+- ~~Aptitud real (issue 003) desde Colab, con la GPU en la huella.~~ Hecho: con `PRESUPUESTO_TOKENS` y `PRESUPUESTO_EVALUACIONES` el notebook corre el piloto (resultados en `resultados_piloto/`, nunca en `resultados/`); la huella indica `Tesla T4` y el commit fijado. Detalle en `issues/008-corrida-piloto.md`, sección *Verificación en Colab*.
 - Entrenamiento completo (issue 009): marcador `TODO issue 009` en la celda de lanzamiento.
-- Que cada uno de los 3 integrantes sin GPU ejecute un fragmento mínimo en su cuenta y comprobar la reanudación cortando una sesión real.
+- P3 ejecutó los 3 fragmentos mínimos en su cuenta (9 evaluaciones `ok`, fusión coherente). Falta que P2 y P4 ejecuten al menos un fragmento mínimo en sus cuentas (`APTITUD = "real"`, `PRESUPUESTO_TOKENS = "minimo"`, `PRESUPUESTO_EVALUACIONES = 9`, su `FRAGMENTO`) y comprobar la reanudación cortando una sesión real (*Desconectar y borrar entorno* a mitad de la celda 6).
